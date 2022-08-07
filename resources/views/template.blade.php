@@ -228,8 +228,8 @@
 
 
 
-            <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <li class="nav-item" id = "home">
+            <a href="{{url('/')}}" class="nav-link">
               <i class="nav-icon fas fa-home"></i>
               <p>
                 Home
@@ -238,8 +238,8 @@
           </li>
 
 
-         <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+         <li class="nav-item" id = "komponen_turbin">
+            <a href="{{url('/komponen_turbin')}}" class="nav-link">
               <i class="nav-icon fas fa-cogs"></i>
               <p>
                 Data Komponen Turbin
@@ -408,6 +408,70 @@
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
+
+
+
+
+
+
+
+<form action="{{route('komponen_turbin.store')}}" method = "POST">
+  @csrf
+
+<!-- Modal -->
+<div class="modal fade" id="DataTurbinModal" tabindex="-1" aria-labelledby="DataTurbinModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="DataTurbinModalLabel">Tambah Data Turbin</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        
+
+        <div class="form-group">
+          <label for="kode_komponen">Kode Komponen</label>
+          <input id = "kode_komponen" type="text" class="form-control" name = "kode_komponen" placeholder="Kode Komponen">
+      </div>
+
+      <div class="form-group">
+        <label for="nama_komponen">Nama Komponen</label>
+        <input id = "nama_komponen" type="text" class="form-control" name = "nama_komponen" placeholder="Nama Komponen">
+    </div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- jQuery -->
 <script src="{{asset('bootstrap/plugins/jquery/jquery.min.js')}}"></script>

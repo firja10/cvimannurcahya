@@ -14,7 +14,15 @@ class CreateRepairingsTable extends Migration
     public function up()
     {
         Schema::create('repairings', function (Blueprint $table) {
-            $table->id();
+            // $table->id();
+            $table->bigIncrements('id');
+            $table->string('komponen')->nullable();
+            $table->string('nama')->nullable();
+            $table->string('jenis')->nullable();
+            $table->string('satuan')->nullable();
+            $table->integer('jumlah')->nullable();
+            $table->string('keterangan')->nullable();
+
             $table->timestamps();
         });
     }

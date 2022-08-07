@@ -22,8 +22,11 @@ Route::get('/', function () {
 });
 
 
+Route::resource('/komponen_turbin',App\Http\Controllers\KomponenTurbinController::class);
 
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+

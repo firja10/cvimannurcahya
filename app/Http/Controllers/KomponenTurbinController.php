@@ -15,6 +15,12 @@ class KomponenTurbinController extends Controller
     public function index()
     {
         //
+        $komponen_turbin = KomponenTurbin::all();
+
+        return view('data_komponen_turbin', compact('komponen_turbin'));
+
+
+
     }
 
     /**
@@ -25,6 +31,7 @@ class KomponenTurbinController extends Controller
     public function create()
     {
         //
+
     }
 
     /**
@@ -36,6 +43,14 @@ class KomponenTurbinController extends Controller
     public function store(Request $request)
     {
         //
+
+        $komponen_turbin = new KomponenTurbin();
+
+        $komponen_turbin['kode_komponen'] = $request->kode_komponen;
+        $komponen_turbin['nama_komponen'] = $request->nama_komponen;
+
+        $komponen_turbin->save();
+        return redirect('/komponen_turbin')->with('komponenturbin','Data Komponen Turbin Telah Ditambahkan');
     }
 
     /**
@@ -78,8 +93,14 @@ class KomponenTurbinController extends Controller
      * @param  \App\Models\KomponenTurbin  $komponenTurbin
      * @return \Illuminate\Http\Response
      */
-    public function destroy(KomponenTurbin $komponenTurbin)
+    public function destroy(KomponenTurbin $komponenTurbin, $id)
     {
         //
+
+        $komponen_turbin = KomponenTurbin::findOrFail($id);
+        $komponen_turbin->delete();
+
+        return redirect('/komponen_turbin')->with('hapuskomponen', 'Sukses Hapus Data Komponen Turbin');
+
     }
 }
