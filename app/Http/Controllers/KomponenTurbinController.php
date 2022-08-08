@@ -93,7 +93,7 @@ class KomponenTurbinController extends Controller
      * @param  \App\Models\KomponenTurbin  $komponenTurbin
      * @return \Illuminate\Http\Response
      */
-    public function destroy(KomponenTurbin $komponenTurbin, $id)
+    public function destroy($id)
     {
         //
 

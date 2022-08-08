@@ -2,34 +2,16 @@
 
 @section('title')
 
-Data Komponen Turbin
+Data Material Carbon Steel
     
 @endsection
 
 
 @section('judul')
 
-Data Komponen Turbin
+Data Material Carbon Steel
     
 @endsection
-
-
-
-@section('style')
-
-<style>
-    #komponen_turbin {
-        background-color: white;
-    }
-
-    #komponen_turbin .nav-link {
-        color:firebrick;
-    }
-</style>
-    
-@endsection
-
-
 
 @section('content')
 
@@ -37,10 +19,19 @@ Data Komponen Turbin
 
 
 
+@section('style')
 
+<style>
+    #carbon_steel{
+        background-color:white;
+    }
 
-
-
+    #carbon_steel .nav-link {
+        color:firebrick;
+    }
+</style>
+    
+@endsection
 
 
 
@@ -64,18 +55,22 @@ Data Komponen Turbin
           <div class="card">
             <div class="card-header justify-content-center d-flex">
               {{-- <h3 class="card-title">DataTable with default features</h3> --}}
-              <button class = "btn btn-dark"> <i class = "fas fa-arrow-left"></i> Previous</button>
-              <button class = "btn btn-success ml-auto" data-toggle = "modal" data-target = "#DataTurbinModal" > <i class = "fas fa-plus"></i> Tambah Data</button>
+              <button class = "btn btn-dark" onclick="history.back()"> <i class = "fas fa-arrow-left"></i> Previous</button>
+              <button class = "btn btn-success ml-auto" data-toggle = "modal" data-target = "#CarbonSteelModal" > <i class = "fas fa-plus"></i> Tambah Data</button>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-              <table id="example1" class="table table-bordered table-striped">
+              <table id="carbon_steel" class="table table-bordered table-striped">
                 <thead>
                 <tr>
                   <th>No. </th>
-                  <th>Kode Komponen</th>
-                  <th>Nama Komponen</th>
-                  <th>Aksi</th>
+                  <th>Kode Material</th>
+                  <th>Nama Material</th>
+                  <th>Jenis</th>
+                    <th>Stock</th>
+                    <th>Harga Beli</th>
+                    <th>Aksi</th>
+
                 </tr>
                 </thead>
                 <tbody>
@@ -84,17 +79,21 @@ Data Komponen Turbin
                         
                         $no = 1;
                         ?>
-                @foreach ($komponen_turbin as $item_turbin)
+                @foreach ($carbon_steel as $item_carbon_steel)
                 
                 <tr>
                     <td><?php echo $no++; ?></td>
-                    <td>{{$item_turbin->nama_komponen}}</td>
-                    <td>{{$item_turbin->kode_komponen}}</td>
+                    <td>{{$item_carbon_steel->nama}}</td>
+                    <td>{{$item_carbon_steel->kategori}}</td>
+                    <td>{{$item_carbon_steel->jenis}}</td>
+                    <td>{{$item_carbon_steel->stock}}</td>
+                    <td>{{$item_carbon_steel->harga_beli}}</td>
+             
                     <td>
 
                         <a href="" class = "btn btn-success">Edit</a>
                             <br> <br>
-                        <form action="{{route('komponen_turbin.destroy', $item_turbin->id)}}" method = "POST" >
+                        <form action="{{route('CarbonSteelDelete', $item_carbon_steel->id)}}" method = "POST" >
                             @csrf
                             @method('DELETE')
                             <button class = "btn  btn-danger">Hapus</button>
@@ -112,8 +111,11 @@ Data Komponen Turbin
                 <tfoot>
                 <tr>
                     <th>No. </th>
-                    <th>Kode Komponen</th>
-                    <th>Nama Komponen</th>
+                  <th>Kode Material</th>
+                  <th>Nama Material</th>
+                  <th>Jenis</th>
+                    <th>Stock</th>
+                    <th>Harga Beli</th>
                     <th>Aksi</th>
                 </tr>
                 </tfoot>
@@ -153,20 +155,5 @@ Data Komponen Turbin
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 @endsection

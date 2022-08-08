@@ -15,6 +15,12 @@ class KebutuhanMaterialController extends Controller
     public function index()
     {
         //
+    
+    
+        $kebutuhan_material = KebutuhanMaterial::all();
+        return view('',compact(''));
+
+
     }
 
     /**

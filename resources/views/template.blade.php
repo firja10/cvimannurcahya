@@ -35,6 +35,8 @@
 
 
 
+@yield('style')
+
 
 
 
@@ -46,7 +48,8 @@
 
   <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="{{asset('bootstrap/dist/img/AdminLTELogo.png')}}" alt="AdminLTELogo" height="60" width="60">
+    {{-- <img class="animation__shake" src="{{asset('bootstrap/dist/img/AdminLTELogo.png')}}" alt="AdminLTELogo" height="60" width="60"> --}}
+    <img class="animation__shake" src="{{asset('logo_cv.jpg')}}" alt="AdminLTELogo" height="120" width="240">
   </div>
 
   <!-- Navbar -->
@@ -257,20 +260,20 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="./index.html" class="nav-link">
+              <li class="nav-item" id = "cast_steel">
+                <a href="{{url('/data_material/cast_steel')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Cast Steel</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+              <li class="nav-item" id = "carbon_steel">
+                <a href="{{url('/data_material/carbon_steel')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Carbon Steel</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
+              <li class="nav-item" id = "stainless_steel">
+                <a href="{{url('/data_material/stainless_steel')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Stainless Steel</p>
                 </a>
@@ -280,8 +283,8 @@
 
 
 
-          <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+          <li class="nav-item" id = "kebutuhan_material">
+            <a href="{{url('/data_material/kebutuhan_material')}}" class="nav-link">
               <i class="nav-icon fas fa-puzzle-piece"></i>
               <p>
                 Data Kebutuhan Material
@@ -393,11 +396,11 @@
 
   </div>
   <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+  <footer class="main-footer bg-dark">
+    <strong>Copyright &copy; 2022 <a href="{{url('/')}}">CV IMAN NUR CAHYA</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.2.0
+      {{-- <b>Version</b> 3.2.0 --}}
     </div>
   </footer>
 
@@ -453,6 +456,229 @@
 </div>
 
 </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<form action="{{route('CastSteelStore')}}" method = "POST">
+  @csrf
+
+<!-- Modal -->
+<div class="modal fade" id="CastSteelModal" tabindex="-1" aria-labelledby="CastSteelModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="CastSteelLabel">Tambah Data Cast Steel</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        
+
+        <div class="form-group">
+          <label for="kode">Kode Material</label>
+          <input id = "kode" type="text" class="form-control" name = "kode" placeholder="Kode Material">
+      </div>
+
+      <div class="form-group">
+        <label for="nama">Nama Material</label>
+        <input id = "nama" type="text" class="form-control" name = "nama" placeholder="Nama Material">
+    </div>
+
+
+    <div class="form-group">
+      <label for="jenis">Jenis</label>
+      <select name="jenis" id="jenis" class = "form-control">
+        <option value="AISI">AISI</option>
+        <option value="JIS">JIS</option>
+      </select>
+  </div>
+
+
+
+<div class="form-group">
+  <label for="stock">Stock</label>
+  <input id = "stock" type="number" class="form-control" name = "stock" placeholder="Stock">
+</div>
+
+
+<div class="form-group">
+  <label for="harga_beli">Harga Beli</label>
+  <input id = "harga_beli" type="number" class="form-control" name = "harga_beli" placeholder="Harga Beli">
+</div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<form action="{{route('CarbonSteelStore')}}" method = "POST">
+  @csrf
+
+<!-- Modal -->
+<div class="modal fade" id="CarbonSteelModal" tabindex="-1" aria-labelledby="CarbonSteelModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="CastSteelLabel">Tambah Data Carbon Steel</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        
+
+        <div class="form-group">
+          <label for="kode">Kode Material</label>
+          <input id = "kode" type="text" class="form-control" name = "kode" placeholder="Kode Material">
+      </div>
+
+      <div class="form-group">
+        <label for="nama">Nama Material</label>
+        <input id = "nama" type="text" class="form-control" name = "nama" placeholder="Nama Material">
+    </div>
+
+
+    <div class="form-group">
+      <label for="jenis">Jenis</label>
+      <select name="jenis" id="jenis" class = "form-control">
+        <option value="AISI">AISI</option>
+        <option value="JIS">JIS</option>
+      </select>
+  </div>
+
+
+
+<div class="form-group">
+  <label for="stock">Stock</label>
+  <input id = "stock" type="number" class="form-control" name = "stock" placeholder="Stock">
+</div>
+
+
+<div class="form-group">
+  <label for="harga_beli">Harga Beli</label>
+  <input id = "harga_beli" type="number" class="form-control" name = "harga_beli" placeholder="Harga Beli">
+</div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+<form action="{{route('StainlessSteelStore')}}" method = "POST">
+  @csrf
+
+<!-- Modal -->
+<div class="modal fade" id="StainlessSteelModal" tabindex="-1" aria-labelledby="StainlessSteelModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="StainlessSteelLabel">Tambah Data Carbon Steel</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        
+
+        <div class="form-group">
+          <label for="kode">Kode Material</label>
+          <input id = "kode" type="text" class="form-control" name = "kode" placeholder="Kode Material">
+      </div>
+
+      <div class="form-group">
+        <label for="nama">Nama Material</label>
+        <input id = "nama" type="text" class="form-control" name = "nama" placeholder="Nama Material">
+    </div>
+
+
+    <div class="form-group">
+      <label for="jenis">Jenis</label>
+      <select name="jenis" id="jenis" class = "form-control">
+        <option value="AISI">AISI</option>
+        <option value="JIS">JIS</option>
+      </select>
+  </div>
+
+
+
+<div class="form-group">
+  <label for="stock">Stock</label>
+  <input id = "stock" type="number" class="form-control" name = "stock" placeholder="Stock">
+</div>
+
+
+<div class="form-group">
+  <label for="harga_beli">Harga Beli</label>
+  <input id = "harga_beli" type="number" class="form-control" name = "harga_beli" placeholder="Harga Beli">
+</div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</form>
+
 
 
 
