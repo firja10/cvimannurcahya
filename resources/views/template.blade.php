@@ -71,9 +71,9 @@
     <ul class="navbar-nav ml-auto">
       <!-- Navbar Search -->
       <li class="nav-item">
-        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+        {{-- <a class="nav-link" data-widget="navbar-search" href="#" role="button">
           <i class="fas fa-search"></i>
-        </a>
+        </a> --}}
         <div class="navbar-search-block">
           <form class="form-inline">
             <div class="input-group input-group-sm">
@@ -150,42 +150,13 @@
         </div>
       </li>
       <!-- Notifications Dropdown Menu -->
-      <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">
-          <i class="far fa-bell"></i>
-          <span class="badge badge-warning navbar-badge">15</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-item dropdown-header">15 Notifications</span>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-envelope mr-2"></i> 4 new messages
-            <span class="float-right text-muted text-sm">3 mins</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-users mr-2"></i> 8 friend requests
-            <span class="float-right text-muted text-sm">12 hours</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-file mr-2"></i> 3 new reports
-            <span class="float-right text-muted text-sm">2 days</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
-        </div>
-      </li>
+   
       <li class="nav-item">
         <a class="nav-link" data-widget="fullscreen" href="#" role="button">
           <i class="fas fa-expand-arrows-alt"></i>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="#" role="button">
-          <i class="fas fa-th-large"></i>
-        </a>
-      </li>
+
     </ul>
   </nav>
   <!-- /.navbar -->
@@ -207,7 +178,35 @@
         </div>
         <div class="info">
           <a href="#" class="d-block">Alexander Pierce</a>
-          <span style = "font-size:12px" class = "text-white">Jabatan</span>
+          <span style = "font-size:12px" class = "text-white">
+          <?php 
+            
+            $manager = Auth::user()->is_manager;
+            $ppic = Auth::user()->is_ppic;
+            $bagiangudang = Auth::user()->is_bagiangudang ;
+            $bagianrepairing = Auth::user()->is_bagianrepairing;
+
+            if($manager == 1){
+              echo "Manager";
+            }
+
+            elseif ($ppic == 1) {
+              # code...
+              echo "PPIC";
+            }
+
+            elseif ($bagiangudang == 1) {
+              # code...
+              echo "Bagian Gudang";
+            }
+
+            elseif ($bagianrepairing == 1) {
+              # code...
+              echo "Bagian Repairing";
+            }
+            
+            ?>
+          </span>
         </div>
       </div>
 
@@ -284,7 +283,7 @@
 
 
           <li class="nav-item" id = "kebutuhan_material">
-            <a href="{{url('/data_material/kebutuhan_material')}}" class="nav-link">
+            <a href="{{url('/kebutuhan_material')}}" class="nav-link">
               <i class="nav-icon fas fa-puzzle-piece"></i>
               <p>
                 Data Kebutuhan Material
@@ -295,8 +294,8 @@
 
 
 
-          <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+          <li class="nav-item" id = "pembelian_material">
+            <a href="{{url('/pembelian_material')}}" class="nav-link">
               <i class="nav-icon fas fa-credit-card"></i>
               <p>
                 Data Pembelian Material
@@ -348,6 +347,29 @@
                 </a>
               </li>
             </ul>
+          </li>
+
+
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                              document.getElementById('logout-form').submit();">
+              <i class="nav-icon fas fa-sign-out-alt"></i>
+              <p>
+                Logout
+              </p>
+            </a>
+
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+              @csrf
+          </form>
+
+
+
+
+
           </li>
 
 
@@ -618,6 +640,79 @@
 
 
 
+<form action="{{route('kebutuhan_material.store')}}" method = "POST">
+  @csrf
+
+<!-- Modal -->
+<div class="modal fade" id="KebutuhanMaterialModal" tabindex="-1" aria-labelledby="KebutuhanMaterialModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="KebutuhanMaterialModalLabel">Tambah Kebutuhan Material</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        
+
+        <div class="form-group">
+          <label for="komponen">Komponen Turbin</label>
+          <input id = "komponen" type="text" class="form-control" name = "komponen" placeholder="Komponen Turbin">
+      </div>
+
+      <div class="form-group">
+        <label for="nama">Nama Material</label>
+        <input id = "nama" type="text" class="form-control" name = "nama" placeholder="Nama Material">
+    </div>
+
+    <div class="form-group">
+      <label for="jenis">Jenis</label>
+      <select name="jenis" id="jenis" class = "form-control">
+        <option value="AISI">AISI</option>
+        <option value="JIS">JIS</option>
+      </select>
+  </div>
+
+
+
+<div class="form-group">
+  <label for="satuan">Satuan</label>
+  <input id = "satuan" type="text" class="form-control" name = "satuan" placeholder="Satuan">
+</div>
+
+<div class="form-group">
+  <label for="jumlah">Jumlah</label>
+  <input id = "jumlah" type="number" class="form-control" name = "jumlah" placeholder="Jumlah">
+</div>
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <form action="{{route('StainlessSteelStore')}}" method = "POST">
   @csrf
 
@@ -684,6 +779,81 @@
 
 
 
+
+
+
+
+
+
+
+
+<form action="{{route('pembelian_material.store')}}" method = "POST">
+  @csrf
+
+<!-- Modal -->
+<div class="modal fade" id="PembelianMaterialModal" tabindex="-1" aria-labelledby="PembelianMaterialModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="PembelianMaterialModalLabel">Tambah Data Pembelian Material</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        
+
+        <div class="form-group">
+          <label for="kode">Kode Material</label>
+          <input id = "kode" type="text" class="form-control" name = "kode" placeholder="Kode Material">
+      </div>
+
+      <div class="form-group">
+        <label for="nama">Nama Material</label>
+        <input id = "nama" type="text" class="form-control" name = "nama" placeholder="Nama Material">
+    </div>
+
+
+    <div class="form-group">
+      <label for="jenis">Jenis</label>
+      <input type="text" class="form-control" name = "jenis" id = "jenis" placeholder="Jenis">
+
+      {{-- <select name="jenis" id="jenis" class = "form-control">
+        <option value="AISI">AISI</option>
+        <option value="JIS">JIS</option>
+      </select> --}}
+  </div>
+
+
+
+<div class="form-group">
+  <label for="satuan">Satuan</label>
+  <input id = "satuan" type="text" class="form-control" name = "satuan" placeholder="Satuan">
+</div>
+
+<div class="form-group">
+  <label for="jumlah">Jumlah</label>
+  <input id = "jumlah" type="number" class="form-control" name = "jumlah" placeholder="Jumlah">
+</div>
+
+
+<div class="form-group">
+  <label for="harga_beli">Harga Beli</label>
+  <input id = "harga_beli" type="number" class="form-control" name = "harga_beli" placeholder="Harga Beli">
+</div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</form>
 
 
 

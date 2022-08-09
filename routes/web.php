@@ -64,6 +64,11 @@ Route::post('/data_material/stainless_steel', [\App\Http\Controllers\LandingCont
 Route::resource('/kebutuhan_material',\App\Http\Controllers\KebutuhanMaterialController::class);
 
 
+//PEMBELIAN MATERIAL
+
+Route::resource('/pembelian_material',\App\Http\Controllers\PembelianMaterialController::class);
+
+
 
 
 

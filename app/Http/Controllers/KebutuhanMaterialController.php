@@ -18,7 +18,7 @@ class KebutuhanMaterialController extends Controller
     
     
         $kebutuhan_material = KebutuhanMaterial::all();
-        return view('',compact(''));
+        return view('PPIC.kebutuhan_material',compact('kebutuhan_material'));
 
 
     }
@@ -42,6 +42,26 @@ class KebutuhanMaterialController extends Controller
     public function store(Request $request)
     {
         //
+
+        $kebutuhan_material = new KebutuhanMaterial();
+
+        $kebutuhan_material['komponen'] = $request->komponen;
+
+        $kebutuhan_material['nama'] = $request->nama;
+
+        $kebutuhan_material['jenis'] = $request->jenis;
+
+        $kebutuhan_material['satuan'] = $request->satuan;
+
+        $kebutuhan_material['jumlah'] = $request->jumlah;
+
+        $kebutuhan_material->save();
+
+        return redirect('/kebutuhan_material')->with('tambahkebutuhanmaterial', 'Sukses Menambahkan Kebutuhan Material');
+
+
+
+
     }
 
     /**
@@ -84,8 +104,16 @@ class KebutuhanMaterialController extends Controller
      * @param  \App\Models\KebutuhanMaterial  $kebutuhanMaterial
      * @return \Illuminate\Http\Response
      */
-    public function destroy(KebutuhanMaterial $kebutuhanMaterial)
+    public function destroy($id)
     {
         //
+
+        $kebutuhan_material = KebutuhanMaterial::findOrFail($id);
+
+        $kebutuhan_material->delete();
+
+        return redirect('/kebutuhan_material')->with('hapuskebutuhanmaterial', 'Kebutuhan Material Berhasil Dihapus');
+
+
     }
 }

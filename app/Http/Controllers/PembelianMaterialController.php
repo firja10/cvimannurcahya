@@ -15,6 +15,12 @@ class PembelianMaterialController extends Controller
     public function index()
     {
         //
+
+
+        $pembelian_material = PembelianMaterial::all();
+
+        return view('gudang.pembelian_material', compact('pembelian_material'));
+
     }
 
     /**
@@ -25,6 +31,7 @@ class PembelianMaterialController extends Controller
     public function create()
     {
         //
+        return view('gudang.pembelian_material');
     }
 
     /**
@@ -36,6 +43,18 @@ class PembelianMaterialController extends Controller
     public function store(Request $request)
     {
         //
+
+        $pembelian_material = new PembelianMaterial();
+        $pembelian_material['kode'] = $request->kode;
+        $pembelian_material['nama'] = $request->nama;
+        $pembelian_material['jenis'] = $request->jenis;
+        $pembelian_material['satuan'] = $request->satuan;
+        $pembelian_material['jumlah'] = $request->jumlah;
+        $pembelian_material['suplier'] = $request->suplier;
+        $pembelian_material->save();
+
+        return redirect('/pembelian_material')->with('pembelianmaterial','Data Pembelian Material Telah Ditambahkan');
+
     }
 
     /**
@@ -58,6 +77,11 @@ class PembelianMaterialController extends Controller
     public function edit(PembelianMaterial $pembelianMaterial)
     {
         //
+
+
+
+
+
     }
 
     /**
@@ -78,8 +102,18 @@ class PembelianMaterialController extends Controller
      * @param  \App\Models\PembelianMaterial  $pembelianMaterial
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PembelianMaterial $pembelianMaterial)
+    public function destroy($id)
     {
         //
+    
+        $pembelian_material = PembelianMaterial::findOrFail($id);
+
+        $pembelian_material->delete();
+
+        return redirect('/pembelian_material')->with('hapuspembelianmaterial','Terdapat Data Pembelian Material yang dihapus');
+
+
+
     }
+
 }
