@@ -264,7 +264,7 @@
 
 
 
-          @if ($manager && $gudang)
+          @if ($manager || $gudang)
               
           <li class="nav-item menu-open">
             <a href="#" class="nav-link">
