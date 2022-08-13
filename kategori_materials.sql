@@ -1,0 +1,17 @@
+INSERT INTO kategori_materials(id,nama_kategori,created_at,updated_at) VALUES (1,'TURBINE CASING','2022-08-11 21:44:35','2022-08-11 21:44:35');
+INSERT INTO kategori_materials(id,nama_kategori,created_at,updated_at) VALUES (2,'CASING CASE','2022-08-11 21:44:35','2022-08-11 21:44:35');
+INSERT INTO kategori_materials(id,nama_kategori,created_at,updated_at) VALUES (3,'LABYRINTH PACKING','2022-08-11 21:44:35','2022-08-11 21:44:35');
+INSERT INTO kategori_materials(id,nama_kategori,created_at,updated_at) VALUES (4,'NOZZLE','2022-08-11 21:44:35','2022-08-11 21:44:35');
+INSERT INTO kategori_materials(id,nama_kategori,created_at,updated_at) VALUES (5,'STATIONARY BLADE SEAT','2022-08-11 21:44:35','2022-08-11 21:44:35');
+INSERT INTO kategori_materials(id,nama_kategori,created_at,updated_at) VALUES (6,'EMERGENCY STOP VALVE CASING','2022-08-11 21:44:35','2022-08-11 21:44:35');
+INSERT INTO kategori_materials(id,nama_kategori,created_at,updated_at) VALUES (7,'VALVE','2022-08-11 21:44:35','2022-08-11 21:44:35');
+INSERT INTO kategori_materials(id,nama_kategori,created_at,updated_at) VALUES (8,'GOVERNOR VALVE CASING COVER','2022-08-11 21:44:35','2022-08-11 21:44:35');
+INSERT INTO kategori_materials(id,nama_kategori,created_at,updated_at) VALUES (9,'VALVE STEM','2022-08-11 21:44:35','2022-08-11 21:44:35');
+INSERT INTO kategori_materials(id,nama_kategori,created_at,updated_at) VALUES (10,'GOVERNOR VALVE','2022-08-11 21:44:35','2022-08-11 21:44:35');
+INSERT INTO kategori_materials(id,nama_kategori,created_at,updated_at) VALUES (11,'TURBINE SHAFT','2022-08-11 21:44:35','2022-08-11 21:44:35');
+INSERT INTO kategori_materials(id,nama_kategori,created_at,updated_at) VALUES (12,'DISC ROTOR','2022-08-11 21:44:35','2022-08-11 21:44:35');
+INSERT INTO kategori_materials(id,nama_kategori,created_at,updated_at) VALUES (13,'OVERSPEED TRIP SHAFT','2022-08-11 21:44:35','2022-08-11 21:44:35');
+INSERT INTO kategori_materials(id,nama_kategori,created_at,updated_at) VALUES (14,'MOVING BLADE','2022-08-11 21:44:35','2022-08-11 21:44:35');
+INSERT INTO kategori_materials(id,nama_kategori,created_at,updated_at) VALUES (15,'BEARING METAL','2022-08-11 21:44:35','2022-08-11 21:44:35');
+INSERT INTO kategori_materials(id,nama_kategori,created_at,updated_at) VALUES (16,'PINION','2022-08-11 21:44:35','2022-08-11 21:44:35');
+INSERT INTO kategori_materials(id,nama_kategori,created_at,updated_at) VALUES (17,'THRUST BEARING METAL','2022-08-11 21:44:35','2022-08-11 21:44:35');

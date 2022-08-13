@@ -16,58 +16,8 @@ use Illuminate\Support\Facades\Auth;
 */
 
 // Route::get('/', function () {
-//     return view('welcome');
+//     return view('welcome')->middleware('auth');
 // });
-
-Route::get('/', function () {
-    return view('dashboard');
-});
-
-
-Route::resource('/komponen_turbin',App\Http\Controllers\KomponenTurbinController::class);
-
-
-
-// CAST STEEL
-
-Route::get('/data_material/cast_steel', [\App\Http\Controllers\LandingController::class, 'CastSteel'])->name('CastSteel');
-
-Route::delete('/data_material/cast_steel/{id}', [\App\Http\Controllers\LandingController::class, 'CastSteelDelete'])->name('CastSteelDelete');
-
-Route::post('/data_material/cast_steel', [\App\Http\Controllers\LandingController::class, 'CastSteelStore'])->name('CastSteelStore');
-
-
-// CARBON STEEL
-
-
-Route::get('/data_material/carbon_steel', [\App\Http\Controllers\LandingController::class, 'CarbonSteel'])->name('CarbonSteel');
-
-Route::delete('/data_material/carbon_steel/{id}', [\App\Http\Controllers\LandingController::class, 'CarbonSteelDelete'])->name('CarbonSteelDelete');
-Route::post('/data_material/carbon_steel', [\App\Http\Controllers\LandingController::class, 'CarbonSteelStore'])->name('CarbonSteelStore');
-
-
-
-
-
-// STAINLESS STEEL
-
-Route::get('/data_material/stainless_steel', [\App\Http\Controllers\LandingController::class, 'StainlessSteel'])->name('StainlessSteel');
-
-Route::delete('/data_material/stainless_steel/{id}', [\App\Http\Controllers\LandingController::class, 'StainlessSteelDelete'])->name('StainlessSteelDelete');
-Route::post('/data_material/stainless_steel', [\App\Http\Controllers\LandingController::class, 'StainlessSteelStore'])->name('StainlessSteelStore');
-
-
-
-
-//KEBUTUHAN MATERIAL
-
-Route::resource('/kebutuhan_material',\App\Http\Controllers\KebutuhanMaterialController::class);
-
-
-//PEMBELIAN MATERIAL
-
-Route::resource('/pembelian_material',\App\Http\Controllers\PembelianMaterialController::class);
-
 
 
 
@@ -78,6 +28,76 @@ Route::resource('/pembelian_material',\App\Http\Controllers\PembelianMaterialCon
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
+
+
+
+
+
+
+
+
+
+Route::get('/', function () {
+    return view('dashboard');
+})->middleware('auth');
+
+
+Route::resource('/komponen_turbin',App\Http\Controllers\KomponenTurbinController::class)->middleware('auth');
+
+
+
+// CAST STEEL
+
+Route::get('/data_material/CS', [\App\Http\Controllers\LandingController::class, 'CastSteel'])->name('CastSteel')->middleware('auth');
+
+Route::delete('/data_material/CS/{id}', [\App\Http\Controllers\LandingController::class, 'CastSteelDelete'])->name('CastSteelDelete')->middleware('auth');
+
+Route::post('/data_material/CS', [\App\Http\Controllers\LandingController::class, 'CastSteelStore'])->name('CastSteelStore')->middleware('auth');
+
+
+// CARBON STEEL
+
+
+Route::get('/data_material/CBS', [\App\Http\Controllers\LandingController::class, 'CarbonSteel'])->name('CarbonSteel')->middleware('auth');
+
+Route::delete('/data_material/CBS/{id}', [\App\Http\Controllers\LandingController::class, 'CarbonSteelDelete'])->name('CarbonSteelDelete')->middleware('auth');
+Route::post('/data_material/CBS', [\App\Http\Controllers\LandingController::class, 'CarbonSteelStore'])->name('CarbonSteelStore')->middleware('auth');
+
+
+
+
+
+// STAINLESS STEEL
+
+Route::get('/data_material/SS', [\App\Http\Controllers\LandingController::class, 'StainlessSteel'])->name('StainlessSteel')->middleware('auth');
+
+Route::delete('/data_material/SS/{id}', [\App\Http\Controllers\LandingController::class, 'StainlessSteelDelete'])->name('StainlessSteelDelete')->middleware('auth');
+Route::post('/data_material/SS', [\App\Http\Controllers\LandingController::class, 'StainlessSteelStore'])->name('StainlessSteelStore')->middleware('auth');
+
+
+
+
+
+
+
+
+
+
+
+//KEBUTUHAN MATERIAL
+
+Route::resource('/kebutuhan_material',\App\Http\Controllers\KebutuhanMaterialController::class)->middleware('auth');
+
+
+//PEMBELIAN MATERIAL
+
+Route::resource('/pembelian_material',\App\Http\Controllers\PembelianMaterialController::class)->middleware('auth');
+
+
+
+// DATA REPAIRING
+
+Route::resource('/data_repairing',\App\Http\Controllers\RepairingController::class)->middleware('auth');
 
 

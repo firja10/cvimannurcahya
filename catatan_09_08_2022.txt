@@ -1,0 +1,12 @@
+Catatan 09 Agustus 2022 : 
+
+1. Data Material dibikin Customable / bisa Ditambah 
+2. Kalau semisal stock < 5 maka ada notifikasi warning harus segera dibeli kembali, kalau >= 5 aman
+3. Data Material Dibuatkan Excel, nanti diimport ke PHPMyAdmin / MYSQL
+4. Data Kebutuhan Material Acuan pola datanya di Persetujuan -> Kebutuhan Material.
+5. Dibuat Laporan Cetak PDF Kebutuhan Material, Pembelian Material. 
+6. Data Pembelian Material -> Barang Masuk -> yang diperbarui hanya di stock, jadi gak nambah barang. 
+7. Data Kebutuhan Material -> Barang Keluar
+
+
+

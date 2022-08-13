@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Repairing;
+use App\Models\jenis_materials;
 use Illuminate\Http\Request;
 
-class RepairingController extends Controller
+class JenisMaterialsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +15,6 @@ class RepairingController extends Controller
     public function index()
     {
         //
-
-        $repairing = Repairing::all();
-        return view('repairing.data_repairing', compact('repairing'));
-
     }
 
     /**
@@ -45,10 +41,10 @@ class RepairingController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Repairing  $repairing
+     * @param  \App\Models\jenis_materials  $jenis_materials
      * @return \Illuminate\Http\Response
      */
-    public function show(Repairing $repairing)
+    public function show(jenis_materials $jenis_materials)
     {
         //
     }
@@ -56,10 +52,10 @@ class RepairingController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Repairing  $repairing
+     * @param  \App\Models\jenis_materials  $jenis_materials
      * @return \Illuminate\Http\Response
      */
-    public function edit(Repairing $repairing)
+    public function edit(jenis_materials $jenis_materials)
     {
         //
     }
@@ -68,10 +64,10 @@ class RepairingController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Repairing  $repairing
+     * @param  \App\Models\jenis_materials  $jenis_materials
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Repairing $repairing)
+    public function update(Request $request, jenis_materials $jenis_materials)
     {
         //
     }
@@ -79,10 +75,10 @@ class RepairingController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Repairing  $repairing
+     * @param  \App\Models\jenis_materials  $jenis_materials
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Repairing $repairing)
+    public function destroy(jenis_materials $jenis_materials)
     {
         //
     }

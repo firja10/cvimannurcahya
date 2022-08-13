@@ -1,0 +1,10 @@
+id ,nama_kategori,link_kategori,created_at,updated_at
+,Cast Steel,cast_steel,,
+,Carbon Steel,carbon_steel,,
+,Stainless Steel,stainless_steel,,
+,Heat Resiting Steel,link_Steel,,
+,Forged Steel,forged_steel,,
+,Al-Alloy-Metal,link_Metal,,
+,White Metal,white_metal,,
+,Ni-Cr-Mau Steel,ni_steel,,
+,N-Cr Steel,ni_cr_steel,,

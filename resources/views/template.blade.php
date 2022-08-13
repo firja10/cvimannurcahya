@@ -26,6 +26,10 @@
   <!-- summernote -->
   <link rel="stylesheet" href="{{asset('bootstrap/plugins/summernote/summernote-bs4.min.css')}}">
 
+  <link rel="stylesheet" href="{{asset('bootstrap/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
+  <link rel="stylesheet" href="{{asset('bootstrap/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
+  <link rel="stylesheet" href="{{asset('bootstrap/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
+
 
   <style>
     .main-sidebar{
@@ -161,6 +165,15 @@
   </nav>
   <!-- /.navbar -->
 
+  <?php
+  
+  $manager = Auth::user()->is_manager == 1;
+  $gudang = Auth::user()->is_bagiangudang == 1;
+  $repairing = Auth::user()->is_bagianrepairing == 1;
+  $ppic = Auth::user()->is_ppic == 1;
+
+  ?>
+
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
@@ -177,7 +190,7 @@
           <img src="{{asset('bootstrap/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block"><?php echo Auth::user()->name ?></a>
           <span style = "font-size:12px" class = "text-white">
           <?php 
             
@@ -250,6 +263,9 @@
           </li>
 
 
+
+          @if ($manager && $gudang)
+              
           <li class="nav-item menu-open">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-cubes"></i>
@@ -259,7 +275,8 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item" id = "cast_steel">
+
+              {{-- <li class="nav-item" id = "cast_steel">
                 <a href="{{url('/data_material/cast_steel')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Cast Steel</p>
@@ -277,10 +294,32 @@
                   <p>Stainless Steel</p>
                 </a>
               </li>
+             --}}
+
+             <?php 
+             
+             $data_kategori = DB::table('kategori_materials')->get();
+             ?>
+
+
+             @foreach ($data_kategori as $item_materials)
+             
+             <li class="nav-item" id = "{{$item_materials->link_kategori}}">
+              <a href="{{url('/data_material/'. $item_materials->link_kategori)}}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>{{$item_materials->nama_kategori}}</p>
+              </a>
+            </li>             
+             @endforeach
             </ul>
           </li>
+          @endif
 
 
+
+
+        @if ($ppic)
+            
 
           <li class="nav-item" id = "kebutuhan_material">
             <a href="{{url('/kebutuhan_material')}}" class="nav-link">
@@ -291,9 +330,13 @@
             </a>
           </li>
 
+          @endif
 
 
 
+
+          @if ($gudang)
+              
           <li class="nav-item" id = "pembelian_material">
             <a href="{{url('/pembelian_material')}}" class="nav-link">
               <i class="nav-icon fas fa-credit-card"></i>
@@ -302,23 +345,31 @@
               </p>
             </a>
           </li>
-          
+          @endif          
 
           
-          <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+
+          @if ($repairing)
+              
+          <li class="nav-item" id = "data_repairing">
+            <a href="{{url('/data_repairing')}}" class="nav-link">
               <i class="nav-icon fas fa-wrench"></i>
               <p>
                 Data Repairing
               </p>
             </a>
           </li>
+         
+          @endif
+   
 
 
 
 
 
-          
+
+          @if ($manager)
+                       
           <li class="nav-item menu-open">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-check-square"></i>
@@ -348,6 +399,12 @@
               </li>
             </ul>
           </li>
+
+          @endif
+
+ 
+
+
 
 
 
@@ -869,6 +926,94 @@
 
 
 
+<form action="{{route('data_repairing.store')}}" method = "POST">
+  @csrf
+
+<!-- Modal -->
+<div class="modal fade" id="RepairingModal" tabindex="-1" aria-labelledby="RepairingModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="RepairingModalLabel">Tambah Data Repairing</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        
+
+        <div class="form-group">
+          <label for="komponen">Komponen Turbin</label>
+          <input id = "komponen" type="text" class="form-control" name = "komponen" placeholder="Komponen Turbin">
+      </div>
+
+      <div class="form-group">
+        <label for="nama">Nama Material</label>
+        <input id = "nama" type="text" class="form-control" name = "nama" placeholder="Nama Material">
+    </div>
+
+    <div class="form-group">
+      <label for="jenis">Jenis</label>
+      <select name="jenis" id="jenis" class = "form-control">
+        <option value="AISI">AISI</option>
+        <option value="JIS">JIS</option>
+      </select>
+  </div>
+
+
+
+<div class="form-group">
+  <label for="satuan">Satuan</label>
+  <input id = "satuan" type="text" class="form-control" name = "satuan" placeholder="Satuan">
+</div>
+
+<div class="form-group">
+  <label for="jumlah">Jumlah</label>
+  <input id = "jumlah" type="number" class="form-control" name = "jumlah" placeholder="Jumlah">
+</div>
+
+
+<div class="form-group">
+  <label for="keterangan">Keterangan</label>
+  <input id = "keterangan" type="text" class="form-control" name = "keterangan" placeholder="Keterangan">
+</div>
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- jQuery -->
 <script src="{{asset('bootstrap/plugins/jquery/jquery.min.js')}}"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -899,6 +1044,67 @@
 <script src="{{asset('bootstrap/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('bootstrap/dist/js/adminlte.js')}}"></script>
+
+
+<script src="{{asset('bootstrap/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('bootstrap/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{asset('bootstrap/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
+<script src="{{asset('bootstrap/plugins/datatables-buttons/js/dataTables.buttons.min.js')}}"></script>
+
+
+
+<script src="{{asset('bootstrap/plugins/datatables-buttons/js/buttons.bootstrap4.min.js')}}"></script>
+<script src="{{asset('bootstrap/plugins/jszip/jszip.min.js')}}"></script>
+<script src="{{asset('bootstrap/plugins/pdfmake/pdfmake.min.js')}}"></script>
+<script src="{{asset('bootstrap/plugins/pdfmake/vfs_fonts.js')}}"></script>
+<script src="{{asset('bootstrap/plugins/datatables-buttons/js/buttons.html5.min.js')}}"></script>
+<script src="{{asset('bootstrap/plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
+<script src="{{asset('bootstrap/plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
+
+{{-- <script src="{{asset('bootstrap/dist/js/demo.js')}}"></script> --}}
+
+
+
+
+<script>
+    $(function () {
+    $("#example_1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+
+    $('#pembelian_material_tabel').DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+    });
+
+    $("#komponen_turbin_tabel").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+  });
+</script>
+
+<
+
+
+
+
+
+
+
+
+
 <!-- AdminLTE for demo purposes -->
 {{-- <script src="{{asset('bootstrap/dist/js/demo.js')}}"></script> --}}
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
