@@ -70,9 +70,14 @@ class KomponenTurbinController extends Controller
      * @param  \App\Models\KomponenTurbin  $komponenTurbin
      * @return \Illuminate\Http\Response
      */
-    public function edit(KomponenTurbin $komponenTurbin)
+    public function edit($id)
     {
-        //
+
+     $komponen_turbin = KomponenTurbin::findOrFail($id);
+
+     return view('data_komponen_turbin_edit', compact('komponen_turbin'));
+
+
     }
 
     /**
@@ -82,9 +87,20 @@ class KomponenTurbinController extends Controller
      * @param  \App\Models\KomponenTurbin  $komponenTurbin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, KomponenTurbin $komponenTurbin)
+    public function update(Request $request, $id)
     {
         //
+
+        KomponenTurbin::where('id', $id)->update([
+
+            'kode_komponen'=>$request['kode_komponen'],
+            'nama_komponen'=>$request['nama_komponen'],
+
+        ]);
+
+        return redirect('/komponen_turbin')->with('komponenturbinupdate','Data Komponen Turbin Telah Diupdate');
+
+
     }
 
     /**

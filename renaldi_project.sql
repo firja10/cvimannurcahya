@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 11 Agu 2022 pada 16.14
+-- Waktu pembuatan: 14 Agu 2022 pada 01.36
 -- Versi server: 10.4.20-MariaDB
 -- Versi PHP: 7.4.22
 
@@ -68,15 +68,46 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `jenis_materials`
+--
+
+CREATE TABLE `jenis_materials` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `nama_jenis` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `nama_kategori` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id_kategori` bigint(20) UNSIGNED DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `kategori_materials`
 --
 
 CREATE TABLE `kategori_materials` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `nama_kategori` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `link_kategori` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `kategori_materials`
+--
+
+INSERT INTO `kategori_materials` (`id`, `nama_kategori`, `link_kategori`, `created_at`, `updated_at`) VALUES
+(1, 'Cast Steel', 'CS', '2022-08-11 14:44:35', '2022-08-12 14:44:35'),
+(2, 'Carbon Steel', 'CBS', '2022-08-12 14:44:35', '2022-08-13 14:44:35'),
+(3, 'Stainless Steel', 'SS', '2022-08-13 14:44:35', '2022-08-14 14:44:35'),
+(4, 'Heat Resiting Steel', 'HRS', '2022-08-14 14:44:35', '2022-08-15 14:44:35'),
+(5, 'Forged Steel', 'FS', '2022-08-15 14:44:35', '2022-08-16 14:44:35'),
+(6, 'Al-Alloy-Metal', 'AAM', '2022-08-16 14:44:35', '2022-08-17 14:44:35'),
+(7, 'White Metal', 'WM', '2022-08-17 14:44:35', '2022-08-18 14:44:35'),
+(8, 'Ni-Cr-Mau Steel', 'NMS', '2022-08-18 14:44:35', '2022-08-19 14:44:35'),
+(9, 'N-Cr Steel', 'NCS', '2022-08-19 14:44:35', '2022-08-20 14:44:35');
 
 -- --------------------------------------------------------
 
@@ -114,8 +145,23 @@ CREATE TABLE `komponen_turbins` (
 --
 
 INSERT INTO `komponen_turbins` (`id`, `kode_komponen`, `nama_komponen`, `created_at`, `updated_at`) VALUES
-(1, '001-TC', 'Turbine Casing', '2022-08-07 13:36:01', '2022-08-07 13:36:01'),
-(2, 'Casing Case', '002-CC', '2022-08-07 22:44:26', '2022-08-07 22:44:26');
+(1, '001-TC', 'TURBINE CASING', '2022-08-11 14:44:35', '2022-08-11 14:44:35'),
+(2, '002-CC', 'CASING CASE', '2022-08-12 14:44:35', '2022-08-12 14:44:35'),
+(3, '003-LP', 'LABYRINTH PACKING', '2022-08-13 14:44:35', '2022-08-13 14:44:35'),
+(4, '004-NZ', 'NOZZLE', '2022-08-14 14:44:35', '2022-08-14 14:44:35'),
+(5, '005-SBS', 'STATIONARY BLADE SEAT', '2022-08-15 14:44:35', '2022-08-15 14:44:35'),
+(6, '006-ESVC', 'EMERGENCY STOP VALVE CASING', '2022-08-16 14:44:35', '2022-08-16 14:44:35'),
+(7, '008-VV', 'VALVE', '2022-08-17 14:44:35', '2022-08-17 14:44:35'),
+(8, '009-GVCC', 'GOVERNOR VALVE CASING COVER', '2022-08-18 14:44:35', '2022-08-18 14:44:35'),
+(9, '010-VS', 'VALVE STEM', '2022-08-19 14:44:35', '2022-08-19 14:44:35'),
+(10, '011-GV', 'GOVERNOR VALVE', '2022-08-20 14:44:35', '2022-08-20 14:44:35'),
+(11, '013-TS', 'TURBINE SHAFT', '2022-08-21 14:44:35', '2022-08-21 14:44:35'),
+(12, '014-DR', 'DISC ROTOR', '2022-08-22 14:44:35', '2022-08-22 14:44:35'),
+(13, '015-OTS', 'OVERSPEED TRIP SHAFT', '2022-08-23 14:44:35', '2022-08-23 14:44:35'),
+(14, '016-MB', 'MOVING BLADE', '2022-08-24 14:44:35', '2022-08-24 14:44:35'),
+(15, '017-BM', 'BEARING METAL', '2022-08-25 14:44:35', '2022-08-25 14:44:35'),
+(16, '018-PN', 'PINION', '2022-08-26 14:44:35', '2022-08-26 14:44:35'),
+(17, '019-TBM', 'THRUST BEARING METAL', '2022-08-27 14:44:35', '2022-08-27 14:44:35');
 
 -- --------------------------------------------------------
 
@@ -145,7 +191,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (9, '2022_08_07_150817_create_pembelian_materials_table', 5),
 (10, '2022_08_07_190248_create_repairings_table', 6),
 (11, '2022_08_08_111323_create_suppliers_table', 7),
-(12, '2022_08_11_135022_create_kategori_materials_table', 7);
+(12, '2022_08_11_135022_create_kategori_materials_table', 7),
+(13, '2022_08_11_150102_create_jenis_materials_table', 8),
+(14, '2022_08_11_153532_add_fk_to_jenis_materials', 9),
+(15, '2022_08_11_154533_add_link_to_kategori_materials', 9);
 
 -- --------------------------------------------------------
 
@@ -259,7 +308,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `is_manager`, `is_ppic`, `is_bagiangudang`, `is_bagianrepairing`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Fairuz Firjatullah', 'fairuzfirjatullah3@gmail.com', NULL, '$2y$10$J5emZnRmUrE4FiBzPlASW.Sv6hjadaFAnfIhlOVzYjA7Ck7zgo0K2', 1, NULL, NULL, NULL, NULL, '2022-08-07 23:17:59', '2022-08-07 23:17:59');
+(1, 'Fairuz Firjatullah', 'fairuzfirjatullah3@gmail.com', NULL, '$2y$10$J5emZnRmUrE4FiBzPlASW.Sv6hjadaFAnfIhlOVzYjA7Ck7zgo0K2', 1, NULL, NULL, NULL, NULL, '2022-08-07 23:17:59', '2022-08-07 23:17:59'),
+(2, 'Takato Matsuda', 'kmtctasik@gmail.com', NULL, '$2y$10$BHmGhUXV/oL5xpU1B4cCO.A1.EmamWJCmqhmmTSHrLL71ssUYNabm', NULL, 1, NULL, NULL, NULL, '2022-08-13 02:21:29', '2022-08-13 02:21:29'),
+(3, 'Gallantmon', 'fairuzf1010@gmail.com', NULL, '$2y$10$X2JClP/Xoxap.I4LCRZAve6fo9uLAjW.TYLFWbxVqZRY5PV9snCN2', NULL, NULL, 1, NULL, NULL, '2022-08-13 02:25:46', '2022-08-13 02:25:46'),
+(4, 'Omegamon', 'bintangr1304@gmail.com', NULL, '$2y$10$9WzcSzkJ7RY19y731ehcB.RZ9PEzr686hr/AhSZTQkDl.stZNE3/q', NULL, NULL, NULL, 1, NULL, '2022-08-13 02:28:30', '2022-08-13 02:28:30');
 
 --
 -- Indexes for dumped tables
@@ -277,6 +329,13 @@ ALTER TABLE `data_materials`
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
+-- Indeks untuk tabel `jenis_materials`
+--
+ALTER TABLE `jenis_materials`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `jenis_materials_id_kategori_foreign` (`id_kategori`);
 
 --
 -- Indeks untuk tabel `kategori_materials`
@@ -358,10 +417,16 @@ ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT untuk tabel `jenis_materials`
+--
+ALTER TABLE `jenis_materials`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT untuk tabel `kategori_materials`
 --
 ALTER TABLE `kategori_materials`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT untuk tabel `kebutuhan_materials`
@@ -373,13 +438,13 @@ ALTER TABLE `kebutuhan_materials`
 -- AUTO_INCREMENT untuk tabel `komponen_turbins`
 --
 ALTER TABLE `komponen_turbins`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT untuk tabel `pembelian_materials`
@@ -409,7 +474,17 @@ ALTER TABLE `suppliers`
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
+
+--
+-- Ketidakleluasaan untuk tabel `jenis_materials`
+--
+ALTER TABLE `jenis_materials`
+  ADD CONSTRAINT `jenis_materials_id_kategori_foreign` FOREIGN KEY (`id_kategori`) REFERENCES `kategori_materials` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

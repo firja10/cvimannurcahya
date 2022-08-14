@@ -64,7 +64,7 @@ Data Komponen Turbin
           <div class="card">
             <div class="card-header justify-content-center d-flex">
               {{-- <h3 class="card-title">DataTable with default features</h3> --}}
-              <button class = "btn btn-dark"> <i class = "fas fa-arrow-left"></i> Previous</button>
+              <button class = "btn btn-dark" onclick="history.back()"> <i class = "fas fa-arrow-left"></i> Previous</button>
               <button class = "btn btn-success ml-auto" data-toggle = "modal" data-target = "#DataTurbinModal" > <i class = "fas fa-plus"></i> Tambah Data</button>
             </div>
             <!-- /.card-header -->
@@ -92,7 +92,7 @@ Data Komponen Turbin
                     <td>{{$item_turbin->kode_komponen}}</td>
                     <td>
 
-                        <a href="" class = "btn btn-success">Edit</a>
+                        <a href="{{route('komponen_turbin.edit', $item_turbin->id)}}" class = "btn btn-success">Edit</a>
                             <br> <br>
                         <form action="{{route('komponen_turbin.destroy', $item_turbin->id)}}" method = "POST" >
                             @csrf
