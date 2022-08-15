@@ -198,6 +198,7 @@
             $ppic = Auth::user()->is_ppic;
             $bagiangudang = Auth::user()->is_bagiangudang ;
             $bagianrepairing = Auth::user()->is_bagianrepairing;
+            $pemilik = Auth::user()->is_pemilik;
 
             if($manager == 1){
               echo "Manager";
@@ -216,6 +217,10 @@
             elseif ($bagianrepairing == 1) {
               # code...
               echo "Bagian Repairing";
+            }
+
+            else {
+              echo '';
             }
             
             ?>
@@ -264,7 +269,7 @@
 
 
 
-          @if ($manager || $gudang)
+          @if ($manager || $gudang || $pemilik)
               
           <li class="nav-item menu-open">
             <a href="#" class="nav-link">
@@ -318,7 +323,7 @@
 
 
 
-        @if ($ppic)
+        @if ($ppic || $pemilik)
             
 
           <li class="nav-item" id = "kebutuhan_material">
@@ -335,7 +340,7 @@
 
 
 
-          @if ($gudang)
+          @if ($gudang || $pemilik)
               
           <li class="nav-item" id = "pembelian_material">
             <a href="{{url('/pembelian_material')}}" class="nav-link">
@@ -349,7 +354,7 @@
 
           
 
-          @if ($repairing)
+          @if ($repairing || $pemilik)
               
           <li class="nav-item" id = "data_repairing">
             <a href="{{url('/data_repairing')}}" class="nav-link">
@@ -368,7 +373,7 @@
 
 
 
-          @if ($manager)
+          @if ($manager || $pemilik)
                        
           <li class="nav-item menu-open">
             <a href="#" class="nav-link">
