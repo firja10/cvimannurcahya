@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 14 Agu 2022 pada 01.36
+-- Waktu pembuatan: 15 Agu 2022 pada 05.27
 -- Versi server: 10.4.20-MariaDB
 -- Versi PHP: 7.4.22
 
@@ -123,7 +123,8 @@ CREATE TABLE `kebutuhan_materials` (
   `satuan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `jumlah` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `status_verif` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -194,7 +195,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (12, '2022_08_11_135022_create_kategori_materials_table', 7),
 (13, '2022_08_11_150102_create_jenis_materials_table', 8),
 (14, '2022_08_11_153532_add_fk_to_jenis_materials', 9),
-(15, '2022_08_11_154533_add_link_to_kategori_materials', 9);
+(15, '2022_08_11_154533_add_link_to_kategori_materials', 9),
+(16, '2022_08_13_042918_add_kode_to_kategori_materials', 10),
+(17, '2022_08_14_093641_add_status_verif_to_kebutuhan_materials', 10),
+(18, '2022_08_15_030610_add_pemilik_to_users', 11);
 
 -- --------------------------------------------------------
 
@@ -300,18 +304,24 @@ CREATE TABLE `users` (
   `is_bagianrepairing` int(11) DEFAULT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `is_pemilik` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data untuk tabel `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `is_manager`, `is_ppic`, `is_bagiangudang`, `is_bagianrepairing`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Fairuz Firjatullah', 'fairuzfirjatullah3@gmail.com', NULL, '$2y$10$J5emZnRmUrE4FiBzPlASW.Sv6hjadaFAnfIhlOVzYjA7Ck7zgo0K2', 1, NULL, NULL, NULL, NULL, '2022-08-07 23:17:59', '2022-08-07 23:17:59'),
-(2, 'Takato Matsuda', 'kmtctasik@gmail.com', NULL, '$2y$10$BHmGhUXV/oL5xpU1B4cCO.A1.EmamWJCmqhmmTSHrLL71ssUYNabm', NULL, 1, NULL, NULL, NULL, '2022-08-13 02:21:29', '2022-08-13 02:21:29'),
-(3, 'Gallantmon', 'fairuzf1010@gmail.com', NULL, '$2y$10$X2JClP/Xoxap.I4LCRZAve6fo9uLAjW.TYLFWbxVqZRY5PV9snCN2', NULL, NULL, 1, NULL, NULL, '2022-08-13 02:25:46', '2022-08-13 02:25:46'),
-(4, 'Omegamon', 'bintangr1304@gmail.com', NULL, '$2y$10$9WzcSzkJ7RY19y731ehcB.RZ9PEzr686hr/AhSZTQkDl.stZNE3/q', NULL, NULL, NULL, 1, NULL, '2022-08-13 02:28:30', '2022-08-13 02:28:30');
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `is_manager`, `is_ppic`, `is_bagiangudang`, `is_bagianrepairing`, `remember_token`, `created_at`, `updated_at`, `is_pemilik`) VALUES
+(1, 'Fairuz Firjatullah', 'fairuzfirjatullah3@gmail.com', NULL, '$2y$10$J5emZnRmUrE4FiBzPlASW.Sv6hjadaFAnfIhlOVzYjA7Ck7zgo0K2', 1, NULL, NULL, NULL, NULL, '2022-08-07 23:17:59', '2022-08-07 23:17:59', NULL),
+(2, 'Takato Matsuda', 'kmtctasik@gmail.com', NULL, '$2y$10$BHmGhUXV/oL5xpU1B4cCO.A1.EmamWJCmqhmmTSHrLL71ssUYNabm', NULL, 1, NULL, NULL, NULL, '2022-08-13 02:21:29', '2022-08-13 02:21:29', NULL),
+(3, 'Gallantmon', 'fairuzf1010@gmail.com', NULL, '$2y$10$X2JClP/Xoxap.I4LCRZAve6fo9uLAjW.TYLFWbxVqZRY5PV9snCN2', NULL, NULL, 1, NULL, NULL, '2022-08-13 02:25:46', '2022-08-13 02:25:46', NULL),
+(4, 'Omegamon', 'bintangr1304@gmail.com', NULL, '$2y$10$9WzcSzkJ7RY19y731ehcB.RZ9PEzr686hr/AhSZTQkDl.stZNE3/q', NULL, NULL, NULL, 1, NULL, '2022-08-13 02:28:30', '2022-08-13 02:28:30', NULL),
+(5, 'Suryanto', 'yanto13@gmail.com', NULL, '$2y$10$ZwLWz5XqsWDR1qKKAadjSOw.UYC7IJ63xuDnRgchhSbH3WlK89MDq', NULL, NULL, NULL, NULL, NULL, '2022-08-14 20:05:19', '2022-08-14 20:05:19', 1),
+(6, 'Yayan Rohman', 'yayanrohman10@gmail.com', NULL, '$2y$10$VyyXsQ7is54qHh9rDm0PZeWT5voJmZs0mLU3DIO8Y0e8EayFOR11i', 1, NULL, NULL, NULL, NULL, '2022-08-14 20:15:59', '2022-08-14 20:15:59', NULL),
+(7, 'Hardi', 'hardi10@gmail.com', NULL, '$2y$10$Ygn6qXT3NVbggXXdXFuysuH6xeSEhdLbkGdoHbvzU7GtcBG3vd2X.', NULL, 1, NULL, NULL, NULL, '2022-08-14 20:22:42', '2022-08-14 20:22:42', NULL),
+(8, 'Suwandi', 'suwandi10@gmail.com', NULL, '$2y$10$bE.kRSZnPI8nvDZVnKF83.PaoqrkrjP866aphD4uonApnlhLno6F.', NULL, NULL, 1, NULL, NULL, '2022-08-14 20:24:34', '2022-08-14 20:24:34', NULL),
+(9, 'Hilwanul Fikri', 'hilwanulfikri10@gmail.com', NULL, '$2y$10$xFw80pKz4Vlrpr/wKq5SYe5nCLpBx17Z8VbghqunaTsFf/pUf20HC', NULL, NULL, NULL, 1, NULL, '2022-08-14 20:25:33', '2022-08-14 20:25:33', NULL);
 
 --
 -- Indexes for dumped tables
@@ -444,7 +454,7 @@ ALTER TABLE `komponen_turbins`
 -- AUTO_INCREMENT untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT untuk tabel `pembelian_materials`
@@ -474,7 +484,7 @@ ALTER TABLE `suppliers`
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

@@ -101,3 +101,16 @@ Route::resource('/pembelian_material',\App\Http\Controllers\PembelianMaterialCon
 Route::resource('/data_repairing',\App\Http\Controllers\RepairingController::class)->middleware('auth');
 
 
+
+
+//MANAGER SIDE
+
+Route::get('/persetujuan/kebutuhan_material',[\App\Http\Controllers\LandingController::class,'SetujuKebutuhanMaterial'])->name('SetujuKebutuhanMaterial')->middleware('auth');
+
+Route::get('/persetujuan/pembelian_material',[\App\Http\Controllers\LandingController::class,'SetujuPembelianMaterial'])->name('SetujuPembelianMaterial')->middleware('auth');
+
+Route::get('/persetujuan/repairing',[\App\Http\Controllers\LandingController::class,'SetujuRepairing'])->name('SetujuRepairing')->middleware('auth');
+
+
+
+

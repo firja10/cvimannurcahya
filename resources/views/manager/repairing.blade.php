@@ -2,38 +2,36 @@
 
 @section('title')
 
-Data Material Cast Steel
+Data Repairing
     
 @endsection
-
 
 @section('judul')
 
-Data Material Cast Steel
+Data Repairing
     
 @endsection
-
-@section('content')
-
-
-
 
 
 @section('style')
 
 <style>
-    #cast_steel{
-        background-color:white;
+    #data_repairing{
+        background-color: white;
     }
 
-    #cast_steel .nav-link {
+    #data_repairing .nav-link {
         color:firebrick;
     }
 </style>
-    
+
+
 @endsection
 
 
+
+
+@section('content')
 
 
 
@@ -55,22 +53,22 @@ Data Material Cast Steel
           <div class="card">
             <div class="card-header justify-content-center d-flex">
               {{-- <h3 class="card-title">DataTable with default features</h3> --}}
-              <button class = "btn btn-dark" onclick="history.back()"> <i class = "fas fa-arrow-left"></i> Previous</button>
-              <button class = "btn btn-success ml-auto" data-toggle = "modal" data-target = "#CastSteelModal" > <i class = "fas fa-plus"></i> Tambah Data</button>
+              <button class = "btn btn-dark" onclick = "history.back()"> <i class = "fas fa-arrow-left"></i> Previous</button>
+              <button class = "btn btn-success ml-auto" data-toggle = "modal" data-target = "#RepairingModal" > <i class = "fas fa-plus"></i> Tambah Data</button>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-              <table id="cast_steel" class="table table-bordered table-striped">
+              <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
                   <th>No. </th>
-                  <th>Kode Material</th>
+                  <th>Komponen Turbin</th>
                   <th>Nama Material</th>
                   <th>Jenis</th>
-                    <th>Stock</th>
-                    <th>Harga Beli</th>
-                    <th>Aksi</th>
-
+                  <th>Satuan</th>
+                  <th>Jumlah</th>
+                  <th>Keterangan</th>
+                  <th>Aksi</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -79,30 +77,25 @@ Data Material Cast Steel
                         
                         $no = 1;
                         ?>
-                @foreach ($cast_steel as $item_cast_steel)
+                @foreach ($repairing as $item_repairing)
                 
                 <tr>
                     <td><?php echo $no++; ?></td>
-                    <td>{{$item_cast_steel->nama}}</td>
-                    <td>{{$item_cast_steel->kategori}}</td>
-                    <td>{{$item_cast_steel->jenis}}</td>
-                    <td>{{$item_cast_steel->stock}}</td>
-                    <td>{{$item_cast_steel->harga_beli}}</td>
-             
+                    <td>{{$item_repairing->komponen}}</td>
+                    <td>{{$item_repairing->nama}}</td>
+                    <td>{{$item_repairing->jenis}}</td>
+                    <td>{{$item_repairing->satuan}}</td>
+                    <td>{{$item_repairing->jumlah}}</td>
+                    <td>{{$item_repairing->keterangan}}</td>
                     <td>
 
-                        <a href="" class = "btn btn-success mt-2 mb-2">Edit</a>
-                        
-                        <form action="{{route('CastSteelDelete', $item_cast_steel->id)}}" method = "POST" >
+                        <a href="" class = "btn btn-success">Edit</a>
+                            <br> <br>
+                        <form action="{{route('kebutuhan_material.destroy', $item_repairing->id)}}" method = "POST" >
                             @csrf
                             @method('DELETE')
                             <button class = "btn  btn-danger">Hapus</button>
                         </form>
-                        
-
-                        <a href="" class="btn btn-primary mt-2 mb-2">Tambah SS</a>
-                        <br>
-                        <a href="" class="btn btn-dark">Tambah ROP</a>
 
                     </td>
                 </tr>
@@ -116,11 +109,12 @@ Data Material Cast Steel
                 <tfoot>
                 <tr>
                     <th>No. </th>
-                  <th>Kode Material</th>
-                  <th>Nama Material</th>
-                  <th>Jenis</th>
-                    <th>Stock</th>
-                    <th>Harga Beli</th>
+                    <th>Komponen Turbin</th>
+                    <th>Nama Material</th>
+                    <th>Jenis</th>
+                    <th>Satuan</th>
+                    <th>Jumlah</th>
+                    <th>Keterangan</th>
                     <th>Aksi</th>
                 </tr>
                 </tfoot>
@@ -153,12 +147,9 @@ Data Material Cast Steel
 
 
 
-
-
-
-
-
-
-
-    
 @endsection
+
+
+
+
+

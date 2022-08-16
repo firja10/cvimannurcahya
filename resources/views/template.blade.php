@@ -384,20 +384,20 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="./index.html" class="nav-link">
+              <li class="nav-item" id = "persetujuan_kebutuhan_material">
+                <a href="{{url('/persetujuan/kebutuhan_material')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data Kebutuhan Material</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+              <li class="nav-item" id = "persetujuan_pembelian_material">
+                <a href="{{url('/persetujuan/pembelian_material')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data Pembelian Material</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
+              <li class="nav-item" id = "persetujuan_repairing">
+                <a href="{{url('/persetujuan/repairing')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data Repairing</p>
                 </a>
@@ -1100,7 +1100,6 @@
   });
 </script>
 
-<
 
 
 

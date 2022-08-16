@@ -2,13 +2,13 @@
 
 @section('title')
 
-Data Kebutuhan Material
+Data Persetujuan Kebutuhan Material
     
 @endsection
 
 @section('judul')
 
-Data Kebutuhan Material
+Data Persetujuan Kebutuhan Material
     
 @endsection
 
@@ -16,22 +16,26 @@ Data Kebutuhan Material
 @section('style')
 
 <style>
-    #kebutuhan_material{
+    #persetujuan_kebutuhan_material{
         background-color: white;
     }
 
-    #kebutuhan_material .nav-link {
+    #persetujuan_kebutuhan_material .nav-link {
         color:firebrick;
     }
 </style>
 
 
 @endsection
-
+2
 
 
 
 @section('content')
+
+
+
+
 
 
 
@@ -47,10 +51,10 @@ Data Kebutuhan Material
 
 
           <div class="card">
-            <div class="card-header justify-content-center d-flex">
+            <div class="card-header">
               {{-- <h3 class="card-title">DataTable with default features</h3> --}}
-              <button class = "btn btn-dark"> <i class = "fas fa-arrow-left"></i> Previous</button>
-              <button class = "btn btn-success ml-auto" data-toggle = "modal" data-target = "#KebutuhanMaterialModal" > <i class = "fas fa-plus"></i> Tambah Data</button>
+              <button class = "btn btn-dark" onclick="history.back()"> <i class = "fas fa-arrow-left"></i> Previous</button>
+              {{-- <button class = "btn btn-success ml-auto" data-toggle = "modal" data-target = "#KebutuhanMaterialModal" > <i class = "fas fa-plus"></i> Tambah Data</button> --}}
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -83,15 +87,8 @@ Data Kebutuhan Material
                     <td>{{$item_material->jumlah}}</td>
                     <td>
 
-                        <a href="" class = "btn btn-success">Edit</a>
-                            <br> <br>
-                        <form action="{{route('kebutuhan_material.destroy', $item_material->id)}}" method = "POST" >
-                            @csrf
-                            @method('DELETE')
-                            <button class = "btn  btn-danger">Hapus</button>
-                        </form>
-                        <br>
-                        <a href="" class="btn btn-warning">Belum diapprove</a>
+                        <a href="" class = "btn btn-success">Approve</a>
+                            <br>
 
                     </td>
                 </tr>
