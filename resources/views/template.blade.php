@@ -396,7 +396,7 @@
                   <p>Data Pembelian Material</p>
                 </a>
               </li>
-              <li class="nav-item" id = "persetujuan_repairing">
+              <li class="nav-item" id = "persetujuan_data_repairing">
                 <a href="{{url('/persetujuan/repairing')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data Repairing</p>
@@ -1096,6 +1096,21 @@
       "responsive": true, "lengthChange": false, "autoWidth": false,
       "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+    $('#kebutuhan_material_tabel').DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+
+    $('#repairing_tabel').DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+
+
+
 
   });
 </script>

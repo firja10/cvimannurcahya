@@ -16,11 +16,11 @@ Data Repairing
 @section('style')
 
 <style>
-    #data_repairing{
+    #persetujuan_data_repairing{
         background-color: white;
     }
 
-    #data_repairing .nav-link {
+    #persetujuan_data_repairing .nav-link {
         color:firebrick;
     }
 </style>
@@ -58,7 +58,7 @@ Data Repairing
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-              <table id="example1" class="table table-bordered table-striped">
+              <table id="repairing_tabel" class="table table-bordered table-striped">
                 <thead>
                 <tr>
                   <th>No. </th>
@@ -89,13 +89,18 @@ Data Repairing
                     <td>{{$item_repairing->keterangan}}</td>
                     <td>
 
-                        <a href="" class = "btn btn-success">Edit</a>
-                            <br> <br>
-                        <form action="{{route('kebutuhan_material.destroy', $item_repairing->id)}}" method = "POST" >
-                            @csrf
-                            @method('DELETE')
-                            <button class = "btn  btn-danger">Hapus</button>
-                        </form>
+                      @if ($item_repairing->status_verif == 0)
+                      <form action="{{route('UpdatePembelianMaterial', $item_repairing->id)}}" method = "POST">
+                        @csrf
+                        @method('PATCH')
+                        <button class = "btn btn-warning" type = "submit">Belum Approve Manager</button>
+                      </form>
+                      
+                      @elseif($item_repairing->status_verif == 1)
+
+                      <button class = "btn btn-success" disabled>Sudah Approve Manager</button>   
+                      @endif
+                      <br>
 
                     </td>
                 </tr>

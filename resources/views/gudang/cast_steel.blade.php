@@ -22,11 +22,11 @@ Data Material Cast Steel
 @section('style')
 
 <style>
-    #cast_steel{
+    #CS{
         background-color:white;
     }
 
-    #cast_steel .nav-link {
+    #CS .nav-link {
         color:firebrick;
     }
 </style>

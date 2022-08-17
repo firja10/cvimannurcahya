@@ -96,7 +96,18 @@ Data Persetujuan Pembelian Material
              
                     <td>
 
-                        <a href="" class = "btn btn-success">Approve</a>
+                      @if ($item_pembelian_material->status_verif == 0)
+                      <form action="{{route('UpdatePembelianMaterial', $item_pembelian_material->id)}}" method = "POST">
+                        @csrf
+                        @method('PATCH')
+                        <button class = "btn btn-warning" type = "submit">Belum Approve Manager</button>
+                      </form>
+                      
+                      @elseif($item_pembelian_material->status_verif == 1)
+
+                      <button class = "btn btn-success" disabled>Sudah Approve Manager</button>   
+                      @endif
+
                             <br>
       
                     </td>

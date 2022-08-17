@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\DB;
 
 use App\Models\DataMaterial;
 use App\Models\KebutuhanMaterial;
+use App\Models\PembelianMaterial;
+use App\Models\Repairing;
 
 class LandingController extends Controller
 {
@@ -62,7 +64,7 @@ class LandingController extends Controller
 
         $cast_steel->delete();
 
-        return redirect('/data_material/cast_steel')->with('hapusdatacaststeel','Data Telah Dihapus');
+        return redirect('/data_material/CS')->with('hapusdatacaststeel','Data Telah Dihapus');
 
 
     }
@@ -409,7 +411,7 @@ public function WhiteMetalStore(Request $request)
     $white_metal['kode'] = $request->kode;
     $white_metal['nama'] = $request->nama;
 
-    $white_metal['kategori'] = "Al-Alloy-Metal";
+    $white_metal['kategori'] = "White Metal";
 
     $white_metal['jenis'] = $request->jenis;
     $white_metal['stock'] = $request->stock;
@@ -421,6 +423,144 @@ public function WhiteMetalStore(Request $request)
    return redirect('/data_material/white_metal')->with('store_white_metal', 'Data White Metal Berhasil Ditambahkan');
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public function NiCrMo()
+{
+    # code...
+
+
+    $ni_cr_mo= DB::table('data_materials')->where('kategori','Ni-Cr-Mo Steel')->get();
+
+
+    return view('gudang.ni_cr_mo',compact('ni_cr_mo'));
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+public function NiCrMoStore(Request $request)
+{
+    # code...
+
+    $ni_cr_mo = new DataMaterial();
+
+    $ni_cr_mo['kode'] = $request->kode;
+    $ni_cr_mo['nama'] = $request->nama;
+
+    $ni_cr_mo['kategori'] = "Ni-Cr-Mo Steel";
+
+    $ni_cr_mo['jenis'] = $request->jenis;
+    $ni_cr_mo['stock'] = $request->stock;
+
+    $ni_cr_mo['harga_beli'] = $request->harga_beli;
+
+    $ni_cr_mo->save();
+
+   return redirect('/data_material/ni_cr_mo')->with('ni_cr_mo', 'Data Ni-Cr-Mo Steel Berhasil Ditambahkan');
+
+}
+
+
+
+
+
+
+
+
+public function NiCr()
+{
+    # code...
+
+
+    $ni_cr= DB::table('data_materials')->where('kategori','Ni-Cr Steel')->get();
+
+
+    return view('gudang.ni_cr',compact('ni_cr'));
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+public function NiCrStore(Request $request)
+{
+    # code...
+
+    $ni_cr = new DataMaterial();
+
+    $ni_cr['kode'] = $request->kode;
+    $ni_cr['nama'] = $request->nama;
+
+    $ni_cr['kategori'] = "Ni-Cr Steel";
+
+    $ni_cr['jenis'] = $request->jenis;
+    $ni_cr['stock'] = $request->stock;
+
+    $ni_cr['harga_beli'] = $request->harga_beli;
+
+    $ni_cr->save();
+
+   return redirect('/data_material/ni_cr')->with('ni_cr', 'Data Ni-Cr Steel Berhasil Ditambahkan');
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -449,14 +589,23 @@ public function SetujuKebutuhanMaterial()
 
 }
 
-public function UpdateSetujuKebutuhanMaterial()
+public function UpdateSetujuKebutuhanMaterial(Request $request, $id)
 {
     # code...
 
+    KebutuhanMaterial::where('id',$id)->update([
+
+        'status_verif'=>1,
+
+    ]);
+
+    return redirect('/persetujuan/kebutuhan_material')->with('sukses_update_status_kebutuhan', 'Kebutuhan Material Sukses Diupdate');
 
 
 
 }
+
+
 
 
 public function SetujuPembelianMaterial()
@@ -472,10 +621,15 @@ public function SetujuPembelianMaterial()
 
 }
 
-public function UpdateSetujuPembelianMaterial()
+public function UpdateSetujuPembelianMaterial($id, Request $request)
 {
     # code...
 
+    PembelianMaterial::where('id',$id)->update([
+        'status_verif'=>1
+    ]);
+
+    return redirect('/persetujuan/pembelian_material')->with('sukses_update_status_verif','Status Verifikasi Telah Terupdate');
 
 
 }
@@ -492,9 +646,17 @@ public function SetujuRepairing()
 }
 
 
-public function UpdateSetujuRepairing()
+public function UpdateSetujuRepairing($id, Request $request)
 {
     # code...
+
+Repairing::where('id',$id)->update([
+
+    'status_verif'=>1
+
+]);
+
+return redirect('/persetujuan/repairing')->with('sukses_update_status_verif','Status Verifikasi Telah Terupdate');
 
 
 

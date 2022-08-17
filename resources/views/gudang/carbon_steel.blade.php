@@ -22,11 +22,11 @@ Data Material Carbon Steel
 @section('style')
 
 <style>
-    #carbon_steel{
+    #CBS{
         background-color:white;
     }
 
-    #carbon_steel .nav-link {
+    #CBS .nav-link {
         color:firebrick;
     }
 </style>

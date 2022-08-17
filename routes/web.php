@@ -107,10 +107,17 @@ Route::resource('/data_repairing',\App\Http\Controllers\RepairingController::cla
 
 Route::get('/persetujuan/kebutuhan_material',[\App\Http\Controllers\LandingController::class,'SetujuKebutuhanMaterial'])->name('SetujuKebutuhanMaterial')->middleware('auth');
 
+Route::patch('/persetujuan/kebutuhan_material/{id}',[\App\Http\Controllers\LandingController::class,'UpdateSetujuKebutuhanMaterial'])->name('UpdateSetujuKebutuhanMaterial')->middleware('auth');
+
+
 Route::get('/persetujuan/pembelian_material',[\App\Http\Controllers\LandingController::class,'SetujuPembelianMaterial'])->name('SetujuPembelianMaterial')->middleware('auth');
+
+Route::patch('/persetujuan/pembelian_material/{id}',[\App\Http\Controllers\LandingController::class,'UpdateSetujuPembelianMaterial'])->name('UpdateSetujuPembelianMaterial')->middleware('auth');
+
 
 Route::get('/persetujuan/repairing',[\App\Http\Controllers\LandingController::class,'SetujuRepairing'])->name('SetujuRepairing')->middleware('auth');
 
+Route::patch('/persetujuan/repairing/{id}',[\App\Http\Controllers\LandingController::class,'UpdateSetujuRepairing'])->name('UpdateSetujuRepairing')->middleware('auth');
 
 
 

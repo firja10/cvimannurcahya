@@ -58,7 +58,7 @@ Data Persetujuan Kebutuhan Material
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-              <table id="example1" class="table table-bordered table-striped">
+              <table id="kebutuhan_material_tabel" class="table table-bordered table-striped">
                 <thead>
                 <tr>
                   <th>No. </th>
@@ -87,7 +87,20 @@ Data Persetujuan Kebutuhan Material
                     <td>{{$item_material->jumlah}}</td>
                     <td>
 
-                        <a href="" class = "btn btn-success">Approve</a>
+
+                      @if ($item_material->status_verif == 0)
+                      <form action="{{route('UpdateKebutuhanMaterial', $item_material->id)}}" method = "POST">
+                        @csrf
+                        @method('PATCH')
+                        <button class = "btn btn-warning" type = "submit">Belum Approve Manager</button>
+                      </form>
+                      
+                      @elseif($item_material->status_verif == 1)
+
+                      <button class = "btn btn-success" disabled>Sudah Approve Manager</button>   
+                      @endif
+
+                       
                             <br>
 
                     </td>

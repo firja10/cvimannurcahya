@@ -54,7 +54,7 @@ Data Kebutuhan Material
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-              <table id="example1" class="table table-bordered table-striped">
+              <table id="kebutuhan_material_tabel" class="table table-bordered table-striped">
                 <thead>
                 <tr>
                   <th>No. </th>
@@ -91,7 +91,13 @@ Data Kebutuhan Material
                             <button class = "btn  btn-danger">Hapus</button>
                         </form>
                         <br>
+
+                        @if ($item_material->status_verif == 0 || $item_material->status_verif == NULL)
                         <a href="" class="btn btn-warning">Belum diapprove</a>
+                        @elseif($item_material->status_verif == 1)
+                        <a href="" class="btn btn-primary">Sudah diapprove</a>   
+                        @endif
+                     
 
                     </td>
                 </tr>
@@ -143,6 +149,7 @@ Data Kebutuhan Material
 
 
 @endsection
+
 
 
 
