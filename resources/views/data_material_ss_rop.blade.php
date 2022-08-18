@@ -59,26 +59,32 @@ Update Data Material SS ROP <?php echo $data_material->nama ?>
                 <form action="{{route('updateSS_ROP', $data_material->id)}}" method ="POST">
                     @csrf
                     @method('PATCH')
-
+{{-- 
                     <div class="form-group">
                         <label for="d_ss">Demand (SS)</label>
                         <input id = "d_ss" type="number" class="form-control" name = "d_ss" placeholder="" value = "{{$data_material->d_ss}}">
                     </div>
-              
-                    <div class="form-group">
+               --}}
+                    {{-- <div class="form-group">
                       <label for="Z">Z</label>
                       <input id = "Z" type="number" class="form-control" name = "Z" placeholder="" step = any value = "{{$data_material->Z}}">
-                  </div>
+                  </div> --}}
               
                   <div class="form-group">
                     <label for="L">L (Lead Time)</label>
                     <input id = "L" type="number" class="form-control" name = "L" placeholder="" value = "{{$data_material->L}}"> 
                 </div>
-              
+
+                      
                 <div class="form-group">
+                  <label for="AU">AU (Average User)</label>
+                  <input id = "AU" type="number" class="form-control" name = "AU" placeholder="" value = "{{$data_material->AU}}"> 
+              </div>
+              
+                {{-- <div class="form-group">
                   <label for="d_rop">Demand (ROP)</label>
                   <input id = "d_rop" type="number" class="form-control" name = "d_rop" placeholder="" value = "{{$data_material->d_rop}}">
-              </div>
+              </div> --}}
               
 
                     <button type = "submit" class = "btn btn-primary">Update SS dan ROP</button>

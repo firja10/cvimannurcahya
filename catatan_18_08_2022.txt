@@ -1,0 +1,10 @@
+1. Acuan ROP diarahkan ke Stock : 
+- ROP <= Stock : Stock Aman 
+- ROP > Stock : Stock Warning / Tidak Aman 
+
+2. Persamaan untuk mencari ROP dan SS : 
+- SS : (Average Usage)*(Lead Time)*0.5
+
+- ROP : (Average Usage)*(Lead Time) + SS
+
+

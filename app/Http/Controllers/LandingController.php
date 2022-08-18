@@ -824,26 +824,31 @@ public function updateSS_ROP($id, Request $request)
 
 
 
-    $Z = $request->Z;
+    // $Z = $request->Z;
     $L = $request->L;
-    $d_ss = $request->d_ss;
-    $d_rop = $request->d_rop;
+    // $d_ss = $request->d_ss;
+    // $d_rop = $request->d_rop;
+
+    $AU = $request->AU;
 
 
-    $SS = $Z*$d_ss*$L;
+    $SS = $AU*$L*0.5;
 
-    $ROP = $SS + ($d_rop*$L);
+    $ROP = $SS + ($AU*$L);
+
+ 
 
 
 
     DataMaterial::where('id', $id)->update([
 
-        'Z'=>$request->Z,
-        'd_ss'=>$request->d_ss,
+        // 'Z'=>$request->Z,
+        // 'd_ss'=>$request->d_ss,
         'L'=>$request->L,
         'SS'=>$SS,
-        'd_rop'=>$d_rop,
+        // 'd_rop'=>$d_rop,
         'ROP'=>$ROP,
+        'AU'=>$ROP,
 
 
     ]);
@@ -883,6 +888,8 @@ public function updateDataMaterials($id, Request $request)
 
 
     $kategori = $request->kategori;
+
+    $link_kategori = '';
 
     if($kategori == "Cast Steel")
     {
@@ -964,7 +971,77 @@ public function updateDataMaterials($id, Request $request)
 
 
 
+public function HapusDataMaterials($id)
+{
+    # code...
 
+    $data_material = DataMaterial::findOrFail($id);
+    $data_material->delete();
+
+    return redirect('/data_material_seluruh')->with('hapus_data_material', 'Data Material Telah Dihapus');
+
+
+
+}
+
+
+
+
+
+
+
+
+public function UpdateKomponenSesuai($id, Request $request)
+{
+    # code...
+
+    KebutuhanMaterial::where('id', $id)->update([
+
+        'status_verif'=>3,
+
+    ]);
+
+
+    return redirect('/kebutuhan_material')->with('kebutuhan_sesuai', 'Kebutuhan Material Sesuai');
+
+    
+
+
+
+}
+
+
+
+
+
+public function UpdateKomponenTidakSesuai($id, Request $request)
+{
+    # code...
+
+
+    KebutuhanMaterial::where('id', $id)->update([
+
+        'status_verif'=>2,
+
+    ]);
+
+
+    return redirect('/kebutuhan_material')->with('kebutuhan_tidak_sesuai', 'Kebutuhan Material Tidak Sesuai');
+
+
+
+}
+
+
+
+
+public function ApproveManager($id, Request $request)
+{
+    # code...
+
+    
+
+}
 
 
 

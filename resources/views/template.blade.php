@@ -381,7 +381,7 @@
 
           @if ($repairing || $pemilik)
               
-          <li class="nav-item" id = "data_repairing">
+          {{-- <li class="nav-item" id = "data_repairing">
             <a href="{{url('/data_repairing')}}" class="nav-link">
               <i class="nav-icon fas fa-wrench"></i>
               <p>
@@ -389,7 +389,7 @@
               </p>
             </a>
           </li>
-         
+          --}}
           @endif
    
 

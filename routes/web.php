@@ -133,8 +133,12 @@ Route::post('/data_material',[\App\Http\Controllers\LandingController::class,'da
 Route::get('/data_material_seluruh',[\App\Http\Controllers\LandingController::class,'data_material_all'])->name('data_material_all')->middleware('auth');
 
 
+Route::get('/data_material_seluruh/{id}',[\App\Http\Controllers\LandingController::class,'editDataMaterials'])->name('editDataMaterials')->middleware('auth');
+
+
 Route::patch('/data_material_seluruh/{id}',[\App\Http\Controllers\LandingController::class,'updateDataMaterials'])->name('updateDataMaterials')->middleware('auth');
 
+Route::delete('/data_material_seluruh/{id}',[\App\Http\Controllers\LandingController::class,'HapusDataMaterials'])->name('HapusDataMaterials')->middleware('auth');
 
 
 // Update SS ROP 
@@ -143,3 +147,14 @@ Route::patch('/data_material_seluruh/ss_rop/{id}',[\App\Http\Controllers\Landing
 
 
 Route::get('/data_material_seluruh/ss_rop/{id}',[\App\Http\Controllers\LandingController::class,'SS_ROP_edit'])->name('SS_ROP_edit')->middleware('auth');
+
+
+// UPDATE STATUS VERIF LAPORAN KEBUTUHAN MATERIAL 
+
+Route::patch('/kebutuhan_material/status_verif_sesuai/{id}',[\App\Http\Controllers\LandingController::class,'UpdateKomponenSesuai'])->name('UpdateKomponenSesuai')->middleware('auth');
+
+
+Route::patch('/kebutuhan_material/status_verif_tidak_sesuai/{id}',[\App\Http\Controllers\LandingController::class,'UpdateKomponenTidakSesuai'])->name('UpdateKomponenTidakSesuai')->middleware('auth');
+
+
+

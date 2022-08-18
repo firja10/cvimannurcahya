@@ -96,6 +96,7 @@ $pemilik = Auth::user()->is_pemilik == 1;
                     <th>Stock</th>
                     <th>Safety Stock</th>
                     <th>Reorder Point</th>
+                    <th>Average User</th>
                     <th>Harga Beli</th>
                     <th>Keterangan</th>
                     <th>Aksi</th>
@@ -119,6 +120,7 @@ $pemilik = Auth::user()->is_pemilik == 1;
                     <td>{{$item_material->stock}}</td>
                     <td>{{$item_material->SS}}</td>
                     <td>{{$item_material->ROP}}</td>
+                    <td>{{$item_material->AU}}</td>
                     <td>{{$item_material->harga_beli}}</td>
                     <td>
                       <br>
@@ -134,10 +136,12 @@ $pemilik = Auth::user()->is_pemilik == 1;
 
 
             
-                      @if ($ROP>=$SS)
-                      <a href="#" class = "btn btn-warning ! mb-2">Warning ! Bahan Baku harus segera dibeli kembali</a>
-                      @else
-                      <a href="#" class = "btn btn-dark ! mb-2">Bahan Baku Aman</a>    
+                      @if ($ROP>=$item_material->stock)
+                      <a href="#" class = "btn btn-warning  mb-2">Warning ! Bahan Baku harus segera dibeli kembali</a>
+                      @elseif($ROP<$item_material->stock)
+                      <a href="#" class = "btn btn-dark  mb-2">Bahan Baku Aman</a>   
+                      @elseif($ROP == NULL || $SS == NULL) 
+                      <a href="#" class = "btn btn-danger  mb-2">Segera Isi !</a>   
                       @endif
                 
                     </td>
@@ -149,12 +153,12 @@ $pemilik = Auth::user()->is_pemilik == 1;
 
 
                         <br>
-                        <a href="" class = "btn btn-success">Edit</a>
+                        <a href="{{route('editDataMaterials', $item_material->id)}}" class = "btn btn-success">Edit</a>
                             <br>
-                        <form action="{{route('CarbonSteelDelete', $item_material->id)}}" method = "POST" >
+                        <form action="{{route('HapusDataMaterials', $item_material->id)}}" method = "POST" >
                             @csrf
                             @method('DELETE')
-                            <button class = "btn  btn-danger mt-2">Hapus</button>
+                            <button class = "btn  btn-danger mt-2" type = "submit">Hapus</button>
                         </form>
 
                         
@@ -181,6 +185,7 @@ $pemilik = Auth::user()->is_pemilik == 1;
                     <th>Stock</th>
                     <th>Safety Stock</th>
                     <th>Reorder Point</th>
+                    <th>Average User</th>
                     <th>Harga Beli</th>
                     <th>Keterangan</th>
                     <th>Aksi</th>
