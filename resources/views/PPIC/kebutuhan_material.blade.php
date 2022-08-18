@@ -93,9 +93,9 @@ Data Kebutuhan Material
                         <br>
 
                         @if ($item_material->status_verif == 0 || $item_material->status_verif == NULL)
-                        <a href="" class="btn btn-warning">Belum diapprove</a>
+                        <button type = "button" class="btn btn-warning">Belum diapprove</button>
                         @elseif($item_material->status_verif == 1)
-                        <a href="" class="btn btn-primary">Sudah diapprove</a>   
+                        <button type = "button" class="btn btn-primary">Sudah diapprove</button>   
                         @endif
                      
 

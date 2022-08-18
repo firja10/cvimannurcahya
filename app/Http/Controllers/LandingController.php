@@ -669,4 +669,347 @@ return redirect('/persetujuan/repairing')->with('sukses_update_status_verif','St
 
 
 
+// Data Material Alternatif 
+
+public function data_material_all(Request $request)
+{
+    # code...
+
+
+
+
+    $data_material = DB::table('data_materials')->get();
+
+
+    return view('data_material_all',compact('data_material'));
+
+}
+
+
+
+
+
+
+
+// Data Material Alternatif 
+
+public function data_material(Request $request)
+{
+    # code...
+
+    $permintaan = $request->get('nama_kategori');
+
+
+    $data_material = DB::table('data_materials')->where('kategori', $permintaan)->get();
+
+
+    return view('data_material',['data_material'=>$data_material]);
+
+}
+
+
+
+public function data_material_store(Request $request)
+{
+    # code...
+
+    $data_material = new DataMaterial();
+
+    $data_material['kode'] = $request->kode;
+    $data_material['nama'] = $request->nama;
+
+    $data_material['kategori'] = $request->kategori;
+
+    $kategori = $request->kategori;
+
+    if($kategori == "Cast Steel")
+    {
+
+        $data_material['link_kategori'] = 'CS';
+    }
+
+    elseif($kategori == "Carbon Steel")
+    {
+        $data_material['link_kategori'] = 'CBS';
+    }
+
+    elseif($kategori == "Stainless Steel")
+    {
+        $data_material['link_kategori'] = 'SS';
+    }
+
+    elseif($kategori == 'Heat Resiting Steel')
+    {
+        $data_material['link_kategori'] = 'HRS';
+
+    }
+
+    elseif($kategori == 'Forged Steel')
+    {
+        $data_material['link_kategori'] = 'FS';
+
+    }
+
+
+    elseif($kategori == 'Al-Alloy-Metal')
+    {
+        $data_material['link_kategori'] = 'AAM';
+
+    }
+
+
+    elseif($kategori == 'White Metal')
+    {
+        $data_material['link_kategori'] = 'WM';
+
+    }
+
+
+    elseif($kategori == 'Ni-Cr-Mo Steel')
+    {
+        $data_material['link_kategori'] = 'NMS';
+
+    }
+
+
+    elseif($kategori == 'Ni-Cr Steel')
+    {
+        $data_material['link_kategori'] = 'NS';
+
+    }
+
+
+
+
+
+
+
+
+
+    $data_material['jenis'] = $request->jenis;
+    $data_material['stock'] = $request->stock;
+
+    $data_material['harga_beli'] = $request->harga_beli;
+
+    $data_material->save();
+
+   return redirect('/data_material_all')->with('data_material_tambah', 'Data Material Berhasil Ditambahkan');
+
+}
+
+
+
+
+
+
+
+public function SS_ROP_edit($id)
+{
+    # code...
+
+    $data_material = DataMaterial::findOrFail($id);
+
+    return view('data_material_ss_rop', compact('data_material'));
+
+
+}
+
+
+
+
+public function updateSS_ROP($id, Request $request)
+{
+    # code...
+
+
+
+
+    $Z = $request->Z;
+    $L = $request->L;
+    $d_ss = $request->d_ss;
+    $d_rop = $request->d_rop;
+
+
+    $SS = $Z*$d_ss*$L;
+
+    $ROP = $SS + ($d_rop*$L);
+
+
+
+    DataMaterial::where('id', $id)->update([
+
+        'Z'=>$request->Z,
+        'd_ss'=>$request->d_ss,
+        'L'=>$request->L,
+        'SS'=>$SS,
+        'd_rop'=>$d_rop,
+        'ROP'=>$ROP,
+
+
+    ]);
+
+    return redirect('/data_material_seluruh')->with('sukses_update_ss', 'SS Telah Diupdate');
+
+
+
+
+
+
+
+}
+
+
+
+
+
+public function editDataMaterials($id)
+{
+    # code...
+
+    $data_material = DataMaterial::findOrFail($id);
+
+    return view('data_material_edit', compact('data_material'));
+
+
+
+}
+
+
+public function updateDataMaterials($id, Request $request)
+{
+    # code...
+
+
+
+
+    $kategori = $request->kategori;
+
+    if($kategori == "Cast Steel")
+    {
+
+        $link_kategori = 'CS';
+    }
+
+    elseif($kategori == "Carbon Steel")
+    {
+        $link_kategori = 'CBS';
+    }
+
+    elseif($kategori == "Stainless Steel")
+    {
+        $link_kategori = 'SS';
+    }
+
+    elseif($kategori == 'Heat Resiting Steel')
+    {
+        $link_kategori = 'HRS';
+
+    }
+
+    elseif($kategori == 'Forged Steel')
+    {
+        $link_kategori = 'FS';
+
+    }
+
+
+    elseif($kategori == 'Al-Alloy-Metal')
+    {
+        $link_kategori = 'AAM';
+
+    }
+
+
+    elseif($kategori == 'White Metal')
+    {
+        $link_kategori = 'WM';
+
+    }
+
+
+    elseif($kategori == 'Ni-Cr-Mo Steel')
+    {
+        $link_kategori = 'NMS';
+
+    }
+
+
+    elseif($kategori == 'Ni-Cr Steel')
+    {
+        $link_kategori = 'NS';
+
+    }
+
+
+    
+
+
+    DataMaterial::where('id', $id)->update([
+
+        'kode'=>$request->kode,
+        'nama'=>$request->nama,
+        'kategori'=> $request->kategori,
+        'link_kategori'=>$link_kategori,
+        'jenis'=> $request->jenis,
+        'stock'=> $request->stock,
+        'harga_beli'=> $request->harga_beli,
+
+    ]);
+
+
+    return redirect('/data_material_seluruh')->with('sukses_update_data_material', 'Sukses Tambahkan Data Material');
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// public function updateROP($id, Request $request)
+// {
+//     # code...
+
+
+
+
+//     $Z = $request->Z;
+//     $L = $request->L;
+//     $d_ss = $request->d_ss;
+
+
+//     $SS = $Z*$d_ss*$L;
+
+
+
+//     DataMaterial::where('id', $id)->update([
+
+//         'Z'=>$request->Z,
+//         'd_ss'=>$request->d_ss,
+//         'L'=>$request->L,
+//         'SS'=>$SS,
+
+
+//     ]);
+
+//     return redirect('/data_material_seluruh')->with('sukses_update_ss', 'SS Telah Diupdate');
+
+
+// }
+
+
+
+
+
+
+
+
+
 }

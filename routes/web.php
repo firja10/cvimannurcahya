@@ -121,3 +121,25 @@ Route::patch('/persetujuan/repairing/{id}',[\App\Http\Controllers\LandingControl
 
 
 
+// DATA BAGIAN GUDANG 
+
+Route::get('/data_material',[\App\Http\Controllers\LandingController::class,'data_material'])->name('data_material')->middleware('auth');
+
+
+
+Route::post('/data_material',[\App\Http\Controllers\LandingController::class,'data_material_store'])->name('data_material_store')->middleware('auth');
+
+
+Route::get('/data_material_seluruh',[\App\Http\Controllers\LandingController::class,'data_material_all'])->name('data_material_all')->middleware('auth');
+
+
+Route::patch('/data_material_seluruh/{id}',[\App\Http\Controllers\LandingController::class,'updateDataMaterials'])->name('updateDataMaterials')->middleware('auth');
+
+
+
+// Update SS ROP 
+
+Route::patch('/data_material_seluruh/ss_rop/{id}',[\App\Http\Controllers\LandingController::class,'updateSS_ROP'])->name('updateSS_ROP')->middleware('auth');
+
+
+Route::get('/data_material_seluruh/ss_rop/{id}',[\App\Http\Controllers\LandingController::class,'SS_ROP_edit'])->name('SS_ROP_edit')->middleware('auth');

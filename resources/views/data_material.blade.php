@@ -1,39 +1,102 @@
 @extends('template')
 
 @section('title')
+<?php $kateg = $_GET['nama_kategori'] ;
 
-Data Pembelian Material
+echo "Data Material ". $kateg;
+
+?>
+
     
 @endsection
 
 
 @section('judul')
 
-Data Pembelian Material
+<?php
 
+echo "Data Material ". $kateg;
+
+?>
+    
 @endsection
+
+@section('content')
+
+
+
 
 
 @section('style')
 
-<style>
 
-    #pembelian_material {
+
+@if($kateg = "Cast Steel")
+
+<style>
+    #CS{
         background-color:white;
     }
 
-    #pembelian_material .nav-link {
+    #CS .nav-link p {
         color:firebrick;
     }
 
+    #CS .nav-link i {
+        color:firebrick;
+    }
 </style>
+
+
+@elseif($kateg = "Carbon Steel")
+
+<style>
+    #CBS{
+        background-color:white;
+    }
+
+    #CBS .nav-link p {
+        color:firebrick;
+    }
+
+    #CBS .nav-link i {
+        color:firebrick;
+    }
+</style>
+
+
+@elseif($kateg = "Stainless Steel")
+
+<style>
+    #SS{
+        background-color:white;
+    }
+
+    #SS .nav-link p {
+        color:firebrick;
+    }
+
+    #SS .nav-link i {
+        color:firebrick;
+    }
+</style>
+    
+@endif
+
+
+
+{{-- <style>
+    #CBS{
+        background-color:white;
+    }
+
+    #CBS .nav-link {
+        color:firebrick;
+    }
+</style> --}}
     
 @endsection
 
-
-
-
-@section('content')
 
 
 
@@ -57,21 +120,20 @@ Data Pembelian Material
             <div class="card-header justify-content-center d-flex">
               {{-- <h3 class="card-title">DataTable with default features</h3> --}}
               <button class = "btn btn-dark" onclick="history.back()"> <i class = "fas fa-arrow-left"></i> Previous</button>
-              <button class = "btn btn-success ml-auto" data-toggle = "modal" data-target = "#PembelianMaterialModal" > <i class = "fas fa-plus"></i> Tambah Data</button>
+              <button class = "btn btn-success ml-auto" data-toggle = "modal" data-target = "#CarbonSteelModal" > <i class = "fas fa-plus"></i> Tambah Data</button>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-              <table id="pembelian_material_tabel" class="table table-bordered table-striped">
+              <table id="data_material_tabel" class="table table-bordered table-striped">
                 <thead>
                 <tr>
                   <th>No. </th>
                   <th>Kode Material</th>
                   <th>Nama Material</th>
+                  <th>Kategori</th>
                   <th>Jenis</th>
-                    <th>Satuan</th>
-                    <th>Jumlah</th>
+                    <th>Stock</th>
                     <th>Harga Beli</th>
-                    <th>Suplier</th>
                     <th>Aksi</th>
 
                 </tr>
@@ -82,35 +144,31 @@ Data Pembelian Material
                         
                         $no = 1;
                         ?>
-                @foreach ($pembelian_material as $item_pembelian_material)
+                @foreach ($data_material as $item_material)
                 
                 <tr>
                     <td><?php echo $no++; ?></td>
-                    <td>{{$item_pembelian_material->kode}}</td>
-                    <td>{{$item_pembelian_material->nama}}</td>
-                    <td>{{$item_pembelian_material->jenis}}</td>
-                    <td>{{$item_pembelian_material->satuan}}</td>
-                    <td>{{$item_pembelian_material->jumlah}}</td>
-                    <td>{{$item_pembelian_material->harga_beli}}</td>
-                    <td>{{$item_pembelian_material->suplier}}</td>
+                    <td>{{$item_material->kode}}</td>
+                    <td>{{$item_material->nama}}</td>
+                    <td>{{$item_material->kategori}}</td>
+                    <td>{{$item_material->jenis}}</td>
+                    <td>{{$item_material->stock}}</td>
+                    <td>{{$item_material->harga_beli}}</td>
              
                     <td>
-                      <br>
+
                         <a href="" class = "btn btn-success">Edit</a>
                             <br> <br>
-                        <form action="{{route('pembelian_material.destroy', $item_pembelian_material->id)}}" method = "POST" >
+                        <form action="{{route('CarbonSteelDelete', $item_material->id)}}" method = "POST" >
                             @csrf
                             @method('DELETE')
                             <button class = "btn  btn-danger">Hapus</button>
                         </form>
 
+                        
+                        <a href="" class="btn btn-primary mt-2 mb-2">Tambah SS</a>
                         <br>
-
-                        @if ($item_pembelian_material->status_verif == 0 || $item_pembelian_material->status_verif == NULL)
-                        <button type = "button" class="btn btn-warning">Belum diapprove</button>
-                        @elseif($item_pembelian_material->status_verif == 1)
-                        <button type = "button" class="btn btn-primary">Sudah diapprove</button>   
-                        @endif
+                        <a href="" class="btn btn-dark">Tambah ROP</a>
 
                     </td>
                 </tr>
@@ -126,13 +184,11 @@ Data Pembelian Material
                     <th>No. </th>
                   <th>Kode Material</th>
                   <th>Nama Material</th>
+                  <th>Kategori</th>
                   <th>Jenis</th>
-                    <th>Satuan</th>
-                    <th>Jumlah</th>
+                    <th>Stock</th>
                     <th>Harga Beli</th>
-                    <th>Suplier</th>
                     <th>Aksi</th>
-
                 </tr>
                 </tfoot>
               </table>
@@ -147,6 +203,15 @@ Data Pembelian Material
     </div>
     <!-- /.container-fluid -->
   </section>
+
+
+
+
+
+
+
+
+
 
 
 

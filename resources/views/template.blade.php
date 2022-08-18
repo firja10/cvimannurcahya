@@ -307,14 +307,39 @@
              ?>
 
 
+            <li class="nav-item" id = "data_material_seluruh">
+                      <a href="{{url('/data_material_seluruh')}}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Seluruh Data Material</p>
+                      </a>
+            </li>             
+
+
              @foreach ($data_kategori as $item_materials)
              
-             <li class="nav-item" id = "{{$item_materials->link_kategori}}">
+             {{-- <li class="nav-item" id = "{{$item_materials->link_kategori}}">
               <a href="{{url('/data_material/'. $item_materials->link_kategori)}}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>{{$item_materials->nama_kategori}}</p>
               </a>
-            </li>             
+            </li>              --}}
+
+            <li class="nav-item" id = "{{$item_materials->link_kategori}}">
+              <form action="/data_material" id = "kategori_form" method = "GET">
+                <input type="hidden" name="nama_kategori" value = "{{$item_materials->nama_kategori}}">
+                {{-- <a href="#" onclick="document.getElementById('kategori_form').submit();" class = "nav-link">     
+                <i class="far fa-circle nav-icon"></i>
+                <p>{{$item_materials->nama_kategori}}</p>
+              </a> --}}
+
+              <button type="submit" class = "nav-link text-light" style = "text-align:left; background-color:transparent; border:none;">
+                <i class="far fa-circle nav-icon"></i>
+                <p>{{$item_materials->nama_kategori}}</p>
+              </button>
+            </form>
+            </li>            
+
+
              @endforeach
             </ul>
           </li>
@@ -323,7 +348,7 @@
 
 
 
-        @if ($ppic || $pemilik)
+        @if ($ppic || $pemilik || $gudang)
             
 
           <li class="nav-item" id = "kebutuhan_material">
@@ -1002,6 +1027,17 @@
 
 
 
+@yield('form_penting')
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1110,6 +1146,15 @@
 
 
 
+    $('#data_material_tabel').DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+    $('#data_material_semua_tabel').DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
 
 
   });

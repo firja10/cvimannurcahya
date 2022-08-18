@@ -97,6 +97,14 @@ Data Repairing
                             <button class = "btn  btn-danger">Hapus</button>
                         </form>
 
+                        <br>
+
+                        @if ($item_repairing->status_verif == 0 || $item_repairing->status_verif == NULL)
+                        <button type = "button" class="btn btn-warning">Belum diapprove</button>
+                        @elseif($item_repairing->status_verif == 1)
+                        <button type = "button" class="btn btn-primary">Sudah diapprove</button>   
+                        @endif
+                     
                     </td>
                 </tr>
 
