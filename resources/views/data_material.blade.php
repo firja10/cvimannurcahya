@@ -29,7 +29,7 @@ echo "Data Material ". $kateg;
 
 @section('style')
 
-
+{{-- 
 
 @if($kateg = "Cast Steel")
 
@@ -81,7 +81,7 @@ echo "Data Material ". $kateg;
     }
 </style>
     
-@endif
+@endif --}}
 
 
 
@@ -98,6 +98,24 @@ echo "Data Material ". $kateg;
 @endsection
 
 
+
+
+
+<?php 
+
+$ppic = Auth::user()->is_ppic == 1;
+
+$gudang = Auth::user()->is_gudang == 1;
+
+$manager = Auth::user()->is_manager == 1;
+
+$repairing = Auth::user()->is_repairing == 1;
+
+$pemilik = Auth::user()->is_pemilik == 1;
+
+
+
+?>
 
 
 
@@ -119,8 +137,22 @@ echo "Data Material ". $kateg;
           <div class="card">
             <div class="card-header justify-content-center d-flex">
               {{-- <h3 class="card-title">DataTable with default features</h3> --}}
+              {{-- <button class = "btn btn-dark" onclick="history.back()"> <i class = "fas fa-arrow-left"></i> Previous</button>
+              <button class = "btn btn-success ml-auto" data-toggle = "modal" data-target = "#CarbonSteelModal" > <i class = "fas fa-plus"></i> Tambah Data</button> --}}
+
+
+              @if ($ppic || $pemilik)
+
+              {{-- <h3 class="card-title">DataTable with default features</h3> --}}
               <button class = "btn btn-dark" onclick="history.back()"> <i class = "fas fa-arrow-left"></i> Previous</button>
-              <button class = "btn btn-success ml-auto" data-toggle = "modal" data-target = "#CarbonSteelModal" > <i class = "fas fa-plus"></i> Tambah Data</button>
+               
+           <button class = "btn btn-success ml-auto" data-toggle = "modal" data-target = "#CarbonSteelModal" > <i class = "fas fa-plus"></i> Tambah Data</button>
+           @else
+               
+           @endif
+
+
+
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -133,7 +165,10 @@ echo "Data Material ". $kateg;
                   <th>Kategori</th>
                   <th>Jenis</th>
                     <th>Stock</th>
+                    <th>Safety Stock</th>
+                    <th>Reorder Point</th>
                     <th>Harga Beli</th>
+                    <th>Keterangan</th>
                     <th>Aksi</th>
 
                 </tr>
@@ -153,22 +188,41 @@ echo "Data Material ". $kateg;
                     <td>{{$item_material->kategori}}</td>
                     <td>{{$item_material->jenis}}</td>
                     <td>{{$item_material->stock}}</td>
+                    <td>{{$item_material->SS}}</td>
+                    <td>{{$item_material->ROP}}</td>
                     <td>{{$item_material->harga_beli}}</td>
+                    <td>
+                      <br>
+
+                      <?php 
+                      
+                      $ROP = $item_material->ROP;
+                      $SS = $item_material->SS;
+
+                      ?>
+                      @if ($ROP>=$SS)
+                      <a href="#" class = "btn btn-warning ! mb-2">Warning ! Bahan Baku harus segera dibeli kembali</a>
+                      @else
+                      <a href="#" class = "btn btn-dark ! mb-2">Bahan Baku Aman</a>    
+                      @endif
+                
+                    </td>
              
                     <td>
-
+                  
+                        <br>
                         <a href="" class = "btn btn-success">Edit</a>
-                            <br> <br>
+                            <br>
                         <form action="{{route('CarbonSteelDelete', $item_material->id)}}" method = "POST" >
                             @csrf
                             @method('DELETE')
-                            <button class = "btn  btn-danger">Hapus</button>
+                            <button class = "btn  btn-danger mt-2">Hapus</button>
                         </form>
 
                         
-                        <a href="" class="btn btn-primary mt-2 mb-2">Tambah SS</a>
-                        <br>
-                        <a href="" class="btn btn-dark">Tambah ROP</a>
+                        {{-- <button class="btn btn-primary mt-2 mb-2" data-toggle = "modal" data-target="#DataMaterialModal_{{ $item_material->id }}">Tambah SS dan ROP</button> --}}
+                          
+                        <a class="btn btn-primary mt-2 mb-2" href = "{{route('SS_ROP_edit', $item_material->id)}}">Tambah / Ganti SS dan ROP</a>
 
                     </td>
                 </tr>
@@ -187,7 +241,10 @@ echo "Data Material ". $kateg;
                   <th>Kategori</th>
                   <th>Jenis</th>
                     <th>Stock</th>
+                    <th>Safety Stock</th>
+                    <th>Reorder Point</th>
                     <th>Harga Beli</th>
+                    <th>Keterangan</th>
                     <th>Aksi</th>
                 </tr>
                 </tfoot>

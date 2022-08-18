@@ -39,8 +39,21 @@ Data Material Keseluruhan
 
 
 
+<?php 
+
+$ppic = Auth::user()->is_ppic == 1;
+
+$gudang = Auth::user()->is_gudang == 1;
+
+$manager = Auth::user()->is_manager == 1;
+
+$repairing = Auth::user()->is_repairing == 1;
+
+$pemilik = Auth::user()->is_pemilik == 1;
 
 
+
+?>
 
 
 
@@ -54,9 +67,21 @@ Data Material Keseluruhan
 
           <div class="card">
             <div class="card-header justify-content-center d-flex">
-              {{-- <h3 class="card-title">DataTable with default features</h3> --}}
-              <button class = "btn btn-dark" onclick="history.back()"> <i class = "fas fa-arrow-left"></i> Previous</button>
+           
+
+
+              @if ($ppic || $pemilik)
+
+                 {{-- <h3 class="card-title">DataTable with default features</h3> --}}
+                 <button class = "btn btn-dark" onclick="history.back()"> <i class = "fas fa-arrow-left"></i> Previous</button>
+                  
               <button class = "btn btn-success ml-auto" data-toggle = "modal" data-target = "#CarbonSteelModal" > <i class = "fas fa-plus"></i> Tambah Data</button>
+              @else
+                  
+              @endif
+
+            
+            
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -103,7 +128,12 @@ Data Material Keseluruhan
                       $ROP = $item_material->ROP;
                       $SS = $item_material->SS;
 
+
                       ?>
+
+
+
+            
                       @if ($ROP>=$SS)
                       <a href="#" class = "btn btn-warning ! mb-2">Warning ! Bahan Baku harus segera dibeli kembali</a>
                       @else
@@ -114,6 +144,10 @@ Data Material Keseluruhan
              
                     <td>
                   
+
+
+
+
                         <br>
                         <a href="" class = "btn btn-success">Edit</a>
                             <br>
