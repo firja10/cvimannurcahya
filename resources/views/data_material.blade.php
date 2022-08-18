@@ -202,12 +202,13 @@ $pemilik = Auth::user()->is_pemilik == 1;
                       $SS = $item_material->SS;
 
                       ?>
-                      @if ($ROP>=$SS)
-                      <a href="#" class = "btn btn-warning ! mb-2">Warning ! Bahan Baku harus segera dibeli kembali</a>
-                      @else
-                      <a href="#" class = "btn btn-dark ! mb-2">Bahan Baku Aman</a>    
-                      @endif
-                
+                 @if ($ROP>=$item_material->stock)
+                 <a href="#" class = "btn btn-warning  mb-2">Warning ! Bahan Baku harus segera dibeli kembali</a>
+                 @elseif($ROP<$item_material->stock)
+                 <a href="#" class = "btn btn-dark  mb-2">Bahan Baku Aman</a>   
+                 @elseif($ROP == NULL || $SS == NULL) 
+                 <a href="#" class = "btn btn-danger  mb-2">Segera Isi !</a>   
+                 @endif
                     </td>
              
                     <td>
