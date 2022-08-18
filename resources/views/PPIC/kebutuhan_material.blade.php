@@ -36,6 +36,24 @@ Data Kebutuhan Material
 
 
 
+<?php 
+
+$ppic = Auth::user()->is_ppic == 1;
+
+$gudang = Auth::user()->is_gudang == 1;
+
+$manager = Auth::user()->is_manager == 1;
+
+$repairing = Auth::user()->is_repairing == 1;
+
+$pemilik = Auth::user()->is_pemilik == 1;
+
+
+
+?>
+
+
+
 
 
 
@@ -92,10 +110,46 @@ Data Kebutuhan Material
                         </form>
                         <br>
 
+
+                   
+
+
+
+
+
                         @if ($item_material->status_verif == 0 || $item_material->status_verif == NULL)
-                        <button type = "button" class="btn btn-warning">Belum diapprove</button>
+                        <button type = "button" class="btn btn-warning">Belum diapprove Manager</button>
                         @elseif($item_material->status_verif == 1)
-                        <button type = "button" class="btn btn-primary">Sudah diapprove</button>   
+                        <button type = "button" class="btn btn-primary disabled">Sudah diapprove Manager</button>   
+                        @elseif($item_material->status_verif == 2)
+                        <button type = "button" class="btn btn-success disabled">Bahan Sesuai</button>   
+
+                        @elseif($item_material->status_verif == 3)
+                        <button type = "button" class="btn btn-warning disabled">Bahan Tidak Sesuai</button>   
+
+                        @endif
+
+
+
+                        <br>
+
+                        @if ($pemilik || $repairing)
+
+                        @if ($item_material->status_verif == 1)
+                        <button class="btn btn-dark mt-2 mb-2">Lapor Komponen Sesuai</button>
+                        <button class="btn btn-warning">Lapor Komponen Tidak Sesuai</button>
+                        @elseif($item_material->status_verif == 2)
+                            
+
+                        <button class="btn btn-danger mt-2">Komponen Tidak Sesuai</button>
+
+                        @endif
+                        
+            
+                        
+
+                        @else
+                            
                         @endif
                      
 

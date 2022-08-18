@@ -348,7 +348,7 @@
 
 
 
-        @if ($ppic || $pemilik || $gudang)
+        @if ($ppic || $pemilik || $gudang || $repairing)
             
 
           <li class="nav-item" id = "kebutuhan_material">
