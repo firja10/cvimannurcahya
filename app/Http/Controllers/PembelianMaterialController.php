@@ -52,7 +52,7 @@ class PembelianMaterialController extends Controller
         $pembelian_material['jenis'] = $request->jenis;
         $pembelian_material['satuan'] = 'Meter';
         $pembelian_material['jumlah'] = $request->jumlah;
-        $pembelian_material['suplier'] = $request->suplier;
+     
 
 
 
@@ -60,6 +60,8 @@ class PembelianMaterialController extends Controller
 
 
         $pembelian_material['harga_beli'] = $butuh_beli_reference->harga_beli;
+
+        $pembelian_material['suplier'] = $butuh_beli_reference->suplier;
         
 
         $pembelian_material->save();

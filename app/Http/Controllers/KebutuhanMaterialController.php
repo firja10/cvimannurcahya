@@ -73,6 +73,8 @@ class KebutuhanMaterialController extends Controller
 
         $kebutuhan_material['jumlah'] = $request->jumlah;
 
+        $kebutuhan_material['suplier'] = $sesuai_kebutuhan->suplier;
+
         $harga_total = '';
 
         if($sesuai_kebutuhan->harga_beli == NULL)
