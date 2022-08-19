@@ -54,10 +54,10 @@ Data Pembelian Material
 
 
           <div class="card">
-            <div class="card-header justify-content-center d-flex">
+            <div class="card-header">
               {{-- <h3 class="card-title">DataTable with default features</h3> --}}
               <button class = "btn btn-dark" onclick="history.back()"> <i class = "fas fa-arrow-left"></i> Previous</button>
-              <button class = "btn btn-success ml-auto" data-toggle = "modal" data-target = "#PembelianMaterialModal" > <i class = "fas fa-plus"></i> Tambah Data</button>
+              {{-- <button class = "btn btn-success ml-auto" data-toggle = "modal" data-target = "#PembelianMaterialModal" > <i class = "fas fa-plus"></i> Tambah Data</button> --}}
             </div>
             <!-- /.card-header -->
             <div class="card-body">

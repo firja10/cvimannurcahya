@@ -63,6 +63,11 @@ Edit Data Kebutuhan Material <?php echo $kebutuhan_material->nama ?>
                         <label for="komponen">Komponen Turbin</label>
                         <input id = "komponen" type="text" class="form-control" name = "komponen" placeholder="" value = "{{$kebutuhan_material->komponen}}">
                     </div>
+
+                    <div class="form-group">
+                      <label for="kode">Kode Material</label>
+                      <input id = "kode" type="text" class="form-control" name = "kode" placeholder="" value = "{{$kebutuhan_material->kode}}">
+                  </div>
               
                     <div class="form-group">
                       <label for="nama">Nama Material</label>

@@ -121,7 +121,7 @@ class KebutuhanMaterialController extends Controller
 
         $kebutuhan_material = KebutuhanMaterial::findOrFail($id);
 
-        return view('ppic.kebutuhan_material_edit',compact('kebutuhan_material'));
+        return view('PPIC.kebutuhan_material_edit',compact('kebutuhan_material'));
 
 
     }
@@ -140,10 +140,12 @@ class KebutuhanMaterialController extends Controller
         KebutuhanMaterial::where('id',$id)->update([
 
             'komponen'=>$request->komponen,
+            'kode'=>$request->kode,
             'nama'=>$request->nama,
             'jenis'=>$request->jenis,
             'satuan'=>'Meter',
             'jumlah'=>$request->jumlah,
+            'harga_beli'=>$request->harga_beli,
     
     
         ]);

@@ -117,7 +117,7 @@ class PembelianMaterialController extends Controller
             'satuan'=>'Meter',
             'jumlah'=>$request->jumlah,
             'harga_beli'=>$request->harga_beli,
-            'suplier'=>$request->suplier,
+            // 'suplier'=>$request->suplier,
 
 
 

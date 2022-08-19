@@ -89,10 +89,10 @@ Edit Pembelian Material <?php echo $pembelian_material->nama ?>
             </div>
 
             
-            <div class="form-group">
+            {{-- <div class="form-group">
                 <label for="suplier">Supplier</label>
                 <input id = "suplier" type="text" class="form-control" name = "suplier" placeholder="" value = "{{$pembelian_material->suplier}}">
-            </div>
+            </div> --}}
 
 
 

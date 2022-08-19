@@ -124,6 +124,9 @@ $pemilik = Auth::user()->is_pemilik == 1;
 
 
 
+
+
+
   <!-- Main content -->
   <section class="content">
     <div class="container-fluid">
@@ -133,25 +136,27 @@ $pemilik = Auth::user()->is_pemilik == 1;
 
           <div class="card">
             <div class="card-header justify-content-center d-flex">
-           
+              {{-- <h3 class="card-title">DataTable with default features</h3> --}}
+              {{-- <button class = "btn btn-dark" onclick="history.back()"> <i class = "fas fa-arrow-left"></i> Previous</button>
+              <button class = "btn btn-success ml-auto" data-toggle = "modal" data-target = "#CarbonSteelModal" > <i class = "fas fa-plus"></i> Tambah Data</button> --}}
 
 
               @if ($ppic || $pemilik)
 
-                 {{-- <h3 class="card-title">DataTable with default features</h3> --}}
-                 <button class = "btn btn-dark" onclick="history.back()"> <i class = "fas fa-arrow-left"></i> Previous</button>
-                  
-              <button class = "btn btn-success ml-auto" data-toggle = "modal" data-target = "#CarbonSteelModal" > <i class = "fas fa-plus"></i> Tambah Data</button>
-              @else
-                  
-              @endif
+              {{-- <h3 class="card-title">DataTable with default features</h3> --}}
+              <button class = "btn btn-dark" onclick="history.back()"> <i class = "fas fa-arrow-left"></i> Previous</button>
+               
+           <button class = "btn btn-success ml-auto" data-toggle = "modal" data-target = "#CarbonSteelModal" > <i class = "fas fa-plus"></i> Tambah Data</button>
+           @else
+               
+           @endif
 
-            
-            
+
+
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-              <table id="data_material_semua_tabel" class="table table-bordered table-striped">
+              <table id="data_material_tabel" class="table table-bordered table-striped">
                 <thead>
                 <tr>
                   <th>No. </th>
@@ -163,7 +168,6 @@ $pemilik = Auth::user()->is_pemilik == 1;
                     <th>Safety Stock</th>
                     <th>Reorder Point</th>
                     <th>Average User</th>
-                    <th>Supplier</th>
                     <th>Harga Beli</th>
                     <th>Keterangan</th>
                     <th>Aksi</th>
@@ -188,7 +192,6 @@ $pemilik = Auth::user()->is_pemilik == 1;
                     <td>{{$item_material->SS}}</td>
                     <td>{{$item_material->ROP}}</td>
                     <td>{{$item_material->AU}}</td>
-                    <td>{{$item_material->suplier}}</td>
                     <td>{{$item_material->harga_beli}}</td>
                     <td>
                       <br>
@@ -198,39 +201,27 @@ $pemilik = Auth::user()->is_pemilik == 1;
                       $ROP = $item_material->ROP;
                       $SS = $item_material->SS;
 
-
                       ?>
-
-
-
-            
-                      @if ($ROP>=$item_material->stock)
-                      <a href="#" class = "btn btn-warning  mb-2">Warning ! Bahan Baku harus segera dibeli kembali</a>
-                      @elseif($ROP<$item_material->stock)
-                      <a href="#" class = "btn btn-dark  mb-2">Bahan Baku Aman</a>   
-                      @elseif($ROP == NULL || $SS == NULL) 
-                      <a href="#" class = "btn btn-danger  mb-2">Segera Isi !</a>   
-                      @endif
-                
+                 @if ($ROP>=$item_material->stock)
+                 <a href="#" class = "btn btn-warning  mb-2">Warning ! Bahan Baku harus segera dibeli kembali</a>
+                 @elseif($ROP<$item_material->stock)
+                 <a href="#" class = "btn btn-dark  mb-2">Bahan Baku Aman</a>   
+                 @elseif($ROP == NULL || $SS == NULL) 
+                 <a href="#" class = "btn btn-danger  mb-2">Segera Isi !</a>   
+                 @endif
                     </td>
              
                     <td>
                   
-
-
-
-
                         <br>
                         <a href="{{route('editDataMaterials', $item_material->id)}}" class = "btn btn-success">Edit</a>
                             <br>
                         <form action="{{route('HapusDataMaterials', $item_material->id)}}" method = "POST" >
-                            @csrf
-                            @method('DELETE')
-                            <button class = "btn  btn-danger mt-2" type = "submit">Hapus</button>
-                        </form>
-                     
-                 
-
+                              @csrf
+                              @method('DELETE')
+                              <button class = "btn  btn-danger mt-2" type = "submit">Hapus</button>
+                          </form>
+  
                         
                         {{-- <button class="btn btn-primary mt-2 mb-2" data-toggle = "modal" data-target="#DataMaterialModal_{{ $item_material->id }}">Tambah SS dan ROP</button> --}}
                           
@@ -256,7 +247,6 @@ $pemilik = Auth::user()->is_pemilik == 1;
                     <th>Safety Stock</th>
                     <th>Reorder Point</th>
                     <th>Average User</th>
-                    <th>Supplier</th>
                     <th>Harga Beli</th>
                     <th>Keterangan</th>
                     <th>Aksi</th>
@@ -274,7 +264,6 @@ $pemilik = Auth::user()->is_pemilik == 1;
     </div>
     <!-- /.container-fluid -->
   </section>
-
 
 
 
