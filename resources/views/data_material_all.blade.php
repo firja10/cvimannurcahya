@@ -160,6 +160,8 @@ $pemilik = Auth::user()->is_pemilik == 1;
                             @method('DELETE')
                             <button class = "btn  btn-danger mt-2" type = "submit">Hapus</button>
                         </form>
+                     
+                 
 
                         
                         {{-- <button class="btn btn-primary mt-2 mb-2" data-toggle = "modal" data-target="#DataMaterialModal_{{ $item_material->id }}">Tambah SS dan ROP</button> --}}

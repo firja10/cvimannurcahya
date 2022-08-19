@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\PembelianMaterial;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Models\KebutuhanMaterial;
 
 class PembelianMaterialController extends Controller
 {
@@ -48,9 +50,18 @@ class PembelianMaterialController extends Controller
         $pembelian_material['kode'] = $request->kode;
         $pembelian_material['nama'] = $request->nama;
         $pembelian_material['jenis'] = $request->jenis;
-        $pembelian_material['satuan'] = $request->satuan;
+        $pembelian_material['satuan'] = 'Meter';
         $pembelian_material['jumlah'] = $request->jumlah;
         $pembelian_material['suplier'] = $request->suplier;
+
+
+
+        $butuh_beli_reference = DB::table('kebutuhan_materials')->where('nama', $request->nama)->first();
+
+
+        $pembelian_material['harga_beli'] = $butuh_beli_reference->harga_beli;
+        
+
         $pembelian_material->save();
 
         return redirect('/pembelian_material')->with('pembelianmaterial','Data Pembelian Material Telah Ditambahkan');
@@ -74,11 +85,13 @@ class PembelianMaterialController extends Controller
      * @param  \App\Models\PembelianMaterial  $pembelianMaterial
      * @return \Illuminate\Http\Response
      */
-    public function edit(PembelianMaterial $pembelianMaterial)
+    public function edit($id)
     {
         //
 
+        $pembelian_material = PembelianMaterial::findOrFail($id);
 
+        return view('gudang.pembelian_material_edit', compact('pembelian_material'));
 
 
 
@@ -91,9 +104,27 @@ class PembelianMaterialController extends Controller
      * @param  \App\Models\PembelianMaterial  $pembelianMaterial
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, PembelianMaterial $pembelianMaterial)
+    public function update(Request $request, $id)
     {
         //
+
+        PembelianMaterial::where('id',$id)->update([
+            'kode'=>$request->kode,
+            'nama'=>$request->nama,
+            'jenis'=>$request->jenis,
+            'satuan'=>'Meter',
+            'jumlah'=>$request->jumlah,
+            'harga_beli'=>$request->harga_beli,
+            'suplier'=>$request->suplier,
+
+
+
+        ]);
+
+
+        return redirect('/pembelian_material')->with('sukses_update_pembelian_material', 'Sukses Update pembelian Material');
+
+
     }
 
     /**

@@ -96,7 +96,7 @@ Data Pembelian Material
              
                     <td>
                       <br>
-                        <a href="" class = "btn btn-success">Edit</a>
+                        <a href="{{route('pembelian_material.edit', $item_pembelian_material->id)}}" class = "btn btn-success">Edit</a>
                             <br> <br>
                         <form action="{{route('pembelian_material.destroy', $item_pembelian_material->id)}}" method = "POST" >
                             @csrf

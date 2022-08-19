@@ -88,8 +88,8 @@ Data Persetujuan Kebutuhan Material
                     <td>
 
 
-                      @if ($item_material->status_verif == 0)
-                      <form action="{{route('UpdateKebutuhanMaterial', $item_material->id)}}" method = "POST">
+                      @if ($item_material->status_verif == 0 || $item_material->status_verif == NULL)
+                      <form action="{{route('UpdateSetujuKebutuhanMaterial', $item_material->id)}}" method = "POST">
                         @csrf
                         @method('PATCH')
                         <button class = "btn btn-warning" type = "submit">Belum Approve Manager</button>
@@ -97,7 +97,20 @@ Data Persetujuan Kebutuhan Material
                       
                       @elseif($item_material->status_verif == 1)
 
-                      <button class = "btn btn-success" disabled>Sudah Approve Manager</button>   
+                      <button class = "btn btn-success" disabled>Sudah Approve Manager</button>  
+                      
+                      @elseif($item_material->status_verif == 2)
+
+                      <button class = "btn btn- mb-2" disabled>Sudah Approve Manager</button>  
+                      <br>
+                      <button class = "btn btn-warning mt-2" disabled>Komponen Tidak Sesuai</button>  
+
+                      @elseif($item_material->status_verif == 3)
+
+                      <button class = "btn btn-success mb-2" disabled>Sudah Approve Manager</button>  
+                      <br>
+                      <button class = "btn btn-primary mb-2" disabled>Komponen Sesuai</button>  
+
                       @endif
 
                        

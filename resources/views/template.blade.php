@@ -421,12 +421,12 @@
                   <p>Data Pembelian Material</p>
                 </a>
               </li>
-              <li class="nav-item" id = "persetujuan_data_repairing">
+              {{-- <li class="nav-item" id = "persetujuan_data_repairing">
                 <a href="{{url('/persetujuan/repairing')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data Repairing</p>
                 </a>
-              </li>
+              </li> --}}
             </ul>
           </li>
 
@@ -743,37 +743,60 @@
       <div class="modal-body">
         
         
+        <?php 
+          
+
+          $komponen_turbin = DB::table('komponen_turbins')->get();
+          
+          ?>
+
 
         <div class="form-group">
           <label for="komponen">Komponen Turbin</label>
-          <input id = "komponen" type="text" class="form-control" name = "komponen" placeholder="Komponen Turbin">
+
+          <select name="komponen" id="komponen" class = "form-control">
+            <option value="#" selected disabled>-- Silakan Pilih --</option>
+            @foreach ($komponen_turbin as $item_turbin)
+
+            <option value="{{$item_turbin->nama_komponen}}">{{$item_turbin->nama_komponen}}</option>
+
+            @endforeach
+  
+
+          </select>
+
+
       </div>
+
+      <?php 
+      
+      $nama_material = DB::table('data_materials')->get();
+
+      ?>
 
       <div class="form-group">
         <label for="nama">Nama Material</label>
-        <input id = "nama" type="text" class="form-control" name = "nama" placeholder="Nama Material">
-    </div>
 
-    <div class="form-group">
-      <label for="jenis">Jenis</label>
-      <select name="jenis" id="jenis" class = "form-control">
-        <option value="AISI">AISI</option>
-        <option value="JIS">JIS</option>
-      </select>
-  </div>
+        {{-- <input id = "nama" type="text" class="form-control" name = "nama" placeholder="Nama Material"> --}}
+
+        <select name="nama" id="nama" class = "form-control">
+
+          <option value="#" selected disabled>-- Silakan Pilih --</option>
+          @foreach ($nama_material as $item_material)
+          <option value="{{$item_material->nama}}">{{$item_material->nama}}</option>
+          
+          @endforeach
+        </select>
+
+      </div>
 
 
+      <div class="form-group">
+        <label for="jumlah">Jumlah Yang Diperlukan</label>
+        <input type="number" name="jumlah" id="jumlah" class="form-control">
+      </div>
 
-<div class="form-group">
-  <label for="satuan">Satuan</label>
-  <input id = "satuan" type="text" class="form-control" name = "satuan" placeholder="Satuan">
-</div>
-
-<div class="form-group">
-  <label for="jumlah">Jumlah</label>
-  <input id = "jumlah" type="number" class="form-control" name = "jumlah" placeholder="Jumlah">
-</div>
-
+ 
 
 
       </div>

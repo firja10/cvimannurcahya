@@ -106,7 +106,7 @@ $pemilik = Auth::user()->is_pemilik == 1;
 
 
 
-                        <a href="" class = "btn btn-success">Edit</a>
+                        <a href="{{route('kebutuhan_material.edit', $item_material->id)}}" class = "btn btn-success">Edit</a>
                             <br> <br>
                         <form action="{{route('kebutuhan_material.destroy', $item_material->id)}}" method = "POST" >
                             @csrf
@@ -136,10 +136,54 @@ $pemilik = Auth::user()->is_pemilik == 1;
                         @elseif($item_material->status_verif == 1)
                         <button type = "button" class="btn btn-primary disabled mb-2">Sudah diapprove Manager</button>   
 
+
+                        <form action="{{route('pembelian_material.store', $item_material->id)}}" method="POST">
+                          @csrf
+
+                          <input type="hidden" name="kode" value = {{$item_material->kode}}>
+                          <input type="hidden" name="nama" value = {{$item_material->nama}}>
+                          <input type="hidden" name="jenis" value = {{$item_material->jenis}}>
+                          <input type="hidden" name="jumlah" value = {{$item_material->jumlah}}>
+
+                          <button class="btn btn-dark" type = "submit">Laksanakan Pembelian</button>
+                        </form>
+                 
+
                         @elseif($item_material->status_verif == 3)
-                        <button type = "button" class="btn btn-success disabled mb-2">Bahan Sesuai</button>   
+
+                        
+                        <form action="{{route('pembelian_material.store', $item_material->id)}}" method="POST">
+                          @csrf
+
+                          <input type="hidden" name="kode" value = {{$item_material->kode}}>
+                          <input type="hidden" name="nama" value = {{$item_material->nama}}>
+                          <input type="hidden" name="jenis" value = {{$item_material->jenis}}>
+                          <input type="hidden" name="jumlah" value = {{$item_material->jumlah}}>
+
+                          <button class="btn btn-dark" type = "submit">Laksanakan Pembelian</button>
+                        </form>
+                        <br>
+                        <button type = "button" class="btn btn-success disabled mb-2">Bahan Sesuai</button>  
+                        
+                        
 
                         @elseif($item_material->status_verif == 2)
+
+                        
+                        <form action="{{route('pembelian_material.store', $item_material->id)}}" method="POST">
+                          @csrf
+
+                          <input type="hidden" name="kode" value = {{$item_material->kode}}>
+                          <input type="hidden" name="nama" value = {{$item_material->nama}}>
+                          <input type="hidden" name="jenis" value = {{$item_material->jenis}}>
+                          <input type="hidden" name="jumlah" value = {{$item_material->jumlah}}>
+                          <input type="hidden" name="harga_beli" value = {{$item_material->harga_beli}}>
+                          <input type="hidden" name="suplier" value = {{$item_material->suplier}}>
+
+
+                          <button class="btn btn-dark disabled" type = "submit">Laksanakan Pembelian</button>
+                        </form>
+                        <br>
                         <button type = "button" class="btn btn-warning disabled mb-2">Bahan Tidak Sesuai</button>   
 
                         @endif

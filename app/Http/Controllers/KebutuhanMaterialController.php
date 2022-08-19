@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DataMaterial;
 use App\Models\KebutuhanMaterial;
 use Illuminate\Http\Request;
+use App\Models\KomponenTurbin;
+use Illuminate\Support\Facades\DB;
 
 class KebutuhanMaterialController extends Controller
 {
@@ -43,18 +46,47 @@ class KebutuhanMaterialController extends Controller
     {
         //
 
+      
+
+
+
         $kebutuhan_material = new KebutuhanMaterial();
 
         $kebutuhan_material['komponen'] = $request->komponen;
 
         $kebutuhan_material['nama'] = $request->nama;
 
-        $kebutuhan_material['jenis'] = $request->jenis;
 
-        $kebutuhan_material['satuan'] = $request->satuan;
+        $sesuai_kebutuhan = DataMaterial::where('nama', $request->nama)->first();
+
+        // $kebutuhan_material['jenis'] = $request->jenis;
+
+        // $kebutuhan_material['satuan'] = $request->satuan;
+
+        // $kebutuhan_material['jumlah'] = $request->jumlah;
+
+        $kebutuhan_material['kode'] = $sesuai_kebutuhan->kode;
+
+        $kebutuhan_material['jenis'] = $sesuai_kebutuhan->jenis;
+
+        $kebutuhan_material['satuan'] = 'Meter';
 
         $kebutuhan_material['jumlah'] = $request->jumlah;
 
+        $harga_total = '';
+
+        if($sesuai_kebutuhan->harga_beli == NULL)
+        {
+            $harga_total = 0;
+        }
+
+        else {
+            $harga_total = ($sesuai_kebutuhan->harga_beli)*($request->jumlah);
+        }
+
+        
+
+        $kebutuhan_material['harga_beli'] = $harga_total;
         $kebutuhan_material->save();
 
         return redirect('/kebutuhan_material')->with('tambahkebutuhanmaterial', 'Sukses Menambahkan Kebutuhan Material');
@@ -81,9 +113,15 @@ class KebutuhanMaterialController extends Controller
      * @param  \App\Models\KebutuhanMaterial  $kebutuhanMaterial
      * @return \Illuminate\Http\Response
      */
-    public function edit(KebutuhanMaterial $kebutuhanMaterial)
+    public function edit($id)
     {
         //
+
+        $kebutuhan_material = KebutuhanMaterial::findOrFail($id);
+
+        return view('ppic.kebutuhan_material_edit',compact('kebutuhan_material'));
+
+
     }
 
     /**
@@ -93,9 +131,22 @@ class KebutuhanMaterialController extends Controller
      * @param  \App\Models\KebutuhanMaterial  $kebutuhanMaterial
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, KebutuhanMaterial $kebutuhanMaterial)
+    public function update(Request $request, $id)
     {
         //
+
+        KebutuhanMaterial::where('id',$id)->update([
+
+            'komponen'=>$request->komponen,
+            'nama'=>$request->nama,
+            'jenis'=>$request->jenis,
+            'satuan'=>'Meter',
+            'jumlah'=>$request->jumlah,
+    
+    
+        ]);
+    
+        return redirect('/kebutuhan_material')->with('sukses_update_kebutuhan_material', 'Kebutuhan Material Sukses Diupdate');
     }
 
     /**

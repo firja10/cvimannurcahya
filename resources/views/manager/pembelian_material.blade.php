@@ -97,7 +97,7 @@ Data Persetujuan Pembelian Material
                     <td>
 
                       @if ($item_pembelian_material->status_verif == 0)
-                      <form action="{{route('UpdatePembelianMaterial', $item_pembelian_material->id)}}" method = "POST">
+                      <form action="{{route('UpdateSetujuPembelianMaterial', $item_pembelian_material->id)}}" method = "POST">
                         @csrf
                         @method('PATCH')
                         <button class = "btn btn-warning" type = "submit">Belum Approve Manager</button>

@@ -582,7 +582,7 @@ public function SetujuKebutuhanMaterial()
 {
     # code...
 
-    $kebutuhan_material = DB::table('kebutuhan_materials')->where('status_verif',1)->get();
+    $kebutuhan_material = DB::table('kebutuhan_materials')->get();
 
     return view('manager.kebutuhan_material',compact('kebutuhan_material'));
 
@@ -612,7 +612,7 @@ public function SetujuPembelianMaterial()
 {
     # code...
 
-    $pembelian_material = DB::table('pembelian_materials')->where('status_verif',1)->get();
+    $pembelian_material = DB::table('pembelian_materials')->get();
 
     return view('manager.pembelian_material',compact('pembelian_material'));
 
@@ -1046,6 +1046,53 @@ public function ApproveManager($id, Request $request)
 
 
 
+public function editKebutuhanMaterials($id)
+{
+    # code...
+
+    $kebutuhan_material = KebutuhanMaterial::findOrFail($id);
+
+    return view('ppic.kebutuhan_material_edit',compact('kebutuhan_material'));
+
+}
+
+
+
+public function updateKebutuhanMaterials($id, Request $request)
+{
+    # code...
+
+    KebutuhanMaterial::where('id',$id)->update([
+
+        'komponen'=>$request->komponen,
+        'nama'=>$request->nama,
+        'jenis'=>$request->jenis,
+        'satuan'=>'Meter',
+        'jumlah'=>$request->jumlah,
+
+
+    ]);
+
+    return redirect('/kebutuhan_material')->with('sukses_update_kebutuhan_material', 'Kebutuhan Material Sukses Diupdate');
+
+}
+
+
+
+public function hapusKebutuhanMaterials($id)
+{
+    # code...
+
+    $kebutuhan_material = KebutuhanMaterial::findOrFail($id);
+    $kebutuhan_material->delete();
+
+    return redirect('/kebutuhan_material')->with('sukses_hapus_kebutuhan_material','Kebutuhan Material Sukses Dihapus');
+
+
+}
+
+
+
 
 
 
@@ -1080,6 +1127,52 @@ public function ApproveManager($id, Request $request)
 
 
 // }
+
+
+
+public function TambahPembelianMaterial(Request $request)
+{
+    # code...
+
+
+    $pembelian_material = new PembelianMaterial();
+    $pembelian_material['kode'] = $request->kode;
+    $pembelian_material['nama'] = $request->nama;
+    $pembelian_material['jenis'] = $request->jenis;
+    $pembelian_material['satuan'] = $request->satuan;
+    $pembelian_material['jumlah'] = $request->jumlah;
+    $pembelian_material['suplier'] = $request->suplier;
+    $pembelian_material->save();
+
+    return redirect('/kebutuhan_material')->with('pembelianmaterial','Data Pembelian Material Telah Ditambahkan');
+
+}
+
+
+
+
+
+
+
+public function UpdatePembelianMaterial($id, Request $request)
+{
+    # code...
+
+    PembelianMaterial::where('id',$id)->update([
+
+        'komponen'=>$request->komponen,
+        'nama'=>$request->nama,
+        'jenis'=>$request->jenis,
+        'satuan'=>'Meter',
+        'jumlah'=>$request->jumlah,
+
+
+    ]);
+
+    return redirect('/kebutuhan_material')->with('sukses_update_kebutuhan_material', 'Kebutuhan Material Sukses Diupdate');
+
+}
+
 
 
 
