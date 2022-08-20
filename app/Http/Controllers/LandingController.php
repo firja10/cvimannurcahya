@@ -734,6 +734,10 @@ public function data_material_store(Request $request)
 
     $kategori = $request->kategori;
 
+    $data_material['tanggal_masuk'] = date('Y-m-d');
+    $data_material['tanggal_update'] = date('Y-m-d');
+
+
     if($kategori == "Cast Steel")
     {
 
@@ -972,6 +976,7 @@ public function updateDataMaterials($id, Request $request)
         'jenis'=> $request->jenis,
         'stock'=> $request->stock,
         'harga_beli'=> $request->harga_beli,
+        'tanggal_update'=>date('Y-m-d'),
 
     ]);
 
@@ -1185,6 +1190,28 @@ public function UpdatePembelianMaterial($id, Request $request)
 
 }
 
+
+
+
+
+
+
+
+
+public function CariKebutuhanMaterialTanggal(Request $request)
+{
+    
+    # code...
+
+    $searchtanggal = $request->get('updated_at');
+
+    $kebutuhan_material = DB::table('kebutuhan_materials')->where('tanggal_masuk', $searchtanggal)->get();
+
+
+    return view('manager.kebutuhan_material_search', compact('kebutuhan_material'));
+
+
+}
 
 
 

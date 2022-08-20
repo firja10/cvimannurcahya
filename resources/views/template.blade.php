@@ -1195,30 +1195,13 @@
                     if (last !== group) {
                         $(rows)
                             .eq(i)
-                            .before('<tr class="group"><td colspan="6" style="background-color:gray;color:white" >' + group + '</td></tr>');
+                            .before('<tr class="group"><td colspan="7" style="background-color:gray;color:white" >' + group + '</td></tr>');
  
                         last = group;
                     }
                 });
         },
     }).buttons().container().appendTo('#kebutuhan_material_tabel_wrapper .col-md-6:eq(0)');
-;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1233,13 +1216,24 @@
 
     $('#data_material_tabel').DataTable({
       "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+      "buttons": ["copy", "csv", "excel", "pdf", "print"],
+      
+    }).buttons().container().appendTo('#data_material_tabel_wrapper .col-md-6:eq(0)');
+
+    // $('#data_material_semua_tabel').DataTable({
+    //   "responsive": true, "lengthChange": false, "autoWidth": false,
+    //   "buttons": ["copy", "csv", "excel", "pdf", "print"]
+    // }).buttons().container().appendTo('#data_material_semua_tabel_wrapper .col-md-6:eq(0)');
+
 
     $('#data_material_semua_tabel').DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+      responsive: true, lengthChange: false, autoWidth: false,
+      buttons: ["copy", "csv", "excel", "pdf", "print"],
+      displayLength:10
+    
+    }).buttons().container().appendTo('#data_material_semua_tabel_wrapper .col-md-6:eq(0)');
+
+
 
 
   });

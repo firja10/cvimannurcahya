@@ -81,7 +81,6 @@ Data Persetujuan Kebutuhan Material
                   <th>Jenis</th>
                   <th>Satuan</th>
                   <th>Jumlah</th>
-                  <th>Tanggal Masuk</th>
                   <th>Aksi</th>
                 </tr>
                 </thead>
@@ -91,7 +90,7 @@ Data Persetujuan Kebutuhan Material
                         
                         $no = 1;
                         ?>
-                @foreach ($kebutuhan_material as $material_key=>$material_value)
+                @foreach ($kebutuhan_material as $item_material)
 
 
                 {{-- <tr>
@@ -104,8 +103,8 @@ Data Persetujuan Kebutuhan Material
                   <td></td>
                 </tr> --}}
                 
-                @foreach ($material_value as $item_material)
-                  
+                {{-- @foreach ($material_value as $item_material)
+                   --}}
 
                 <tr>
                     <td><?php echo $no++; ?></td>
@@ -114,7 +113,6 @@ Data Persetujuan Kebutuhan Material
                     <td>{{$item_material->jenis}}</td>
                     <td>{{$item_material->satuan}}</td>
                     <td>{{$item_material->jumlah}}</td>
-                    <td>{{$item_material->tanggal_masuk}}</td>
                     <td>
 
 
@@ -149,7 +147,7 @@ Data Persetujuan Kebutuhan Material
                     </td>
                 </tr>
 
-                @endforeach
+                {{-- @endforeach --}}
 
                 @endforeach
 
@@ -164,7 +162,6 @@ Data Persetujuan Kebutuhan Material
                     <th>Jenis</th>
                     <th>Satuan</th>
                     <th>Jumlah</th>
-                    <th>Tanggal Masuk</th>
                     <th>Aksi</th>
                 </tr>
                 </tfoot>

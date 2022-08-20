@@ -173,3 +173,12 @@ Route::patch('/kebutuhan_material/status_verif_tidak_sesuai/{id}',[\App\Http\Con
 // Route::get('/kebutuhan_material/{id}',[\App\Http\Controllers\LandingController::class,'editKebutuhanMaterials'])->name('editKebutuhanMaterials')->middleware('auth');
 
 
+
+
+
+Route::get('/persetujuan/kebutuhan_material/cari',[\App\Http\Controllers\LandingController::class,'CariKebutuhanMaterialTanggal'])->name('CariKebutuhanMaterialTanggal')->middleware('auth');
+
+
+
+
+

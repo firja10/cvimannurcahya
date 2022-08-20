@@ -56,6 +56,10 @@ class KebutuhanMaterialController extends Controller
 
         $kebutuhan_material['nama'] = $request->nama;
 
+        $kebutuhan_material['tanggal_masuk'] = date('Y-m-d');
+
+
+        $kebutuhan_material['tanggal_update'] = date('Y-m-d');
 
         $sesuai_kebutuhan = DataMaterial::where('nama', $request->nama)->first();
 
@@ -146,7 +150,7 @@ class KebutuhanMaterialController extends Controller
             'satuan'=>'Meter',
             'jumlah'=>$request->jumlah,
             'harga_beli'=>$request->harga_beli,
-    
+            'tanggal_update'=>date('Y-m-d')
     
         ]);
     
