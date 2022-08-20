@@ -495,6 +495,8 @@
     @yield('content')
 
 
+  
+
 
 
 
@@ -1156,10 +1158,70 @@
       "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
 
-    $('#kebutuhan_material_tabel').DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+
+
+    // $('#kebutuhan_material_tabel').DataTable({
+    //   "responsive": true, "lengthChange": false, "autoWidth": false,
+    //   "buttons": ["copy", "csv", "excel", "pdf", "print"]
+    // }).buttons().container().appendTo('#kebutuhan_material_tabel_wrapper .col-md-6:eq(0)');
+
+
+
+
+
+
+
+
+
+
+
+    var groupColumn = 1;
+    var table = $('#kebutuhan_material_tabel').DataTable({
+        columnDefs: [{ visible: false, targets: groupColumn }],
+        order: [[groupColumn, 'dsc']],
+       buttons: ["copy", "csv", "excel", "pdf", "print"],
+
+        displayLength: 25,
+        drawCallback: function (settings) {
+            var api = this.api();
+            var rows = api.rows({ page: 'current' }).nodes();
+            var last = null;
+ 
+            api
+                .column(groupColumn, { page: 'current' })
+                .data()
+                .each(function (group, i) {
+                    if (last !== group) {
+                        $(rows)
+                            .eq(i)
+                            .before('<tr class="group"><td colspan="6" style="background-color:gray;color:white" >' + group + '</td></tr>');
+ 
+                        last = group;
+                    }
+                });
+        },
+    }).buttons().container().appendTo('#kebutuhan_material_tabel_wrapper .col-md-6:eq(0)');
+;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     $('#repairing_tabel').DataTable({

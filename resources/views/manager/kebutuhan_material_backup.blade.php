@@ -78,7 +78,7 @@ Data Persetujuan Kebutuhan Material
                 @foreach ($kebutuhan_material as $material_key=>$material_value)
 
 
-                {{-- <tr>
+                <tr>
                   <td colspan="7" style = "background-color: gray; color:white">{{$material_key}}</td>
                   <td></td>
                   <td></td>
@@ -86,7 +86,7 @@ Data Persetujuan Kebutuhan Material
                   <td></td>
                   <td></td>
                   <td></td>
-                </tr> --}}
+                </tr>
                 
                 @foreach ($material_value as $item_material)
                   

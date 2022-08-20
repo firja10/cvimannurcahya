@@ -36,3 +36,4 @@ class AddSuplierToDataMaterials extends Migration
         });
     }
 }
+

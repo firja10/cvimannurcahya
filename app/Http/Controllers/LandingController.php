@@ -582,7 +582,19 @@ public function SetujuKebutuhanMaterial()
 {
     # code...
 
-    $kebutuhan_material = DB::table('kebutuhan_materials')->get();
+    $kebutuhan_material = KebutuhanMaterial::orderBy('komponen')->get()->groupBy(function($item){
+
+        return $item->komponen;
+
+    });
+
+
+    // $kebutuhan_material = DB::table('kebutuhan_materials')->get();
+
+    // $kebutuhan_material = DB::table('kebutuhan_materials')
+    // ->select('komponen', DB::raw('count(*) as total'))
+    // ->groupBy('komponen')
+    // ->get();
 
     return view('manager.kebutuhan_material',compact('kebutuhan_material'));
 
@@ -848,7 +860,7 @@ public function updateSS_ROP($id, Request $request)
         'SS'=>$SS,
         // 'd_rop'=>$d_rop,
         'ROP'=>$ROP,
-        'AU'=>$ROP,
+        'AU'=>$AU,
 
 
     ]);
