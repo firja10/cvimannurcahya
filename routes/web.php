@@ -180,5 +180,18 @@ Route::get('/persetujuan/kebutuhan_material/cari',[\App\Http\Controllers\Landing
 
 
 
+Route::patch('/pembelian_material/update_beli/{id}',[\App\Http\Controllers\LandingController::class,'KonfirmasiBeli'])->name('KonfirmasiBeli')->middleware('auth');
+
+
+Route::patch('/kebutuhan_material/perbaikan_komponen/{id}',[\App\Http\Controllers\LandingController::class,'PerbaikanKomponen'])->name('PerbaikanKomponen')->middleware('auth');
+
+Route::patch('/data_repairing/tambah/{id}',[\App\Http\Controllers\LandingController::class,'updateRepairingDilakukan'])->name('updateRepairingDilakukan')->middleware('auth');
+
+
+
+
+Route::patch('/data_repairing/dilakukan/{id}',[\App\Http\Controllers\LandingController::class,'MasukanRepairing'])->name('MasukanRepairing')->middleware('auth');
+
+
 
 

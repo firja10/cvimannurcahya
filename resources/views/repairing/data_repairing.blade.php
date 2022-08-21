@@ -91,7 +91,7 @@ Data Repairing
 
                         <a href="" class = "btn btn-success">Edit</a>
                             <br> <br>
-                        <form action="{{route('kebutuhan_material.destroy', $item_repairing->id)}}" method = "POST" >
+                        <form action="{{route('data_repairing.destroy', $item_repairing->id)}}" method = "POST" >
                             @csrf
                             @method('DELETE')
                             <button class = "btn  btn-danger">Hapus</button>
@@ -102,9 +102,33 @@ Data Repairing
                         @if ($item_repairing->status_verif == 0 || $item_repairing->status_verif == NULL)
                         <button type = "button" class="btn btn-warning">Belum diapprove</button>
                         @elseif($item_repairing->status_verif == 1)
-                        <button type = "button" class="btn btn-primary">Sudah diapprove</button>   
+                        <button type = "button" class="btn btn-primary mb-2">Sudah diapprove</button>  <br>
+                        <button class ="btn btn-warning mt-2">Menunggu Kesesuaian Komponen</button>
+                        
+                        @elseif($item_repairing->status_verif == 2)
+                        <button type = "button" class="btn btn-primary mb-2">Sudah diapprove</button> <br>
+
+                        <form action="{{route('updateRepairingDilakukan', $item_repairing->id)}}" method = "POST">
+                          @csrf
+                          @method('PATCH')
+                          
+                          <button type="submit" class = "btn btn-dark mt-2">Komponen Sesuai, Laporkan bahwa Repairing Telah Dilakukan </button>
+
+
+                        </form>
+
+                      
+
+                        @elseif($item_repairing->status_verif == 3)
+
+                        <button type = "button" class="btn btn-primary mb-2">Sudah diapprove</button> <br>
+
+                        <button class = "btn btn-success mt-2">Repairing Sudah Dilakukan</button>
+
+                        
                         @endif
                      
+
                     </td>
                 </tr>
 

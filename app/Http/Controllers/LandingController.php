@@ -848,13 +848,11 @@ public function updateSS_ROP($id, Request $request)
     $AU = $request->AU;
 
 
-    $SS = $AU*$L*0.5;
+    $SS = $AU*$L*0.1;
 
     $ROP = $SS + ($AU*$L);
 
  
-
-
 
     DataMaterial::where('id', $id)->update([
 
@@ -1019,6 +1017,18 @@ public function UpdateKomponenSesuai($id, Request $request)
     ]);
 
 
+    // $kebutuhan_material_nama = KebutuhanMaterial::where('id', $id)->first();
+
+    // Repairing::where('nama', $kebutuhan_material_nama)->update([
+
+    //     'status_verif'=>2,
+
+    // ]);
+
+    // return redirect('/data_repairing')->with('update_komponen_sesuai', 'Komponen Sudah Sesuai');
+
+
+
     return redirect('/kebutuhan_material')->with('kebutuhan_sesuai', 'Kebutuhan Material Sesuai');
 
     
@@ -1026,6 +1036,59 @@ public function UpdateKomponenSesuai($id, Request $request)
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+public function MasukanRepairing($id, Request $request)
+{
+    # code...
+
+
+    KebutuhanMaterial::where('id', $id)->update([
+
+        'status_verif'=>4,
+
+    ]);
+
+
+
+    
+    $data_repairing = new Repairing();
+
+    $data_repairing['komponen'] = $request->komponen;
+
+    $data_repairing['nama'] = $request->nama;
+    
+    $data_repairing['jenis'] = $request->jenis;
+
+    $data_repairing['satuan'] = $request->satuan;
+
+    $data_repairing['jumlah'] = $request->jumlah;
+
+    $data_repairing['tanggal_masuk'] = date('Y-m-d');
+
+    $data_repairing['tanggal_update'] = date('Y-m-d');
+
+    $data_repairing['status_verif'] = 2;
+
+
+    $data_repairing->save();
+
+
+    return redirect('/data_repairing')->with('masukan_repairing', 'Masukkan Data Repairing');
+
+
+}
+
+
 
 
 
@@ -1048,6 +1111,81 @@ public function UpdateKomponenTidakSesuai($id, Request $request)
 
 
 }
+
+
+
+
+
+public function updateRepairingDilakukan($id, Request $request)
+{
+    # code...
+   
+    Repairing::where('id', $id)->update([
+
+        'status_verif'=>3,
+
+    ]);
+
+
+    $data_material = Repairing::where('id', $id)->first();
+
+
+
+
+    KebutuhanMaterial::where('nama', $data_material->nama)->update([
+
+        'status_verif'=>5,
+
+    ]);
+
+
+    $data_repairing = Repairing::where('id', $id)->first();
+
+    $data_material = DataMaterial::where('nama', $data_repairing->nama)->first();
+
+
+    $update_stock = (int)$data_material->stock - (int)$request->jumlah ;
+
+
+
+
+    DataMaterial::where('nama', $data_repairing->nama)->update([
+
+        'stock'=>$update_stock,
+
+
+    ]);
+
+    
+
+    return redirect('/data_repairing')->with('sukses_update_repairing', 'Repairing Telah Dilakukan');
+    
+}
+
+
+
+
+public function hapusDataRepairing($id)
+{
+    # code...
+
+    $repairing = Repairing::findOrFail($id);
+
+    $repairing->delete();
+
+    return redirect('/data_repairing')->with('data_repairing_dihapus', 'Data Repairing Telah Dihapuskan');
+
+
+
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -1212,6 +1350,75 @@ public function CariKebutuhanMaterialTanggal(Request $request)
 
 
 }
+
+
+
+
+
+
+public function KonfirmasiBeli(Request $request, $id)
+{
+    # code...
+
+
+     PembelianMaterial::where('id', $id)->update([
+
+        'status_verif'=>2
+
+     ]);
+
+
+     $pembelian_material = PembelianMaterial::where('id',$id)->first();
+
+     $data_material_sebelumnya = DataMaterial::where('nama', $pembelian_material->nama)->first();
+
+     $hasil_stok = (int)$data_material_sebelumnya->stock + (int)$request->jumlah;
+
+     DataMaterial::where('nama', $pembelian_material->nama)->update([
+
+        'tanggal_masuk'=>date('Y-m-d'),
+        'stock'=> $hasil_stok,
+
+     ]);
+
+
+
+     return redirect('/pembelian_material')->with('update_pembelian_material', 'Update Pembelian Material');
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+public function PerbaikanKomponen($id, Request $request)
+{
+    # code...
+
+    KebutuhanMaterial::where('id',$id)->update([
+
+        'status_verif'=>1,
+
+    ]);
+
+    return redirect('/kebutuhan_material')->with('perbaikan_komponen', 'Komponen Telah Diperbaiki');
+
+}
+
+
+
+
+
+
+
+
 
 
 

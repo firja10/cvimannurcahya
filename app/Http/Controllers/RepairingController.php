@@ -82,8 +82,15 @@ class RepairingController extends Controller
      * @param  \App\Models\Repairing  $repairing
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Repairing $repairing)
+    public function destroy($id)
     {
         //
+
+        $repairing = Repairing::findOrFail($id);
+
+        $repairing->delete();
+    
+        return redirect('/data_repairing')->with('data_repairing_dihapus', 'Data Repairing Telah Dihapuskan');
+        
     }
 }

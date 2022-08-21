@@ -103,7 +103,7 @@ Data Persetujuan Pembelian Material
                         <button class = "btn btn-warning" type = "submit">Belum Approve Manager</button>
                       </form>
                       
-                      @elseif($item_pembelian_material->status_verif == 1)
+                      @elseif($item_pembelian_material->status_verif == 1 || $item_pembelian_material->status_verif == 2)
 
                       <button class = "btn btn-success" disabled>Sudah Approve Manager</button>   
                       @endif

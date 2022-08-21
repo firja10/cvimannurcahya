@@ -109,7 +109,26 @@ Data Pembelian Material
                         @if ($item_pembelian_material->status_verif == 0 || $item_pembelian_material->status_verif == NULL)
                         <button type = "button" class="btn btn-warning">Belum diapprove</button>
                         @elseif($item_pembelian_material->status_verif == 1)
-                        <button type = "button" class="btn btn-primary">Sudah diapprove</button>   
+                        <button type = "button" class="btn btn-primary mb-2">Sudah diapprove</button>   <br>
+
+                        <form action="{{route('KonfirmasiBeli', $item_pembelian_material->id)}}" method="POST">
+                          @csrf
+                          @method('PATCH')
+
+                          <input type="hidden" name="jumlah" value = {{$item_pembelian_material->jumlah}}>
+
+                          <button type = "submit" class="btn btn-dark mt-2">Konfirmasi Barang sudah dibeli</button>
+
+                        </form>
+
+
+                        
+                        
+                        @elseif($item_pembelian_material->status_verif == 2)
+
+                        <button type = "button" class="btn btn-primary mb-2">Sudah diapprove</button>   <br>
+                        <button type = "button" class="btn btn-success mt-2">Barang sudah dilakukan pembelian</button>
+
                         @endif
 
                     </td>

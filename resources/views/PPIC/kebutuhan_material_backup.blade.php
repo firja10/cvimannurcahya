@@ -36,6 +36,21 @@ Data Kebutuhan Material
 
 
 
+<?php 
+
+$ppic = Auth::user()->is_ppic == 1;
+
+$gudang = Auth::user()->is_gudang == 1;
+
+$manager = Auth::user()->is_manager == 1;
+
+$repairing = Auth::user()->is_repairing == 1;
+
+$pemilik = Auth::user()->is_pemilik == 1;
+
+
+
+?>
 
 
 
@@ -113,48 +128,18 @@ Data Kebutuhan Material
 
 
 
-
-<?php 
-
-$ppic = Auth::user()->is_ppic;
-
-$gudang = Auth::user()->is_bagiangudang;
-
-$manager = Auth::user()->is_manager;
-
-$repairing = Auth::user()->is_bagianrepairing;
-
-$pemilik = Auth::user()->is_pemilik;
-
-
-
-?>
-
-
-{{-- @if ($gudang)
-
-<button>Bagian gudang</button>
-    
-@elseif($repairing)
-
-<button>Bagian Repairing</button>
-
-@else
-
-<button>Bagian Lain</button>
-    
-@endif --}}
-
-
-
                    
 
                         @if ($item_material->status_verif == 0 || $item_material->status_verif == NULL )
                         <button type = "button" class="btn btn-warning mb-2">Belum diapprove Manager</button>
 
-                        @elseif($gudang == 1 && $item_material->status_verif == 1)
+                        @elseif($item_material->status_verif == 1)
                         <button type = "button" class="btn btn-primary disabled mb-2">Sudah diapprove Manager</button>   
 
+
+                            @if ($gudang || $pemilik)
+                                
+                          
 
                                   <form action="{{route('pembelian_material.store', $item_material->id)}}" method="POST">
                                     @csrf
@@ -167,8 +152,7 @@ $pemilik = Auth::user()->is_pemilik;
                                     <button class="btn btn-dark" type = "submit">Laksanakan Pembelian</button>
                                   </form>
 
-                        @elseif($repairing == 1 && $item_material->status_verif == 1)
-                        <button type = "button" class="btn btn-primary disabled mb-2">Sudah diapprove Manager</button>   
+                            @elseif($repairing || $pemilik)
 
                                   <form action="{{route('UpdateKomponenSesuai', $item_material->id)}}" method="POST">
                                     @csrf
@@ -188,11 +172,17 @@ $pemilik = Auth::user()->is_pemilik;
          
 
 
+
+                            @endif
                  
 
-                        @elseif($gudang == 1 && $item_material->status_verif == 3)
+                        @elseif($item_material->status_verif == 3)
 
-            
+                        
+                
+
+
+                              @if ($gudang || $pemilik)
 
                               <form action="{{route('pembelian_material.store', $item_material->id)}}" method="POST">
                                 @csrf
@@ -208,7 +198,7 @@ $pemilik = Auth::user()->is_pemilik;
                               <button type = "button" class="btn btn-success disabled mb-2">Bahan Sesuai</button>  
 
                                   
-                        @elseif($repairing == 1 && $item_material->status_verif == 3)
+                              @elseif($repairing || $pemilik)
 
                               <button class="btn btn-success mt-2 disabled">Komponen Sesuai</button>
 
@@ -225,12 +215,14 @@ $pemilik = Auth::user()->is_pemilik;
                                 <button class = "btn btn-primary mt-2">Lakukan Repairing</button> 
                               </form>
                                   
-                       
+                              @endif
                         
                         
 
-                        @elseif($gudang == 1 && $item_material->status_verif == 2)
+                        @elseif($item_material->status_verif == 2)
 
+
+                            @if ($gudang || $pemilik)
 
                             <form action="{{route('pembelian_material.store', $item_material->id)}}" method="POST">
                               @csrf
@@ -248,7 +240,7 @@ $pemilik = Auth::user()->is_pemilik;
                             <br>
                             <button type = "button" class="btn btn-warning disabled mb-2">Bahan Tidak Sesuai</button>   
                                 
-                        @elseif($repairing == 1 && $item_material->status_verif == 2)
+                            @elseif($repairing || $pemilik)
 
                             <form action="{{route('PerbaikanKomponen', $item_material->id)}}" method="POST">
                               @csrf
@@ -258,23 +250,7 @@ $pemilik = Auth::user()->is_pemilik;
                             </form>
     
                                 
-                      
-
-                        @elseif($item_material->status_verif == 4)
-
-                            <button class="btn btn-success mt-2 disabled">Komponen Sesuai</button>
-    
-                            <button class="btn btn-warning mt-2 disabled">Repairing Sedang Dilakukan</button>
-
-                        @elseif($item_material->status_verif == 5)
-
-                        <button class="btn btn-success mt-2 disabled">Repairing Sudah Dilakukan</button>
-
-                        
-                        @else
-
-
-                             <button class="btn btn-danger mt-2 disabled">Mboten, gak ada</button>
+                            @endif
                         
                     
 
@@ -287,7 +263,34 @@ $pemilik = Auth::user()->is_pemilik;
 
                         <br>
 
-                    
+                        @if ($pemilik || $repairing)
+
+                   
+
+                  
+
+                        @elseif($item_material->status_verif == 4)
+
+                        <button class="btn btn-success mt-2 disabled">Komponen Sesuai</button>
+
+                        <button class="btn btn-warning mt-2 disabled">Repairing Sedang Dilakukan</button>
+
+                 
+
+
+
+
+                        @endif
+                        
+                                   
+
+                        @elseif ($gudang)
+
+
+                            
+                        @endif
+                     
+
                       </center>
 
                     </td>

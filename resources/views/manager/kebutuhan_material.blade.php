@@ -141,6 +141,21 @@ Data Persetujuan Kebutuhan Material
                       <br>
                       <button class = "btn btn-primary mb-2" disabled>Komponen Sesuai</button>  
 
+                      @elseif($item_material->status_verif == 4)
+
+                      
+                      <button class = "btn btn-success mb-2" disabled>Sudah Approve Manager</button>  
+                      <br>
+                      <button class = "btn btn-warning mb-2" disabled>Sedang Dilakukan Repairing</button>  
+
+                      @elseif($item_material->status_verif == 5)
+
+                      
+                      <button class = "btn btn-success mb-2" disabled>Sudah Approve Manager</button>  
+                      <br>
+                      <button class = "btn btn-success mb-2" disabled>Sudah Dilakukan Repairing</button>  
+
+
                       @endif
 
                        

@@ -52,6 +52,9 @@ class PembelianMaterialController extends Controller
         $pembelian_material['jenis'] = $request->jenis;
         $pembelian_material['satuan'] = 'Meter';
         $pembelian_material['jumlah'] = $request->jumlah;
+        $pembelian_material['tanggal_masuk'] = date('Y-m-d');
+        $pembelian_material['tanggal_update'] = date('Y-m-d');
+
      
 
 
@@ -117,6 +120,7 @@ class PembelianMaterialController extends Controller
             'satuan'=>'Meter',
             'jumlah'=>$request->jumlah,
             'harga_beli'=>$request->harga_beli,
+            'tanggal_update'=>date('Y-m-d')
             // 'suplier'=>$request->suplier,
 
 
