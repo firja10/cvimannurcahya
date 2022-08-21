@@ -582,14 +582,14 @@ public function SetujuKebutuhanMaterial()
 {
     # code...
 
-    $kebutuhan_material = KebutuhanMaterial::orderBy('komponen')->get()->groupBy(function($item){
+    // $kebutuhan_material = KebutuhanMaterial::orderBy('komponen')->get()->groupBy(function($item){
 
-        return $item->komponen;
+    //     return $item->komponen;
 
-    });
+    // });
 
 
-    // $kebutuhan_material = DB::table('kebutuhan_materials')->get();
+     $kebutuhan_material = DB::table('kebutuhan_materials')->get();
 
     // $kebutuhan_material = DB::table('kebutuhan_materials')
     // ->select('komponen', DB::raw('count(*) as total'))

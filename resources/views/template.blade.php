@@ -1183,7 +1183,7 @@
     var groupColumn = 1;
     var table = $('#kebutuhan_material_tabel').DataTable({
         columnDefs: [{ visible: false, targets: groupColumn }],
-        order: [[groupColumn, 'dsc']],
+        order: [[groupColumn, 'asc']],
        buttons: ["copy", "csv", "excel", "pdf", "print"],
 
         displayLength: 25,
@@ -1233,7 +1233,8 @@
     $('#data_material_semua_tabel').DataTable({
       responsive: true, lengthChange: false, autoWidth: false,
       buttons: ["copy", "csv", "excel", "pdf", "print"],
-      displayLength:10
+      displayLength:10,
+      
     
     }).buttons().container().appendTo('#data_material_semua_tabel_wrapper .col-md-6:eq(0)');
 
