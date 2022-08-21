@@ -97,10 +97,11 @@ $pemilik = Auth::user()->is_pemilik == 1;
                     <th>Safety Stock</th>
                     <th>Reorder Point</th>
                     <th>Average User</th>
+                    <th>Keterangan</th>
                     <th>Supplier</th>
                     <th>Tanggal Masuk</th>
                     <th>Harga Beli</th>
-                    <th>Keterangan</th>
+                 
                     <th>Aksi</th>
 
                 </tr>
@@ -123,9 +124,7 @@ $pemilik = Auth::user()->is_pemilik == 1;
                     <td>{{$item_material->SS}}</td>
                     <td>{{$item_material->ROP}}</td>
                     <td>{{$item_material->AU}}</td>
-                    <td>{{$item_material->suplier}}</td>
-                    <td>{{$item_material->tanggal_masuk}}</td>
-                    <td>{{$item_material->harga_beli}}</td>
+              
                     <td>
                       <br>
 
@@ -137,11 +136,9 @@ $pemilik = Auth::user()->is_pemilik == 1;
 
                       ?>
 
-
-
             
                       @if ($ROP>=$item_material->stock)
-                      <a href="#" class = "btn btn-warning  mb-2">Warning ! Bahan Baku harus segera dibeli kembali</a>
+                      <a href="#" class = "btn btn-warning  mb-2">Warning ! Bahan Baku harus segera dibeli</a>
                       @elseif($ROP<$item_material->stock)
                       <a href="#" class = "btn btn-dark  mb-2">Bahan Baku Aman</a>   
                       @elseif($ROP == NULL || $SS == NULL) 
@@ -149,6 +146,12 @@ $pemilik = Auth::user()->is_pemilik == 1;
                       @endif
                 
                     </td>
+
+                    <td>{{$item_material->suplier}}</td>
+              
+                    <td>{{$item_material->tanggal_masuk}}</td>
+                    <td>{{$item_material->harga_beli}}</td>
+                  
              
                     <td>
                   
@@ -192,10 +195,12 @@ $pemilik = Auth::user()->is_pemilik == 1;
                     <th>Safety Stock</th>
                     <th>Reorder Point</th>
                     <th>Average User</th>
+                    <th>Keterangan</th>
                     <th>Supplier</th>
+                   
                     <th>Tanggal Masuk</th>
                     <th>Harga Beli</th>
-                    <th>Keterangan</th>
+                 
                     <th>Aksi</th>
                 </tr>
                 </tfoot>
