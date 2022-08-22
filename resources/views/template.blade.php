@@ -1180,7 +1180,7 @@
 
 
 
-    var groupColumn = 1;
+    var groupColumn = 0;
     var table = $('#kebutuhan_material_tabel').DataTable({
         columnDefs: [{ visible: false, targets: groupColumn }],
         order: [[groupColumn, 'asc']],

@@ -72,15 +72,19 @@ Data Persetujuan Kebutuhan Material
             
             <!-- /.card-header -->
             <div class="card-body">
+             
+
+
               <table id="kebutuhan_material_tabel" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>No. </th>
+                  {{-- <th>No. </th> --}}
                   <th>Komponen Turbin</th>
                   <th>Nama Material</th>
                   <th>Jenis</th>
                   <th>Satuan</th>
                   <th>Jumlah</th>
+                  <th>Tanggal Masuk</th>
                   <th>Aksi</th>
                 </tr>
                 </thead>
@@ -90,6 +94,8 @@ Data Persetujuan Kebutuhan Material
                         
                         $no = 1;
                         ?>
+                {{-- @foreach ($kebutuhan_material as $material_key=>$material_value) --}}
+
                 @foreach ($kebutuhan_material as $item_material)
 
 
@@ -103,16 +109,17 @@ Data Persetujuan Kebutuhan Material
                   <td></td>
                 </tr> --}}
                 
-                {{-- @foreach ($material_value as $item_material)
-                   --}}
+                {{-- @foreach ($material_value as $item_material) --}}
+                  
 
                 <tr>
-                    <td><?php echo $no++; ?></td>
+                   
                     <td>{{$item_material->komponen}}</td>
                     <td>{{$item_material->nama}}</td>
                     <td>{{$item_material->jenis}}</td>
                     <td>{{$item_material->satuan}}</td>
                     <td>{{$item_material->jumlah}}</td>
+                    <td>{{$item_material->tanggal_masuk}}</td>
                     <td>
 
 
@@ -139,6 +146,21 @@ Data Persetujuan Kebutuhan Material
                       <br>
                       <button class = "btn btn-primary mb-2" disabled>Komponen Sesuai</button>  
 
+                      @elseif($item_material->status_verif == 4)
+
+                      
+                      <button class = "btn btn-success mb-2" disabled>Sudah Approve Manager</button>  
+                      <br>
+                      <button class = "btn btn-warning mb-2" disabled>Sedang Dilakukan Repairing</button>  
+
+                      @elseif($item_material->status_verif == 5)
+
+                      
+                      <button class = "btn btn-success mb-2" disabled>Sudah Approve Manager</button>  
+                      <br>
+                      <button class = "btn btn-success mb-2" disabled>Sudah Dilakukan Repairing</button>  
+
+
                       @endif
 
                        
@@ -156,16 +178,20 @@ Data Persetujuan Kebutuhan Material
                </tbody>
                 <tfoot>
                 <tr>
-                    <th>No. </th>
+                    {{-- <th>No. </th> --}}
                     <th>Komponen Turbin</th>
                     <th>Nama Material</th>
                     <th>Jenis</th>
                     <th>Satuan</th>
                     <th>Jumlah</th>
+                    <th>Tanggal Masuk</th>
                     <th>Aksi</th>
                 </tr>
                 </tfoot>
               </table>
+
+
+
             </div>
             <!-- /.card-body -->
           </div>

@@ -60,7 +60,7 @@ Data Kebutuhan Material
               <table id="kebutuhan_material_tabel" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>No. </th>
+                  {{-- <th>No. </th> --}}
                   <th>Komponen Turbin</th>
                   <th>Nama Material</th>
                   <th>Jenis</th>
@@ -78,7 +78,7 @@ Data Kebutuhan Material
                 @foreach ($kebutuhan_material as $item_material)
                 
                 <tr>
-                    <td><?php echo $no++; ?></td>
+                    {{-- <td></td> --}}
                     <td>{{$item_material->komponen}}</td>
                     <td>{{$item_material->nama}}</td>
                     <td>{{$item_material->jenis}}</td>
@@ -301,7 +301,7 @@ $pemilik = Auth::user()->is_pemilik;
                </tbody>
                 <tfoot>
                 <tr>
-                    <th>No. </th>
+                    {{-- <th>No. </th> --}}
                     <th>Komponen Turbin</th>
                     <th>Nama Material</th>
                     <th>Jenis</th>
