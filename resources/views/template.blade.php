@@ -365,7 +365,7 @@
 
 
 
-          @if ($gudang || $pemilik)
+          @if ($gudang || $pemilik || $repairing)
               
           <li class="nav-item" id = "pembelian_material">
             <a href="{{url('/pembelian_material')}}" class="nav-link">

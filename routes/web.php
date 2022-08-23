@@ -195,3 +195,25 @@ Route::patch('/data_repairing/dilakukan/{id}',[\App\Http\Controllers\LandingCont
 
 
 
+
+
+Route::post('/pembelian_material/update_beli/{id}',[\App\Http\Controllers\LandingController::class,'LakukanPembelian'])->name('LakukanPembelian')->middleware('auth');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

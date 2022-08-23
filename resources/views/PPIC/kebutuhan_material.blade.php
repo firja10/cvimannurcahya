@@ -164,8 +164,11 @@ $pemilik = Auth::user()->is_pemilik;
                                     <input type="hidden" name="jenis" value = {{$item_material->jenis}}>
                                     <input type="hidden" name="jumlah" value = {{$item_material->jumlah}}>
 
-                                    <button class="btn btn-dark" type = "submit">Laksanakan Pembelian</button>
+                                    <button class="btn btn-dark disabled" type = "submit">Laksanakan Pembelian</button>
                                   </form>
+
+                                  <br>
+                        <button class = "btn btn-warning"> Menunggu Kesesuaian Komponen dari Repairing</button>
 
                         @elseif($repairing == 1 && $item_material->status_verif == 1)
                         <button type = "button" class="btn btn-primary disabled mb-2">Sudah diapprove Manager</button>   
@@ -194,7 +197,7 @@ $pemilik = Auth::user()->is_pemilik;
 
             
 
-                              <form action="{{route('pembelian_material.store', $item_material->id)}}" method="POST">
+                              {{-- <form action="{{route('pembelian_material.store', $item_material->id)}}" method="POST">
                                 @csrf
       
                                 <input type="hidden" name="kode" value = {{$item_material->kode}}>
@@ -203,7 +206,37 @@ $pemilik = Auth::user()->is_pemilik;
                                 <input type="hidden" name="jumlah" value = {{$item_material->jumlah}}>
       
                                 <button class="btn btn-dark" type = "submit">Laksanakan Pembelian</button>
+                              </form> --}}
+
+
+                              <form action="{{route('LakukanPembelian', $item_material->id)}}" method="POST">
+                                @csrf
+      
+                                <input type="hidden" name="kode" value = {{$item_material->kode}}>
+                                <input type="hidden" name="nama" value = {{$item_material->nama}}>
+                                <input type="hidden" name="jenis" value = {{$item_material->jenis}}>
+                                <input type="hidden" name="jumlah" value = {{$item_material->jumlah}}>
+
+                                @if ($item_material->status_beli == 0 || $item_material->status_beli == NULL)
+                                <button class="btn btn-dark" type = "submit">Laksanakan Pembelian</button>
+                                    
+                                @elseif($item_material->status_beli == 2)
+
+                                  <button class="btn btn-dark disabled" type = "submit">Laksanakan Pembelian</button>
+
+                                @elseif($item_material->status_beli == 1)
+
+                                <button class="btn btn-dark disabled" type = "submit">Laksanakan Pembelian</button>
+                                    
+                                @endif
+      
+                              
                               </form>
+
+
+
+
+
                               <br>
                               <button type = "button" class="btn btn-success disabled mb-2">Bahan Sesuai</button>  
 
@@ -213,17 +246,25 @@ $pemilik = Auth::user()->is_pemilik;
                               <button class="btn btn-success mt-2 disabled">Komponen Sesuai</button>
 
 
-                              <form action="{{route('MasukanRepairing', $item_material->id)}}" method="POST">
-                                @csrf
-                                @method('PATCH')
+                            @if ($item_material->status_beli == 2)
+                            <form action="{{route('MasukanRepairing', $item_material->id)}}" method="POST">
+                              @csrf
+                              @method('PATCH')
+                              
+                              <input type="hidden" name="komponen" value="{{$item_material->komponen}}">
+                              <input type="hidden" name="nama" value="{{$item_material->nama}}">
+                              <input type="hidden" name="jenis" value="{{$item_material->jenis}}">
+                              <input type="hidden" name="satuan" value="{{$item_material->satuan}}">
+                              <input type="hidden" name="jumlah" value="{{$item_material->jumlah}}">
+                              <button class = "btn btn-primary mt-2">Lakukan Repairing</button> 
+                            </form>
+                            @elseif($item_material->status_beli == 1)
+
+                            <br>
+                            <button class = "btn btn-warning mt-3 disabled"> Menunggu Dilakukan Pembelian</button>
                                 
-                                <input type="hidden" name="komponen" value="{{$item_material->komponen}}">
-                                <input type="hidden" name="nama" value="{{$item_material->nama}}">
-                                <input type="hidden" name="jenis" value="{{$item_material->jenis}}">
-                                <input type="hidden" name="satuan" value="{{$item_material->satuan}}">
-                                <input type="hidden" name="jumlah" value="{{$item_material->jumlah}}">
-                                <button class = "btn btn-primary mt-2">Lakukan Repairing</button> 
-                              </form>
+                            @endif
+                           
                                   
                        
                         

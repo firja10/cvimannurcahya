@@ -1324,6 +1324,12 @@ public function UpdatePembelianMaterial($id, Request $request)
 
     ]);
 
+
+
+
+
+
+
     return redirect('/kebutuhan_material')->with('sukses_update_kebutuhan_material', 'Kebutuhan Material Sukses Diupdate');
 
 }
@@ -1356,6 +1362,68 @@ public function CariKebutuhanMaterialTanggal(Request $request)
 
 
 
+
+
+public function LakukanPembelian($id,Request $request )
+{
+    # code...
+    $pembelian_material = new PembelianMaterial();
+    $pembelian_material['kode'] = $request->kode;
+    $pembelian_material['nama'] = $request->nama;
+    $pembelian_material['jenis'] = $request->jenis;
+    $pembelian_material['satuan'] = 'Meter';
+    $pembelian_material['jumlah'] = $request->jumlah;
+    $pembelian_material['tanggal_masuk'] = date('Y-m-d');
+    $pembelian_material['tanggal_update'] = date('Y-m-d');
+    
+
+    $butuh_beli_reference = DB::table('kebutuhan_materials')->where('nama', $request->nama)->get();
+
+    // $butuh_beli_reference = KebutuhanMaterial::find ;
+
+    $harga_beli = '';
+
+    $suplier = '';
+
+    foreach ($butuh_beli_reference as $data_butuh) {
+        # code...
+
+        $harga_beli = $data_butuh->harga_beli;
+
+        $suplier = $data_butuh->suplier;
+
+
+    }
+
+
+    $pembelian_material['harga_beli'] = $harga_beli;
+
+    $pembelian_material['suplier'] = $suplier;
+    
+
+    $pembelian_material->save();
+
+
+    
+    KebutuhanMaterial::where('id', $id)->update([
+
+        'status_beli' => 1,
+
+    ]);
+
+    return redirect('/pembelian_material')->with('pembelianmaterial','Data Pembelian Material Telah Ditambahkan');
+
+
+
+}
+
+
+
+
+
+
+
+
 public function KonfirmasiBeli(Request $request, $id)
 {
     # code...
@@ -1367,8 +1435,35 @@ public function KonfirmasiBeli(Request $request, $id)
 
      ]);
 
+     
 
+     
      $pembelian_material = PembelianMaterial::where('id',$id)->first();
+
+    //  $pembelian_material = PembelianMaterial::where('id',$id)->get();
+     
+
+    //  $nama_pembelian_material = '';
+
+    //  foreach ($pembelian_material as $beli_material) {
+    //     # code...
+
+    //     $nama_pembelian_material = $beli_material->nama;
+
+
+    //  }
+
+
+     
+     KebutuhanMaterial::where('nama', $pembelian_material->nama)->update([
+
+        'status_beli'=>2,
+
+     ]);
+
+
+
+
 
      $data_material_sebelumnya = DataMaterial::where('nama', $pembelian_material->nama)->first();
 

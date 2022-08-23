@@ -55,11 +55,8 @@ class PembelianMaterialController extends Controller
         $pembelian_material['tanggal_masuk'] = date('Y-m-d');
         $pembelian_material['tanggal_update'] = date('Y-m-d');
 
-
+      
         
-        
-
-
 
         $butuh_beli_reference = DB::table('kebutuhan_materials')->where('nama', $request->nama)->get();
 
@@ -86,6 +83,12 @@ class PembelianMaterialController extends Controller
         
 
         $pembelian_material->save();
+
+
+
+
+
+
 
         return redirect('/pembelian_material')->with('pembelianmaterial','Data Pembelian Material Telah Ditambahkan');
 

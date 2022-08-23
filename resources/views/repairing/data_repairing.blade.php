@@ -112,7 +112,7 @@ Data Repairing
                           @csrf
                           @method('PATCH')
                           
-                          <button type="submit" class = "btn btn-dark mt-2">Komponen Sesuai, Laporkan bahwa Repairing Telah Dilakukan </button>
+                          <button type="submit" class = "btn btn-dark mt-2">Laporkan bahwa Repairing Telah Dilakukan </button>
 
 
                         </form>

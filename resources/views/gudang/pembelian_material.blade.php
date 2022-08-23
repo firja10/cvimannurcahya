@@ -38,6 +38,21 @@ Data Pembelian Material
 
 
 
+<?php 
+
+
+$gudang = Auth::user()->is_bagiangudang;
+
+$repairing = Auth::user()->is_bagianrepairing;
+
+$pemilik = Auth::user()->is_pemilik;
+
+$ppic = Auth::user()->is_ppic;
+
+
+?>
+
+
 
 
 
@@ -96,14 +111,20 @@ Data Pembelian Material
              
                     <td>
                       <br>
-                        <a href="{{route('pembelian_material.edit', $item_pembelian_material->id)}}" class = "btn btn-success">Edit</a>
-                            <br> <br>
-                        <form action="{{route('pembelian_material.destroy', $item_pembelian_material->id)}}" method = "POST" >
-                            @csrf
-                            @method('DELETE')
-                            <button class = "btn  btn-danger">Hapus</button>
-                        </form>
 
+                      @if ($gudang || $pemilik)
+                      <a href="{{route('pembelian_material.edit', $item_pembelian_material->id)}}" class = "btn btn-success">Edit</a>
+                      <br> <br>
+                  <form action="{{route('pembelian_material.destroy', $item_pembelian_material->id)}}" method = "POST" >
+                      @csrf
+                      @method('DELETE')
+                      <button class = "btn  btn-danger">Hapus</button>
+                  </form>     
+                      @else
+                          
+                      @endif
+
+                     
                         <br>
 
                         @if ($item_pembelian_material->status_verif == 0 || $item_pembelian_material->status_verif == NULL)
