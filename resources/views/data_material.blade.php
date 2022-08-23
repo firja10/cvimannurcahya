@@ -195,16 +195,16 @@ $pemilik = Auth::user()->is_pemilik == 1;
                       
                       $ROP = $item_material->ROP;
                       $SS = $item_material->SS;
-
+                      $AU = $item_material->AU;
 
                       ?>
 
             
                       @if ($ROP>=$item_material->stock)
                       <a href="#" class = "btn btn-warning  mb-2">Warning ! Bahan Baku Tidak Aman</a>
-                      @elseif($ROP<$item_material->stock)
+                      @elseif($ROP<$item_material->stock && ($ROP != NULL || $SS != NULL  || $AU !=NULL))
                       <a href="#" class = "btn btn-dark  mb-2">Bahan Baku aman</a>   
-                      @elseif($ROP == NULL || $SS == NULL) 
+                      @elseif($ROP == NULL || $SS == NULL || $AU == NULL) 
                       <a href="#" class = "btn btn-danger  mb-2">Segera Isi !</a>   
                       @endif
                 
