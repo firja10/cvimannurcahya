@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 25 Agu 2022 pada 01.51
+-- Waktu pembuatan: 25 Agu 2022 pada 13.37
 -- Versi server: 10.4.20-MariaDB
 -- Versi PHP: 7.4.22
 
@@ -55,11 +55,11 @@ CREATE TABLE `data_materials` (
 --
 
 INSERT INTO `data_materials` (`id`, `kode`, `nama`, `kategori`, `link_kategori`, `jenis`, `stock`, `harga_beli`, `suplier`, `tanggal_masuk`, `tanggal_update`, `created_at`, `updated_at`, `d_ss`, `L`, `Z`, `SS`, `d_rop`, `ROP`, `AU`) VALUES
-(1, 'AIS-1015', 'AISI1015', 'Cast Steel', 'CS', 'AISI', 4, 2500000, 'Rakan Pratama Mandiri', '2022-08-24', NULL, '2022-08-07 18:38:04', '2022-08-24 05:35:07', 10, 3, 1.64, 38, 20, 113, 25),
-(2, 'AIS-1016', 'AISI1016', 'Cast Steel', 'CS', 'AISI', 357, 250000, 'Rakan Pratama Mandiri', '2022-08-24', NULL, '2022-08-07 18:43:18', '2022-08-24 06:13:11', NULL, 20, NULL, 100, NULL, 300, 300),
+(1, 'AIS-1015', 'AISI1015', 'Cast Steel', 'CS', 'AISI', 171, 2500000, 'Rakan Pratama Mandiri', '2022-08-25', '2022-08-25', '2022-08-07 18:38:04', '2022-08-25 04:32:52', 10, 3, 1.64, 9, 20, 39, 10),
+(2, 'AIS-1016', 'AISI1016', 'Cast Steel', 'CS', 'AISI', 387, 250000, 'Rakan Pratama Mandiri', '2022-08-25', NULL, '2022-08-07 18:43:18', '2022-08-25 00:19:15', NULL, 20, NULL, 100, NULL, 300, 300),
 (4, 'JIS-1015', 'JIS1015', 'Carbon Steel', 'CBS', 'JIS', 9, 200000, 'Rakan Pratama Mandiri', '2022-08-22', NULL, '2022-08-07 19:51:29', '2022-08-23 01:55:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(5, 'JIS-1016', 'JIS1016', 'Stainless Steel', 'SS', 'JIS', 23, 3000000, 'Rakan Pratama Mandiri', NULL, NULL, '2022-08-07 20:21:12', '2022-08-21 03:03:51', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(6, 'CS-SCP-1', 'Cast Steel SCPH1', 'Cast Steel', 'CS', 'JIS', 35, NULL, 'Rakan Pratama Mandiri', NULL, NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 3, NULL, 0.6, NULL, 7, 2),
+(5, 'JIS-1016', 'JIS1016', 'Stainless Steel', 'SS', 'JIS', 23, 3000000, 'Rakan Pratama Mandiri', '2022-08-25', '2022-08-25', '2022-08-07 20:21:12', '2022-08-21 03:03:51', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(6, 'CS-SCP-1', 'Cast Steel SCPH1', 'Cast Steel', 'CS', 'JIS', 35, 20000, 'Rakan Pratama Mandiri', '2022-08-25', '2022-08-25', '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 3, NULL, 0.6, NULL, 7, 2),
 (7, 'CS-SCR-415', 'Cast Steel SCR415H', 'Cast Steel', 'CS', 'JIS', 47, NULL, 'Rahayu Teknik', NULL, NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 3, NULL, 0.5, NULL, 6, 2),
 (8, 'CS-SCR-420', 'Cast Steel SCR420H', 'Cast Steel', 'CS', 'JIS', 52, NULL, 'Rahayu Teknik', NULL, NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 3, NULL, 0.6, NULL, 7, 2),
 (9, 'CS-SCR-430', 'Cast Steel SCR430H', 'Cast Steel', 'CS', 'JIS', 33, NULL, 'Rahayu Teknik', NULL, NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 3, NULL, 0.5, NULL, 5, 2),
@@ -388,10 +388,20 @@ CREATE TABLE `kebutuhan_materials` (
 --
 
 INSERT INTO `kebutuhan_materials` (`id`, `komponen`, `kode`, `nama`, `jenis`, `satuan`, `jumlah`, `harga_beli`, `suplier`, `tanggal_masuk`, `tanggal_update`, `created_at`, `updated_at`, `status_verif`, `status_repairing`, `status_beli`) VALUES
-(29, 'LABYRINTH PACKING', 'AIS-1016', 'AISI1016', 'AISI', 'Meter', 3, 750000, 'Rakan Pratama Mandiri', '2022-08-23', '2022-08-23', '2022-08-23 02:21:57', '2022-08-24 06:13:10', 5, NULL, 2),
-(30, 'CASING CASE', 'JIS-1015', 'JIS1015', 'JIS', 'Meter', 1, 200000, 'Rakan Pratama Mandiri', '2022-08-24', '2022-08-24', '2022-08-24 05:22:01', '2022-08-24 05:22:01', NULL, NULL, NULL),
-(31, 'TURBINE', 'AIS-1015', 'AISI1015', 'AISI', 'Meter', 2, 5000000, 'Rakan Pratama Mandiri', '2022-08-24', '2022-08-24', '2022-08-24 05:22:45', '2022-08-24 05:35:07', 5, NULL, 2),
-(32, 'NOZZLE', 'AIS-1016', 'AISI1016', 'AISI', 'Meter', 2, 500000, 'Rakan Pratama Mandiri', '2022-08-24', '2022-08-24', '2022-08-24 06:01:06', '2022-08-24 06:13:10', 5, NULL, 2);
+(46, 'STATIONARY BLADE SEAT', 'AIS-1016', 'AISI1016', 'AISI', 'Meter', 2, 500000, 'Rakan Pratama Mandiri', '2022-08-25', '2022-08-25', '2022-08-24 22:23:36', '2022-08-25 00:19:15', 1, 4, 2),
+(47, 'STATIONARY BLADE SEAT', 'AIS-1016', 'AISI1016', 'AISI', 'Meter', 2, 500000, 'Rakan Pratama Mandiri', '2022-08-25', '2022-08-25', '2022-08-24 22:23:52', '2022-08-25 00:19:15', 1, 4, 2),
+(48, 'NOZZLE', 'AIS-1016', 'AISI1016', 'AISI', 'Meter', 5, 1250000, 'Rakan Pratama Mandiri', '2022-08-25', '2022-08-25', '2022-08-24 23:03:13', '2022-08-25 00:19:15', 1, 2, 2),
+(49, 'NOZZLE', 'AIS-1016', 'AISI1016', 'AISI', 'Meter', 3, 750000, 'Rakan Pratama Mandiri', '2022-08-25', '2022-08-25', '2022-08-24 23:03:26', '2022-08-25 00:19:15', 1, 2, 2),
+(50, 'DISC ROTOR', 'AIS-1016', 'AISI1016', 'AISI', 'Meter', 3, 750000, 'Rakan Pratama Mandiri', '2022-08-25', '2022-08-25', '2022-08-25 00:17:24', '2022-08-25 00:22:04', 1, 4, 2),
+(51, 'DISC ROTOR', 'AIS-1016', 'AISI1016', 'AISI', 'Meter', 2, 500000, 'Rakan Pratama Mandiri', '2022-08-25', '2022-08-25', '2022-08-25 00:17:35', '2022-08-25 00:22:04', 1, 4, 2),
+(52, 'CASING CASE', 'AIS-1015', 'AISI1015', 'AISI', 'Meter', 3, 7500000, 'Rakan Pratama Mandiri', '2022-08-25', '2022-08-25', '2022-08-25 00:23:14', '2022-08-25 04:32:27', 1, NULL, 2),
+(53, 'CASING CASE', 'AIS-1015', 'AISI1015', 'AISI', 'Meter', 10, 25000000, 'Rakan Pratama Mandiri', '2022-08-25', '2022-08-25', '2022-08-25 00:28:00', '2022-08-25 04:32:27', 1, NULL, 2),
+(54, 'CASING CASE', 'AIS-1015', 'AISI1015', 'AISI', 'Meter', 150, 375000000, 'Rakan Pratama Mandiri', '2022-08-25', '2022-08-25', '2022-08-25 00:29:46', '2022-08-25 04:32:27', 1, 1, 2),
+(55, 'THRUST BEARING METAL', 'AIS-1015', 'AISI1015', 'AISI', 'Meter', 3, 7500000, 'Rakan Pratama Mandiri', '2022-08-25', '2022-08-25', '2022-08-25 02:18:44', '2022-08-25 04:32:27', 1, NULL, 2),
+(59, 'THRUST BEARING METAL', 'AIS-1016', 'AISI1016', 'AISI', 'Meter', 25, 6250000, 'Rakan Pratama Mandiri', '2022-08-25', '2022-08-25', '2022-08-25 02:37:47', '2022-08-25 03:51:15', 1, NULL, NULL),
+(60, 'PINION', 'AIS-1015', 'AISI1015', 'AISI', 'Meter', 10, 25000000, 'Rakan Pratama Mandiri', '2022-08-25', '2022-08-25', '2022-08-25 03:57:50', '2022-08-25 04:32:27', 1, NULL, 2),
+(61, 'PINION', 'AIS-1015', 'AISI1015', 'AISI', 'Meter', 150, 375000000, 'Rakan Pratama Mandiri', '2022-08-25', '2022-08-25', '2022-08-25 04:06:47', '2022-08-25 04:32:27', 1, NULL, 2),
+(62, 'LABYRINTH PACKING', 'AIS-1015', 'AISI1015', 'AISI', 'Meter', 5, 12500000, 'Rakan Pratama Mandiri', '2022-08-25', '2022-08-25', '2022-08-25 04:29:10', '2022-08-25 04:35:51', 1, 4, 2);
 
 -- --------------------------------------------------------
 
@@ -482,7 +492,49 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (33, '2022_08_20_075843_add_tanggal_to_data_materials', 24),
 (34, '2022_08_20_103535_add_tanggal_to_repairings', 25),
 (35, '2022_08_23_070648_add_status_beli_to_pembelian_materials', 26),
-(36, '2022_08_23_070928_add_status_beli_to_kebutuhan_materials', 26);
+(36, '2022_08_23_070928_add_status_beli_to_kebutuhan_materials', 26),
+(37, '2022_08_25_030928_add_status_repairing_to_repairings', 27),
+(38, '2022_08_25_074920_create_notifikasis_table', 28),
+(39, '2022_08_25_080856_add_status_to_notifikasis', 29),
+(40, '2022_08_25_094723_add_link_to_notifikasis', 30);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `notifikasis`
+--
+
+CREATE TABLE `notifikasis` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `nama_notifikasi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `deskripsi` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `pengirim` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tanggal_kirim` date DEFAULT NULL,
+  `jenis_notifikasi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `status_notif` int(11) DEFAULT NULL,
+  `kebutuhan_material_id` int(11) DEFAULT NULL,
+  `pembelian_material_id` int(11) DEFAULT NULL,
+  `repairing_id` int(11) DEFAULT NULL,
+  `deskripsi_link` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `link_notif` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `notifikasis`
+--
+
+INSERT INTO `notifikasis` (`id`, `nama_notifikasi`, `deskripsi`, `pengirim`, `tanggal_kirim`, `jenis_notifikasi`, `created_at`, `updated_at`, `status_notif`, `kebutuhan_material_id`, `pembelian_material_id`, `repairing_id`, `deskripsi_link`, `link_notif`) VALUES
+(1, 'Tambah Kebutuhan Material AISI1015', 'Telah dilaksanakan Penambahan Kebutuhan Material AISI1015 oleh PPIC Takato Matsuda', 'Takato Matsuda', '2022-08-25', 'Tambah Kebutuhan Material', '2022-08-25 02:19:29', '2022-08-25 03:50:28', 1, NULL, NULL, NULL, NULL, NULL),
+(2, 'Tambah Kebutuhan Material AISI1016', 'Telah dilaksanakan Penambahan Kebutuhan Material AISI1016 oleh PPIC Takato Matsuda', 'Takato Matsuda', '2022-08-25', 'Tambah Kebutuhan Material', '2022-08-25 02:37:47', '2022-08-25 02:37:47', 0, 59, NULL, NULL, NULL, NULL),
+(3, 'Tambah Kebutuhan Material AISI1015', 'Telah dilaksanakan Penambahan Kebutuhan Material AISI1015 oleh PPIC Takato Matsuda', 'Takato Matsuda', '2022-08-25', 'Tambah Kebutuhan Material', '2022-08-25 03:57:50', '2022-08-25 04:27:53', 1, 60, NULL, NULL, 'Berikut merupakan Link untuk melihat Kebutuhan material : ', 'kebutuhan_material'),
+(4, 'Tambah Pembelian Material AISI1015', 'Telah dilaksanakan Penambahan Pembelian Material AISI1015 oleh Bagian Gudang Gallantmon', 'Gallantmon', '2022-08-25', 'Tambah Pembelian Material', '2022-08-25 03:58:22', '2022-08-25 04:03:59', 1, NULL, 47, NULL, 'Berikut merupakan Link untuk melihat Pembelian material : ', 'pembelian_material'),
+(5, 'Tambah Kebutuhan Material AISI1015', 'Telah dilaksanakan Penambahan Kebutuhan Material AISI1015 oleh PPIC Takato Matsuda', 'Takato Matsuda', '2022-08-25', 'Tambah Kebutuhan Material', '2022-08-25 04:06:47', '2022-08-25 04:08:14', 1, 61, NULL, NULL, 'Berikut merupakan Link untuk melihat Kebutuhan material : ', 'persetujuan/kebutuhan_material'),
+(6, 'Tambah Pembelian Material AISI1015', 'Telah dilaksanakan Penambahan Pembelian Material AISI1015 oleh Bagian Gudang Gallantmon', 'Gallantmon', '2022-08-25', 'Tambah Pembelian Material', '2022-08-25 04:08:32', '2022-08-25 04:08:57', 1, NULL, 48, NULL, 'Berikut merupakan Link untuk melihat Pembelian material : ', 'pembelian_material'),
+(7, 'Tambah Kebutuhan Material AISI1015', 'Telah dilaksanakan Penambahan Kebutuhan Material AISI1015 oleh PPIC Takato Matsuda', 'Takato Matsuda', '2022-08-25', 'Tambah Kebutuhan Material', '2022-08-25 04:29:10', '2022-08-25 04:29:41', 1, 62, NULL, NULL, 'Berikut merupakan Link untuk melihat Kebutuhan material : ', 'persetujuan/kebutuhan_material'),
+(8, 'Tambah Pembelian Material AISI1015', 'Telah dilaksanakan Penambahan Pembelian Material AISI1015 oleh Bagian Gudang Gallantmon', 'Gallantmon', '2022-08-25', 'Tambah Pembelian Material', '2022-08-25 04:31:27', '2022-08-25 04:31:40', 1, NULL, 49, NULL, 'Berikut merupakan Link untuk melihat Pembelian material : ', 'persetujuan/pembelian_material'),
+(9, 'Tambah Data Repairing AISI1015', 'Telah dilaksanakan Penambahan Repairing AISI1015 oleh PPIC Omegamon', 'Omegamon', '2022-08-25', 'Tambah Kebutuhan Material', '2022-08-25 04:35:51', '2022-08-25 04:36:02', 1, NULL, NULL, 24, 'Berikut merupakan Link untuk melihat Data Repairing : ', 'data_repairing');
 
 -- --------------------------------------------------------
 
@@ -526,7 +578,26 @@ CREATE TABLE `pembelian_materials` (
 INSERT INTO `pembelian_materials` (`id`, `kode`, `nama`, `jenis`, `satuan`, `jumlah`, `harga_beli`, `suplier`, `tanggal_masuk`, `tanggal_update`, `status_verif`, `created_at`, `updated_at`, `status_beli`) VALUES
 (28, 'AIS-1016', 'AISI1016', 'AISI', 'Meter', 3, 750000, 'Rakan Pratama Mandiri', '2022-08-23', '2022-08-23', 2, '2022-08-23 02:22:54', '2022-08-23 02:23:27', NULL),
 (29, 'AIS-1015', 'AISI1015', 'AISI', 'Meter', 2, 5000000, 'Rakan Pratama Mandiri', '2022-08-24', '2022-08-24', 2, '2022-08-24 05:33:49', '2022-08-24 05:34:19', NULL),
-(30, 'AIS-1016', 'AISI1016', 'AISI', 'Meter', 2, 500000, 'Rakan Pratama Mandiri', '2022-08-24', '2022-08-24', 2, '2022-08-24 06:09:49', '2022-08-24 06:12:33', NULL);
+(30, 'AIS-1016', 'AISI1016', 'AISI', 'Meter', 2, 500000, 'Rakan Pratama Mandiri', '2022-08-24', '2022-08-24', 2, '2022-08-24 06:09:49', '2022-08-24 06:12:33', NULL),
+(31, 'AIS-1016', 'AISI1016', 'AISI', 'Meter', 3, 750000, 'Rakan Pratama Mandiri', '2022-08-25', '2022-08-25', 1, '2022-08-24 17:50:17', '2022-08-24 17:52:30', NULL),
+(32, 'AIS-1016', 'AISI1016', 'AISI', 'Meter', 3, 750000, 'Rakan Pratama Mandiri', '2022-08-25', '2022-08-25', 2, '2022-08-24 17:58:55', '2022-08-24 18:07:10', NULL),
+(33, 'AIS-1016', 'AISI1016', 'AISI', 'Meter', 2, 500000, 'Rakan Pratama Mandiri', '2022-08-25', '2022-08-25', 2, '2022-08-24 21:12:39', '2022-08-24 21:13:08', NULL),
+(34, 'AIS-1016', 'AISI1016', 'AISI', 'Meter', 3, 750000, 'Rakan Pratama Mandiri', '2022-08-25', '2022-08-25', 2, '2022-08-24 21:25:18', '2022-08-24 21:26:08', NULL),
+(35, 'AIS-1016', 'AISI1016', 'AISI', 'Meter', 3, 750000, 'Rakan Pratama Mandiri', '2022-08-25', '2022-08-25', 2, '2022-08-24 22:09:25', '2022-08-24 22:10:15', NULL),
+(36, 'AIS-1016', 'AISI1016', 'AISI', 'Meter', 2, 750000, 'Rakan Pratama Mandiri', '2022-08-25', '2022-08-25', 2, '2022-08-24 22:09:37', '2022-08-24 22:10:10', NULL),
+(37, 'AIS-1016', 'AISI1016', 'AISI', 'Meter', 2, 500000, 'Rakan Pratama Mandiri', '2022-08-25', '2022-08-25', 2, '2022-08-24 22:27:57', '2022-08-24 22:28:39', NULL),
+(38, 'AIS-1016', 'AISI1016', 'AISI', 'Meter', 2, 500000, 'Rakan Pratama Mandiri', '2022-08-25', '2022-08-25', 2, '2022-08-24 22:28:08', '2022-08-24 22:28:33', NULL),
+(39, 'AIS-1016', 'AISI1016', 'AISI', 'Meter', 3, 750000, 'Rakan Pratama Mandiri', '2022-08-25', '2022-08-25', 2, '2022-08-24 23:07:04', '2022-08-24 23:09:01', NULL),
+(40, 'AIS-1016', 'AISI1016', 'AISI', 'Meter', 5, 750000, 'Rakan Pratama Mandiri', '2022-08-25', '2022-08-25', 2, '2022-08-24 23:07:13', '2022-08-24 23:08:57', NULL),
+(41, 'AIS-1016', 'AISI1016', 'AISI', 'Meter', 2, 500000, 'Rakan Pratama Mandiri', '2022-08-25', '2022-08-25', 2, '2022-08-25 00:18:04', '2022-08-25 00:19:14', NULL),
+(42, 'AIS-1016', 'AISI1016', 'AISI', 'Meter', 3, 500000, 'Rakan Pratama Mandiri', '2022-08-25', '2022-08-25', 2, '2022-08-25 00:18:17', '2022-08-25 00:19:07', NULL),
+(43, 'AIS-1015', 'AISI1015', 'AISI', 'Meter', 3, 7500000, 'Rakan Pratama Mandiri', '2022-08-25', '2022-08-25', 2, '2022-08-25 00:25:07', '2022-08-25 00:25:47', NULL),
+(44, 'AIS-1015', 'AISI1015', 'AISI', 'Meter', 10, 25000000, 'Rakan Pratama Mandiri', '2022-08-25', '2022-08-25', 2, '2022-08-25 00:28:35', '2022-08-25 00:29:03', NULL),
+(45, 'AIS-1015', 'AISI1015', 'AISI', 'Meter', 150, 375000000, 'Rakan Pratama Mandiri', '2022-08-25', '2022-08-25', 2, '2022-08-25 00:30:08', '2022-08-25 00:30:41', NULL),
+(46, 'AIS-1015', 'AISI1015', 'AISI', 'Meter', 3, 7500000, 'Rakan Pratama Mandiri', '2022-08-25', '2022-08-25', NULL, '2022-08-25 03:55:15', '2022-08-25 03:55:15', NULL),
+(47, 'AIS-1015', 'AISI1015', 'AISI', 'Meter', 10, 25000000, 'Rakan Pratama Mandiri', '2022-08-25', '2022-08-25', 2, '2022-08-25 03:58:22', '2022-08-25 04:04:23', NULL),
+(48, 'AIS-1015', 'AISI1015', 'AISI', 'Meter', 150, 375000000, 'Rakan Pratama Mandiri', '2022-08-25', '2022-08-25', 2, '2022-08-25 04:08:32', '2022-08-25 04:15:55', NULL),
+(49, 'AIS-1015', 'AISI1015', 'AISI', 'Meter', 5, 12500000, 'Rakan Pratama Mandiri', '2022-08-25', '2022-08-25', 2, '2022-08-25 04:31:27', '2022-08-25 04:32:27', NULL);
 
 -- --------------------------------------------------------
 
@@ -564,18 +635,23 @@ CREATE TABLE `repairings` (
   `keterangan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `status_verif` int(11) DEFAULT NULL
+  `status_verif` int(11) DEFAULT NULL,
+  `status_repairing` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data untuk tabel `repairings`
 --
 
-INSERT INTO `repairings` (`id`, `komponen`, `nama`, `jenis`, `satuan`, `jumlah`, `tanggal_masuk`, `tanggal_update`, `keterangan`, `created_at`, `updated_at`, `status_verif`) VALUES
-(6, 'NOZZLE', 'JIS1015', 'JIS', 'Meter', 2, '2022-08-23', '2022-08-23', NULL, '2022-08-23 01:54:34', '2022-08-23 01:55:00', 3),
-(7, 'LABYRINTH PACKING', 'AISI1016', 'AISI', 'Meter', 3, '2022-08-23', '2022-08-23', NULL, '2022-08-23 02:23:45', '2022-08-23 02:23:54', 3),
-(8, 'TURBINE', 'AISI1015', 'AISI', 'Meter', 2, '2022-08-24', '2022-08-24', NULL, '2022-08-24 05:34:29', '2022-08-24 05:35:07', 3),
-(9, 'NOZZLE', 'AISI1016', 'AISI', 'Meter', 2, '2022-08-24', '2022-08-24', NULL, '2022-08-24 06:13:05', '2022-08-24 06:13:10', 3);
+INSERT INTO `repairings` (`id`, `komponen`, `nama`, `jenis`, `satuan`, `jumlah`, `tanggal_masuk`, `tanggal_update`, `keterangan`, `created_at`, `updated_at`, `status_verif`, `status_repairing`) VALUES
+(17, 'STATIONARY BLADE SEAT', 'AISI1016', 'AISI', 'Meter', 2, '2022-08-25', '2022-08-25', NULL, '2022-08-24 22:28:51', '2022-08-24 22:29:41', 2, 1),
+(18, 'STATIONARY BLADE SEAT', 'AISI1016', 'AISI', 'Meter', 2, '2022-08-25', '2022-08-25', NULL, '2022-08-24 22:29:02', '2022-08-24 22:29:41', 2, 1),
+(19, 'NOZZLE', 'AISI1016', 'AISI', 'Meter', 3, '2022-08-25', '2022-08-25', NULL, '2022-08-24 23:09:08', '2022-08-24 23:39:44', 2, 2),
+(20, 'NOZZLE', 'AISI1016', 'AISI', 'Meter', 5, '2022-08-25', '2022-08-25', NULL, '2022-08-24 23:09:12', '2022-08-24 23:39:44', 2, 2),
+(21, 'DISC ROTOR', 'AISI1016', 'AISI', 'Meter', 2, '2022-08-25', '2022-08-25', NULL, '2022-08-25 00:19:35', '2022-08-25 00:22:04', 2, 1),
+(22, 'DISC ROTOR', 'AISI1016', 'AISI', 'Meter', 3, '2022-08-25', '2022-08-25', NULL, '2022-08-25 00:19:40', '2022-08-25 00:22:04', 2, 1),
+(23, 'CASING CASE', 'AISI1015', 'AISI', 'Meter', 150, '2022-08-25', '2022-08-25', NULL, '2022-08-25 00:31:07', '2022-08-25 00:31:07', 2, NULL),
+(24, 'LABYRINTH PACKING', 'AISI1015', 'AISI', 'Meter', 5, '2022-08-25', '2022-08-25', NULL, '2022-08-25 04:33:05', '2022-08-25 04:35:51', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -682,6 +758,12 @@ ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeks untuk tabel `notifikasis`
+--
+ALTER TABLE `notifikasis`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `password_resets`
 --
 ALTER TABLE `password_resets`
@@ -758,7 +840,7 @@ ALTER TABLE `kategori_materials`
 -- AUTO_INCREMENT untuk tabel `kebutuhan_materials`
 --
 ALTER TABLE `kebutuhan_materials`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT untuk tabel `komponen_turbins`
@@ -770,13 +852,19 @@ ALTER TABLE `komponen_turbins`
 -- AUTO_INCREMENT untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+
+--
+-- AUTO_INCREMENT untuk tabel `notifikasis`
+--
+ALTER TABLE `notifikasis`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT untuk tabel `pembelian_materials`
 --
 ALTER TABLE `pembelian_materials`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT untuk tabel `personal_access_tokens`
@@ -788,7 +876,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT untuk tabel `repairings`
 --
 ALTER TABLE `repairings`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT untuk tabel `suppliers`
