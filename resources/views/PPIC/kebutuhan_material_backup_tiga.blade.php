@@ -128,29 +128,41 @@ $pemilik = Auth::user()->is_pemilik;
                     <td>{{$item_material->tanggal_masuk}}</td>
                     
                     <td>
-                      <?php
+                   
+                     <?php   $keterangan = DB::table('data_materials')->where('nama', $item_material->nama)->first(); ?> 
+
+
+                    @if (!empty($keterangan->ROP) || !empty($keterangan->AU) || !empty($keterangan->SS) || !empty($keterangan->stock))
+
+                   <?php
                         
-                        $keterangan = DB::table('data_materials')->where('nama', $item_material->nama)->first();
+                      
 
-                        $R_O_P = $keterangan->ROP;
+                        $Reorder = $keterangan->ROP;
 
-                        $A_U = $keterangan->AU;
+                        $Average = $keterangan->AU;
 
-                        $S_S = $keterangan->SS;
+                        $Safety = $keterangan->SS;
 
-                        $stoc_k = $keterangan->stock;
+                        $stok = $keterangan->stock;
 
                         ?>
 
-                      @if ($R_O_P >= $keterangan->stock)
+                   
+                        
+               
+                      @if ($Reorder >= $keterangan->stock)
                       <a href="#" class = "btn btn-warning  mb-2">Warning ! Bahan Baku Tidak Mencukupi</a>
-                      @elseif($R_O_P<$keterangan->stock && ($R_O_P != NULL || $S_S != NULL  || $A_U !=NULL))
+                      @elseif($Reorder<$keterangan->stock && ($Reorder != NULL || $Safety != NULL  || $Average !=NULL))
                       <a href="#" class = "btn btn-dark  mb-2">Bahan Baku Tersedia</a>   
-                      @elseif($R_O_P == NULL || $S_S == NULL || $A_U == NULL) 
+                      @elseif($Reorder == NULL || $Safety == NULL || $Average == NULL) 
                       <a href="#" class = "btn btn-danger  mb-2">Segera Isi, Safety Stock / Reorder Point / Average User Masih Kosong</a>   
                       @endif
 
-
+                    @else
+                        
+                    @endif
+  
 
                     </td>
 
@@ -219,20 +231,42 @@ $pemilik = Auth::user()->is_pemilik;
                           @csrf
 
                           <input type="hidden" name="kode" value = {{$item_material->kode}}>
-                          {{-- <input type="hidden" name="nama" value = {{$item_material->nama}}> --}}
-                          <textarea name="nama" id="nama" cols="30" rows="10" hidden>{{$item_material->nama}}</textarea>
+                          <input type="hidden" name="nama" value = {{$item_material->nama}}>
                           <input type="hidden" name="jenis" value = {{$item_material->jenis}}>
                           <input type="hidden" name="jumlah" value = {{$item_material->jumlah}}>
 
-                          @if ($R_O_P>=$stoc_k)
-                          <button class="btn btn-dark" type = "submit">Laksanakan Pemesanan</button>                
-                          @elseif($R_O_P<$stoc_k && ($R_O_P != NULL || $S_S != NULL  || $A_U !=NULL))
-                          <button class="btn btn-dark disabled" type = "submit">Laksanakan Pemesanan</button>     
-                          @elseif($R_O_P == NULL || $S_S == NULL || $A_U == NULL)
+
+
+                          @if (!empty($keterangan->ROP) || !empty($keterangan->AU) || !empty($keterangan->SS) || !empty($keterangan->stock))
+
+                          <?php
+                               
+                             
+       
+                               $Reorder = $keterangan->ROP;
+       
+                               $Average = $keterangan->AU;
+       
+                               $Safety = $keterangan->SS;
+       
+                               $stok = $keterangan->stock;
+       
+                               ?>
+
+
+                          @if ($Reorder>=$stok)
+                          <button class="btn btn-dark" type = "submit">Laksanakan Pembelian</button>                
+                          @elseif($Reorder<$stok && ($Reorder != NULL || $Safety != NULL  || $Average !=NULL))
+                          <button class="btn btn-dark disabled" type = "submit">Laksanakan Pembelian</button>     
+                          @elseif($Reorder == NULL || $Safety == NULL || $Average == NULL)
                           <button class="btn btn-danger disabled">Segera isi bahan baku</button> 
 
                           @endif
               
+                        @else
+
+                        @endif
+
                         </form>
                         
                       @elseif($item_material->status_beli == 1)
@@ -256,14 +290,40 @@ $pemilik = Auth::user()->is_pemilik;
                         {{-- <button type = "submit" class = "btn btn-dark">Ajukan ke Repairing</button> --}}
 
 
-                        @if ($R_O_P>=$stoc_k)
+
+                        @if (!empty($keterangan->ROP) || !empty($keterangan->AU) || !empty($keterangan->SS) || !empty($keterangan->stock))
+
+                        <?php
+                             
+                           
+     
+                             $Reorder = $keterangan->ROP;
+     
+                             $Average = $keterangan->AU;
+     
+                             $Safety = $keterangan->SS;
+     
+                             $stok = $keterangan->stock;
+     
+                             ?>
+
+
+
+
+                        @if ($Reorder>=$stok)
                         <button class="btn btn-dark disabled" type = "submit">Ajukan Repairing</button>                
-                        @elseif($R_O_P<$stoc_k && ($R_O_P != NULL || $S_S != NULL  || $A_U !=NULL))
+                        @elseif($Reorder<$stok && ($Reorder != NULL || $Safety != NULL  || $Average !=NULL))
                         <button class="btn btn-dark" type = "submit">Ajukan Repairing</button>     
-                        @elseif($R_O_P == NULL || $S_S == NULL || $A_U == NULL)
+                        @elseif($Reorder == NULL || $Safety == NULL || $Average == NULL)
                         <button class="btn btn-danger disabled">Segera isi bahan baku</button> 
 
                         @endif
+
+
+                      @else
+
+
+                      @endif
 
 
                       </form>

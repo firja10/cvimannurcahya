@@ -1,0 +1,7 @@
+1. SS, ROP, AU jadi Integer - Ceklis
+2. Data diupdate sebener mungkin Sereal mungkin yang dulu2 (Update ROP, SS, Harga Beli, dll) - Ceklis
+3. Bahan Baku jadi "Bahan Baku Tersedia" - Ceklis
+4. Kata "Segera Isi" dibuat jadi "Segera Isi" + sesuaikan dengan Keterangan yang kosongnya - Ceklis
+5. Data Dummy yang 4 di atas dihilangkan - Ceklis
+6. Data SS / ROP yang float (0.) diganti jadi integer (dibulatkan ke 1 baik itu 0.1 hingga 0.9) - Ceklis
+7. 

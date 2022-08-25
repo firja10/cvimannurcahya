@@ -91,7 +91,27 @@ Data Persetujuan Pembelian Material
                     <td>{{$item_pembelian_material->jenis}}</td>
                     <td>{{$item_pembelian_material->satuan}}</td>
                     <td>{{$item_pembelian_material->jumlah}}</td>
-                    <td>{{$item_pembelian_material->harga_beli}}</td>
+                    {{-- <td>{{$item_pembelian_material->harga_beli}}</td> --}}
+                    
+                    <td>
+
+                      <?php
+                        
+                      $harga_beli = $item_pembelian_material->harga_beli;
+
+                      $jumlah = $item_pembelian_material->jumlah;
+
+                      $harga_total = $harga_beli*$jumlah;
+
+                      $total_rupiah = 'Rp. ' . number_format($harga_total,2,',','.');
+
+                      echo $total_rupiah;
+
+
+                      ?>
+
+                    </td>
+
                     <td>{{$item_pembelian_material->suplier}}</td>
              
                     <td>

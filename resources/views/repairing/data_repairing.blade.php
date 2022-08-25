@@ -238,7 +238,7 @@ Data Repairing
 
 <?php
 
-$status_repair = $item_repairing->status_repairing;
+// $status_repair = $item_repairing->status_repairing;
 
 ?>
 
@@ -336,7 +336,7 @@ $status_repair = $item_repairing->status_repairing;
 <script>
 
 
-var status_repair = '<?php $status_repair ?>'; 
+var status_repair =  
 
   var groupColumn_repair = 1;
       var table_repair = $('#repairing_tabel').DataTable({

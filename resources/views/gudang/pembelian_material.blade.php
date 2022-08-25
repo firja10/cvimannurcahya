@@ -106,7 +106,25 @@ $ppic = Auth::user()->is_ppic;
                     <td>{{$item_pembelian_material->jenis}}</td>
                     <td>{{$item_pembelian_material->satuan}}</td>
                     <td>{{$item_pembelian_material->jumlah}}</td>
-                    <td>{{$item_pembelian_material->harga_beli}}</td>
+                    {{-- <td>{{$item_pembelian_material->harga_beli}}</td> --}}
+                    <td>
+
+                      <?php
+                        
+                        $harga_beli = $item_pembelian_material->harga_beli;
+
+                        $jumlah = $item_pembelian_material->jumlah;
+
+                        $harga_total = $harga_beli*$jumlah;
+
+                        $total_rupiah = 'Rp. ' . number_format($harga_total,2,',','.');
+
+                        echo $total_rupiah;
+
+
+                        ?>
+                      
+                    </td>
                     <td>{{$item_pembelian_material->suplier}}</td>
              
                     <td>
@@ -138,7 +156,7 @@ $ppic = Auth::user()->is_ppic;
 
                           <input type="hidden" name="jumlah" value = {{$item_pembelian_material->jumlah}}>
 
-                          <button type = "submit" class="btn btn-dark mt-2">Konfirmasi Barang sudah dibeli</button>
+                          <button type = "submit" class="btn btn-dark mt-2">Sedang dilakukan pemesanan, klik jika sudah sampai</button>
 
                         </form>
 
@@ -148,7 +166,7 @@ $ppic = Auth::user()->is_ppic;
                         @elseif($item_pembelian_material->status_verif == 2)
 
                         <button type = "button" class="btn btn-primary mb-2">Sudah diapprove</button>   <br>
-                        <button type = "button" class="btn btn-success mt-2">Barang sudah dilakukan pembelian</button>
+                        <button type = "button" class="btn btn-success mt-2">Pesanan sudah sampai</button>
 
                         @endif
 

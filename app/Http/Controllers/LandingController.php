@@ -1581,13 +1581,15 @@ public function LakukanPembelian($id,Request $request )
     // $butuh_beli_reference = DB::table('kebutuhan_materials')->where('nama', $request->nama)->get();
 
 
-    $butuh_beli_reference = DB::table('kebutuhan_materials')->where('nama', $request->nama)->get();
+    $butuh_beli_reference = DB::table('data_materials')->where('nama', $request->nama)->get();
+
+    // $butuh_beli_reference = DB::table('data_materials')->where('nama', $request->nama)->first();
 
     // $butuh_beli_reference = KebutuhanMaterial::find ;
 
-    $harga_beli = '';
+    // $harga_beli = '';
 
-    $suplier = '';
+    // $suplier = '';
 
     foreach ($butuh_beli_reference as $data_butuh) {
         # code...
@@ -1596,13 +1598,18 @@ public function LakukanPembelian($id,Request $request )
 
         $suplier = $data_butuh->suplier;
 
+        $pembelian_material['harga_beli'] = $harga_beli;
+
+        $pembelian_material['suplier'] = $suplier;
+
 
     }
 
 
-    $pembelian_material['harga_beli'] = $harga_beli;
+    // $pembelian_material['harga_beli'] = $butuh_beli_reference->harga_beli;
 
-    $pembelian_material['suplier'] = $suplier;
+    // $pembelian_material['suplier'] = $butuh_beli_reference->suplier;
+
     
 
     $pembelian_material->save();
