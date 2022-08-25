@@ -1197,14 +1197,21 @@
       "responsive": true,
     });
 
-    $('#pembelian_material_tabel').DataTable({
+    // $('#pembelian_material_tabel').DataTable({
+    //   "responsive": true, "lengthChange": false, "autoWidth": false,
+    // });
+
+
+    $("#pembelian_material_tabel").DataTable({
       "responsive": true, "lengthChange": false, "autoWidth": false,
-    });
+      "buttons": ["copy", "csv", "excel", "pdf", "print"]
+    }).buttons().container().appendTo('#pembelian_material_tabel_wrapper .col-md-6:eq(0)');
+
 
     $("#komponen_turbin_tabel").DataTable({
       "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+      "buttons": ["copy", "csv", "excel", "pdf", "print"]
+    }).buttons().container().appendTo('#komponen_turbin_tabel_wrapper .col-md-6:eq(0)');
 
 
 
