@@ -58,7 +58,7 @@ Data Repairing
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-              <table id="example1" class="table table-bordered table-striped">
+              <table id="repairing_tabel" class="table table-bordered table-striped">
                 <thead>
                 <tr>
                   <th>No. </th>
@@ -67,7 +67,8 @@ Data Repairing
                   <th>Jenis</th>
                   <th>Satuan</th>
                   <th>Jumlah</th>
-                  <th>Keterangan</th>
+                  <th>Tanggal Masuk</th>
+                  {{-- <th>Keterangan</th> --}}
                   <th>Aksi</th>
                 </tr>
                 </thead>
@@ -77,7 +78,7 @@ Data Repairing
                         
                         $no = 1;
                         ?>
-                @foreach ($repairing as $item_repairing)
+                @foreach ($repairing->reverse() as $item_repairing)
                 
                 <tr>
                     <td><?php echo $no++; ?></td>
@@ -86,7 +87,8 @@ Data Repairing
                     <td>{{$item_repairing->jenis}}</td>
                     <td>{{$item_repairing->satuan}}</td>
                     <td>{{$item_repairing->jumlah}}</td>
-                    <td>{{$item_repairing->keterangan}}</td>
+                    <td>{{$item_repairing->tanggal_masuk}}</td>
+                    {{-- <td>{{$item_repairing->keterangan}}</td> --}}
                     <td>
 
                         <a href="" class = "btn btn-success">Edit</a>
@@ -99,7 +101,50 @@ Data Repairing
 
                         <br>
 
-                        @if ($item_repairing->status_verif == 0 || $item_repairing->status_verif == NULL)
+
+
+                        @if ($item_repairing->status_repairing == NULL || $item_repairing->status_repairing == 0)
+
+                        <form action="{{route('UpdateKomponenSesuai', $item_repairing->komponen)}}" method="POST" id = "update_sesuai">
+                          @csrf
+                          @method('PATCH')
+
+                      
+                          <button class="btn btn-dark mt-2 mb-2" type = "submit">Lapor Komponen Sesuai</button>
+                        </form>
+
+                        
+                        <form action="{{route('UpdateKomponenTidakSesuai', $item_repairing->komponen)}}" method="POST" id = "update_tidak_sesuai">
+                          @csrf
+                          @method('PATCH')
+                          <button class="btn btn-warning" type = "submit">Lapor Komponen Tidak Sesuai, Minta Koreksi</button>
+                        </form> 
+
+                            
+                        @elseif($item_repairing->status_repairing == 2)
+
+                        <button class = "btn btn-success">Komponen Sesuai</button>
+
+                        <form action="{{route('updateRepairingDilakukan', $item_repairing->komponen)}}" method = "POST" id = "update_repairing">
+                          @csrf
+                          @method('PATCH')
+                          <button class = "btn btn-dark mt-3" type = "submit">Konfirmasi Repairing Telah Dilakukan</button>
+                        </form>
+
+                        @elseif($item_repairing->status_repairing == 1)
+
+                        <button class = "btn btn-success">Repairing Telah Dilakukan</button>
+                            
+                        @endif
+
+
+
+
+
+
+
+
+                        {{-- @if ($item_repairing->status_verif == 0 || $item_repairing->status_verif == NULL)
                         <button type = "button" class="btn btn-warning">Belum diapprove</button>
                         @elseif($item_repairing->status_verif == 1)
                         <button type = "button" class="btn btn-primary mb-2">Sudah diapprove</button>  <br>
@@ -127,7 +172,11 @@ Data Repairing
 
                         
                         @endif
-                     
+                      --}}
+
+
+
+
 
                     </td>
                 </tr>
@@ -146,7 +195,8 @@ Data Repairing
                     <th>Jenis</th>
                     <th>Satuan</th>
                     <th>Jumlah</th>
-                    <th>Keterangan</th>
+                    <th>Tanggal Masuk</th>
+                    {{-- <th>Keterangan</th> --}}
                     <th>Aksi</th>
                 </tr>
                 </tfoot>
@@ -184,4 +234,369 @@ Data Repairing
 
 
 
+@push('script')
 
+<?php
+
+$status_repair = $item_repairing->status_repairing;
+
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+  
+    var groupColumn_repair = 1;
+        var table_repair = $('#repairing_tabel').DataTable({
+            columnDefs: [{ visible: false, targets: groupColumn_repair }],
+            // order: [[groupColumn, 'asc']],
+            order: [[6, 'desc']],
+           buttons: ["copy", "csv", "excel", "pdf", "print"],
+    
+            displayLength: 25,
+          
+            drawCallback: function (settings) {
+                var api_repair = this.api();
+                var rows_repair = api_repair.rows({ page: 'current' }).nodes();
+                var last_repair = null;
+     
+                api_repair
+                    .column(groupColumn_repair, { page: 'current' })
+                    .data()
+                    .each(function (group, i) {
+                        if (last_repair !== group) {
+  
+                          $(rows_repair)
+                                .eq(i)
+                                .before('<tr class="group"><td colspan="7" style="background-color:gray;color:white;" class = "justify-content-center" >' + '<h6 class = "mr-auto">' + group + '</h6> (Untuk konfirmasi, silakan klik tombol Lapor Komponen Sesuai / Konfirmasi Repairing Telah Dilakukan pada salah satu data di bawah)</td></tr>');
+     
+                            last_repair = group;
+  
+  
+                          }
+                    });
+            },
+        }).buttons().container().appendTo('#repairing_tabel_wrapper .col-md-6:eq(0)');
+  
+        
+  
+    
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{-- 
+
+<script>
+
+
+var status_repair = '<?php $status_repair ?>'; 
+
+  var groupColumn_repair = 1;
+      var table_repair = $('#repairing_tabel').DataTable({
+          columnDefs: [{ visible: false, targets: groupColumn_repair }],
+          // order: [[groupColumn, 'asc']],
+          order: [[5, 'desc']],
+         buttons: ["copy", "csv", "excel", "pdf", "print"],
+  
+          displayLength: 25,
+        
+          drawCallback: function (settings) {
+              var api_repair = this.api();
+              var rows_repair = api_repair.rows({ page: 'current' }).nodes();
+              var last_repair = null;
+   
+              api_repair
+                  .column(groupColumn_repair, { page: 'current' })
+                  .data()
+                  .each(function (group, i) {
+                      if (last_repair !== group) {
+
+                        if(status_repair == NULL || status_repair == 0)
+                        {
+                          $(rows_repair)
+                              .eq(i)
+                              .before('<tr class="group"><td colspan="7" style="background-color:gray;color:white;" class = "justify-content-center" >' + '<h6 class = "mr-auto">' + group + '</h6>' + '<button class = "btn btn-primary" form = "update_sesuai">Komponen Sesuai</button> &nbsp; <button class = "btn btn-danger" form = "update_tidak_sesuai">Komponen Tidak Sesuai</button> </td></tr>');
+   
+                          last_repair = group;
+                        }
+                      
+
+                        else if(status_repair == 2) {
+
+                          $(rows_repair)
+                              .eq(i)
+                              .before('<tr class="group"><td colspan="7" style="background-color:gray;color:white;" class = "justify-content-center" >' + '<h6 class = "mr-auto">' + group + '</h6>' + '<button class = "btn btn-warning" form = "update_repairing">Lakukan Repairing</button> </td></tr>');
+   
+                          last_repair = group;
+
+
+                        }
+
+                        else if(status_repair == 1)
+                        {
+
+
+                          $(rows_repair)
+                              .eq(i)
+                              .before('<tr class="group"><td colspan="7" style="background-color:gray;color:white;" class = "justify-content-center" >' + '<h6 class = "mr-auto">' + group + '</h6>' + '<button class = "btn btn-dark">Repairing Telah Dilakukan</button> </td></tr>');
+   
+                          last_repair = group;
+
+
+                        }
+
+
+
+
+                        }
+                  });
+          },
+      }).buttons().container().appendTo('#repairing_tabel_wrapper .col-md-6:eq(0)');
+
+      
+
+  
+  </script> --}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{-- 
+@if ($item_repairing->status_repairing == NULL || $item_repairing->status_repairing == 0)
+
+
+
+
+
+
+<script>
+
+
+  var groupColumn_repair = 1;
+      var table_repair = $('#repairing_tabel').DataTable({
+          columnDefs: [{ visible: false, targets: groupColumn_repair }],
+          // order: [[groupColumn, 'asc']],
+          order: [[5, 'desc']],
+         buttons: ["copy", "csv", "excel", "pdf", "print"],
+  
+          displayLength: 25,
+          drawCallback: function (settings) {
+              var api_repair = this.api();
+              var rows_repair = api_repair.rows({ page: 'current' }).nodes();
+              var last_repair = null;
+   
+              api_repair
+                  .column(groupColumn_repair, { page: 'current' })
+                  .data()
+                  .each(function (group, i) {
+                      if (last_repair !== group) {
+                          $(rows_repair)
+                              .eq(i)
+                              .before('<tr class="group"><td colspan="7" style="background-color:gray;color:white;" class = "justify-content-center" >' + '<h6 class = "mr-auto">' + group + '</h6>' + '<button class = "btn btn-primary" form = "update_sesuai">Komponen Sesuai</button> &nbsp; <button class = "btn btn-danger" form = "update_tidak_sesuai">Komponen Tidak Sesuai</button> </td></tr>');
+   
+                          last_repair = group;
+                      }
+                  });
+          },
+      }).buttons().container().appendTo('#repairing_tabel_wrapper .col-md-6:eq(0)');
+
+      
+
+  
+  </script>
+
+
+
+
+
+
+
+
+    
+@elseif($item_repairing->status_repairing == 2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+
+  var groupColumn_repair = 1;
+      var table_repair = $('#repairing_tabel').DataTable({
+          columnDefs: [{ visible: false, targets: groupColumn_repair }],
+          // order: [[groupColumn, 'asc']],
+          order: [[5, 'desc']],
+         buttons: ["copy", "csv", "excel", "pdf", "print"],
+  
+          displayLength: 25,
+          drawCallback: function (settings) {
+              var api_repair = this.api();
+              var rows_repair = api_repair.rows({ page: 'current' }).nodes();
+              var last_repair = null;
+   
+              api_repair
+                  .column(groupColumn_repair, { page: 'current' })
+                  .data()
+                  .each(function (group, i) {
+                      if (last_repair !== group) {
+                          $(rows_repair)
+                              .eq(i)
+                              .before('<tr class="group"><td colspan="7" style="background-color:gray;color:white;" class = "justify-content-center" >' + '<h6 class = "mr-auto">' + group + '</h6>' + '<button class = "btn btn-dark" form = "update_reparing">Lakukan Repairing</button></td></tr>');
+   
+                          last_repair = group;
+                      }
+                  });
+          },
+      }).buttons().container().appendTo('#repairing_tabel_wrapper .col-md-6:eq(0)');
+
+      
+
+  
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+@elseif($item_repairing->status_repairing == 1)
+
+
+
+
+
+
+
+<script>
+
+
+
+
+
+
+
+  var groupColumn_repair = 1;
+      var table_repair = $('#repairing_tabel').DataTable({
+          columnDefs: [{ visible: false, targets: groupColumn_repair }],
+          // order: [[groupColumn, 'asc']],
+          order: [[5, 'desc']],
+         buttons: ["copy", "csv", "excel", "pdf", "print"],
+  
+          displayLength: 25,
+          drawCallback: function (settings) {
+              var api_repair = this.api();
+              var rows_repair = api_repair.rows({ page: 'current' }).nodes();
+              var last_repair = null;
+   
+              api_repair
+                  .column(groupColumn_repair, { page: 'current' })
+                  .data()
+                  .each(function (group, i) {
+                      if (last_repair !== group) {
+                          $(rows_repair)
+                              .eq(i)
+
+
+                              .before('<tr class="group"><td colspan="7" style="background-color:gray;color:white;" class = "justify-content-center" >' + '<h6 class = "mr-auto">' + group + '</h6>' + '<button class = "btn btn-dark">Repairing Berhasil Dilakukan</button></td></tr>');
+
+
+                              
+                          last_repair = group;
+                      }
+                  });
+          },
+      }).buttons().container().appendTo('#repairing_tabel_wrapper .col-md-6:eq(0)');
+
+      
+
+  
+  </script>
+
+
+
+
+
+    
+@endif --}}
+
+
+
+    
+@endpush

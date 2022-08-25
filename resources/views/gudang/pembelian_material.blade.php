@@ -97,7 +97,7 @@ $ppic = Auth::user()->is_ppic;
                         
                         $no = 1;
                         ?>
-                @foreach ($pembelian_material as $item_pembelian_material)
+                @foreach ($pembelian_material->reverse() as $item_pembelian_material)
                 
                 <tr>
                     <td><?php echo $no++; ?></td>

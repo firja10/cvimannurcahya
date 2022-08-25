@@ -77,7 +77,7 @@ Data Repairing
                         
                         $no = 1;
                         ?>
-                @foreach ($repairing as $item_repairing)
+                @foreach ($repairing->reverse() as $item_repairing)
                 
                 <tr>
                     <td><?php echo $no++; ?></td>

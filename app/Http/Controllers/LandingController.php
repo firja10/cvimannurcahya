@@ -10,6 +10,9 @@ use App\Models\DataMaterial;
 use App\Models\KebutuhanMaterial;
 use App\Models\PembelianMaterial;
 use App\Models\Repairing;
+use Illuminate\Support\Facades\Auth;
+
+use App\Models\Notifikasi;
 
 class LandingController extends Controller
 {
@@ -848,7 +851,7 @@ public function updateSS_ROP($id, Request $request)
     $AU = $request->AU;
 
 
-    $SS = $AU*$L*0.1;
+    $SS = $AU*$L*0.3;
 
     $ROP = $SS + ($AU*$L);
 
@@ -1006,26 +1009,87 @@ public function HapusDataMaterials($id)
 
 
 
-public function UpdateKomponenSesuai($id, Request $request)
+// public function UpdateKomponenSesuai($id, Request $request)
+// {
+//     # code...
+
+
+
+//     Repairing::where('id', $id)->update([
+
+//         'status_repairing'=>2,
+
+//     ]);
+
+
+//     $kebutuhan_material_nama = Repairing::where('id', $id)->first();
+
+// //     KebutuhanMaterial::where('nama', $kebutuhan_material_nama->nama)->update([
+
+// //        'status_repairing'=>2,
+
+// //  ]);
+
+
+// DB::table('kebutuhan_materials')->where('nama', $kebutuhan_material_nama->nama)->update([
+
+//     'status_repairing'=>2,
+
+// ]);
+
+//     return redirect('/data_repairing')->with('update_komponen_sesuai', 'Komponen Sudah Sesuai');
+
+
+
+//     return redirect('/kebutuhan_material')->with('kebutuhan_sesuai', 'Kebutuhan Material Sesuai');
+
+    
+
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public function UpdateKomponenSesuai($komponen, Request $request)
 {
     # code...
 
-    KebutuhanMaterial::where('id', $id)->update([
 
-        'status_verif'=>3,
+
+    Repairing::where('komponen', $komponen)->update([
+
+        'status_repairing'=>2,
 
     ]);
 
 
-    // $kebutuhan_material_nama = KebutuhanMaterial::where('id', $id)->first();
+    $kebutuhan_material_nama = Repairing::where('komponen', $komponen)->first();
 
-    // Repairing::where('nama', $kebutuhan_material_nama)->update([
+//     KebutuhanMaterial::where('nama', $kebutuhan_material_nama->nama)->update([
 
-    //     'status_verif'=>2,
+//        'status_repairing'=>2,
 
-    // ]);
+//  ]);
 
-    // return redirect('/data_repairing')->with('update_komponen_sesuai', 'Komponen Sudah Sesuai');
+
+DB::table('kebutuhan_materials')->where('komponen', $kebutuhan_material_nama->komponen)->update([
+
+    'status_repairing'=>2,
+
+]);
+
+    return redirect('/data_repairing')->with('update_komponen_sesuai', 'Komponen Sudah Sesuai');
 
 
 
@@ -1033,9 +1097,29 @@ public function UpdateKomponenSesuai($id, Request $request)
 
     
 
-
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1054,9 +1138,21 @@ public function MasukanRepairing($id, Request $request)
 
     KebutuhanMaterial::where('id', $id)->update([
 
-        'status_verif'=>4,
+        // 'status_verif'=>4,
+
+        'status_repairing'=>1,
 
     ]);
+
+
+
+//     $kebutuhan_material_nama = KebutuhanMaterial::where('id', $id)->first();
+
+//     Repairing::where('nama', $kebutuhan_material_nama)->update([
+
+//         'status_repairing'=>2,
+ 
+//   ]);
 
 
 
@@ -1083,7 +1179,22 @@ public function MasukanRepairing($id, Request $request)
     $data_repairing->save();
 
 
-    return redirect('/data_repairing')->with('masukan_repairing', 'Masukkan Data Repairing');
+    $is_repairing = Auth::user()->is_repairing == 1;
+
+    if ($is_repairing) {
+        # code...
+ 
+        return redirect('/data_repairing')->with('masukan_repairing', 'Masukkan Data Repairing');
+
+    }
+
+    else{
+
+        return redirect('/kebutuhan_material')->with('masukan_repairing', 'Masukkan Data Repairing');
+
+    }
+
+ 
 
 
 }
@@ -1099,11 +1210,19 @@ public function UpdateKomponenTidakSesuai($id, Request $request)
     # code...
 
 
-    KebutuhanMaterial::where('id', $id)->update([
+    Repairing::where('id', $id)->update([
 
-        'status_verif'=>2,
+        'status_repairing'=>3,
 
     ]);
+
+    $kebutuhan_material_nama = DB::table('kebutuhan_materials')->where('id',$id)->first();
+
+    KebutuhanMaterial::where('nama', $kebutuhan_material_nama->nama)->update([
+
+        'status_repairing'=>3,
+ 
+  ]);
 
 
     return redirect('/kebutuhan_material')->with('kebutuhan_tidak_sesuai', 'Kebutuhan Material Tidak Sesuai');
@@ -1116,45 +1235,127 @@ public function UpdateKomponenTidakSesuai($id, Request $request)
 
 
 
-public function updateRepairingDilakukan($id, Request $request)
+public function updateRepairingDilakukan($komponen, Request $request)
 {
     # code...
    
-    Repairing::where('id', $id)->update([
+    Repairing::where('komponen', $komponen)->update([
 
-        'status_verif'=>3,
-
-    ]);
-
-
-    $data_material = Repairing::where('id', $id)->first();
-
-
-
-
-    KebutuhanMaterial::where('nama', $data_material->nama)->update([
-
-        'status_verif'=>5,
+        'status_repairing'=>1,
 
     ]);
 
 
-    $data_repairing = Repairing::where('id', $id)->first();
-
-    $data_material = DataMaterial::where('nama', $data_repairing->nama)->first();
-
-
-    $update_stock = (int)$data_material->stock - (int)$request->jumlah ;
 
 
 
 
-    DataMaterial::where('nama', $data_repairing->nama)->update([
+    
 
-        'stock'=>$update_stock,
 
+
+
+    $data_material = Repairing::where('komponen', $komponen)->first();
+
+
+
+    $data_material_khusus = Repairing::where('komponen', $komponen)->first();
+
+
+
+    KebutuhanMaterial::where('komponen', $data_material->komponen)->update([
+
+        'status_repairing'=>4,
 
     ]);
+
+
+    $data_repairing = Repairing::where('komponen', $komponen)->get();
+
+
+
+foreach ($data_repairing as $repairings) {
+    # code...
+
+
+
+
+
+
+    $data_material = DataMaterial::where('nama', $repairings->nama)->get();
+
+
+
+    foreach ($data_material as $materials) {
+        # code...
+
+
+        $update_stock = (int)$materials->stock - (int)$request->jumlah ;
+
+
+        $material_update = DataMaterial::find($materials->id);
+
+        $material_update['stock'] = $update_stock;
+
+        $material_update->save();
+
+    }
+
+
+    
+
+
+
+
+}
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // KIRIM NOTIFIKASI 
+
+        $notifikasi = new Notifikasi();
+
+        $notifikasi['nama_notifikasi'] = 'Tambah Data Repairing ' . $data_material_khusus->nama;
+        $notifikasi['deskripsi'] = 'Telah dilaksanakan Penambahan Repairing '. $data_material_khusus->nama .' oleh PPIC ' . Auth::user()->name . '';
+        $notifikasi['pengirim'] = Auth::user()->name;
+        $notifikasi['tanggal_kirim'] = date('Y-m-d');
+        $notifikasi['jenis_notifikasi'] = 'Tambah Kebutuhan Material';        
+        $notifikasi['status_notif'] = 0;      
+        $notifikasi['repairing_id'] = $data_material_khusus->id;
+
+        $notifikasi['link_notif'] = "data_repairing";
+
+
+        $notifikasi['deskripsi_link'] = "Berikut merupakan Link untuk melihat Data Repairing : ";
+
+
+        $notifikasi->save();
+
+  
+
+
+   
+
+
+
+
+    // DataMaterial::where('nama', $data_repairing->nama)->update([
+
+    //     'stock'=>$update_stock,
+
+
+    // ]);
 
     
 
@@ -1377,6 +1578,9 @@ public function LakukanPembelian($id,Request $request )
     $pembelian_material['tanggal_update'] = date('Y-m-d');
     
 
+    // $butuh_beli_reference = DB::table('kebutuhan_materials')->where('nama', $request->nama)->get();
+
+
     $butuh_beli_reference = DB::table('kebutuhan_materials')->where('nama', $request->nama)->get();
 
     // $butuh_beli_reference = KebutuhanMaterial::find ;
@@ -1403,6 +1607,29 @@ public function LakukanPembelian($id,Request $request )
 
     $pembelian_material->save();
 
+
+
+    
+        
+        // KIRIM NOTIFIKASI 
+
+        $notifikasi = new Notifikasi();
+
+        $notifikasi['nama_notifikasi'] = 'Tambah Pembelian Material ' . $request->nama;
+        $notifikasi['deskripsi'] = 'Telah dilaksanakan Penambahan Pembelian Material '. $request->nama .' oleh Bagian Gudang ' . Auth::user()->name . '';
+        $notifikasi['pengirim'] = Auth::user()->name;
+        $notifikasi['tanggal_kirim'] = date('Y-m-d');
+        $notifikasi['jenis_notifikasi'] = 'Tambah Pembelian Material';        
+        $notifikasi['status_notif'] = 0;      
+        $notifikasi['pembelian_material_id'] = $pembelian_material->id;
+
+        $notifikasi['link_notif'] = "persetujuan/pembelian_material";
+
+
+        $notifikasi['deskripsi_link'] = "Berikut merupakan Link untuk melihat Pembelian material : ";
+
+
+        $notifikasi->save();
 
     
     KebutuhanMaterial::where('id', $id)->update([
@@ -1438,7 +1665,10 @@ public function KonfirmasiBeli(Request $request, $id)
      
 
      
-     $pembelian_material = PembelianMaterial::where('id',$id)->first();
+    //  $pembelian_material = PembelianMaterial::where('id',$id)->first();
+
+
+    $pembelian_material = PembelianMaterial::findOrFail($id);
 
     //  $pembelian_material = PembelianMaterial::where('id',$id)->get();
      
@@ -1506,6 +1736,59 @@ public function PerbaikanKomponen($id, Request $request)
     return redirect('/kebutuhan_material')->with('perbaikan_komponen', 'Komponen Telah Diperbaiki');
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+public function notifikasi_all()
+{
+    # code...
+
+    $notifikasi = Notifikasi::all();
+
+    return view('manager.notifikasi',compact('notifikasi'));
+
+
+}
+
+
+
+
+
+public function notifikasi_id($id)
+{
+    # code...
+
+    $notifikasi = Notifikasi::findOrFail($id);
+
+    Notifikasi::where('id', $id)->update([
+
+        'status_notif'=>1,
+
+    ]);
+
+    return view('manager.notifikasi_id',compact('notifikasi'));
+
+
+}
+
+
+
+
+// public function notif_dibaca($id)
+// {
+//     # code...
+
+
+// }
 
 
 

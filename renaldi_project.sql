@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 21 Agu 2022 pada 14.04
+-- Waktu pembuatan: 25 Agu 2022 pada 01.51
 -- Versi server: 10.4.20-MariaDB
 -- Versi PHP: 7.4.22
 
@@ -55,9 +55,9 @@ CREATE TABLE `data_materials` (
 --
 
 INSERT INTO `data_materials` (`id`, `kode`, `nama`, `kategori`, `link_kategori`, `jenis`, `stock`, `harga_beli`, `suplier`, `tanggal_masuk`, `tanggal_update`, `created_at`, `updated_at`, `d_ss`, `L`, `Z`, `SS`, `d_rop`, `ROP`, `AU`) VALUES
-(1, 'AIS-1015', 'AISI1015', 'Cast Steel', 'CS', 'AISI', 2, 2500000, 'Rakan Pratama Mandiri', '2022-08-02', NULL, '2022-08-07 18:38:04', '2022-08-19 05:34:34', 10, 3, 1.64, 38, 20, 113, 25),
-(2, 'AIS-1016', 'AISI1016', 'Cast Steel', 'CS', 'AISI', 352, 250000, 'Rakan Pratama Mandiri', '2022-08-20', NULL, '2022-08-07 18:43:18', '2022-08-20 19:48:04', NULL, 20, NULL, 100, NULL, 300, 300),
-(4, 'JIS-1015', 'JIS1015', 'Carbon Steel', 'CBS', 'JIS', 3, 200000, 'Rakan Pratama Mandiri', '2022-08-20', NULL, '2022-08-07 19:51:29', '2022-08-21 03:14:32', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(1, 'AIS-1015', 'AISI1015', 'Cast Steel', 'CS', 'AISI', 4, 2500000, 'Rakan Pratama Mandiri', '2022-08-24', NULL, '2022-08-07 18:38:04', '2022-08-24 05:35:07', 10, 3, 1.64, 38, 20, 113, 25),
+(2, 'AIS-1016', 'AISI1016', 'Cast Steel', 'CS', 'AISI', 357, 250000, 'Rakan Pratama Mandiri', '2022-08-24', NULL, '2022-08-07 18:43:18', '2022-08-24 06:13:11', NULL, 20, NULL, 100, NULL, 300, 300),
+(4, 'JIS-1015', 'JIS1015', 'Carbon Steel', 'CBS', 'JIS', 9, 200000, 'Rakan Pratama Mandiri', '2022-08-22', NULL, '2022-08-07 19:51:29', '2022-08-23 01:55:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (5, 'JIS-1016', 'JIS1016', 'Stainless Steel', 'SS', 'JIS', 23, 3000000, 'Rakan Pratama Mandiri', NULL, NULL, '2022-08-07 20:21:12', '2022-08-21 03:03:51', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (6, 'CS-SCP-1', 'Cast Steel SCPH1', 'Cast Steel', 'CS', 'JIS', 35, NULL, 'Rakan Pratama Mandiri', NULL, NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 3, NULL, 0.6, NULL, 7, 2),
 (7, 'CS-SCR-415', 'Cast Steel SCR415H', 'Cast Steel', 'CS', 'JIS', 47, NULL, 'Rahayu Teknik', NULL, NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 3, NULL, 0.5, NULL, 6, 2),
@@ -379,15 +379,19 @@ CREATE TABLE `kebutuhan_materials` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `status_verif` int(11) DEFAULT NULL,
-  `status_repairing` int(11) DEFAULT NULL
+  `status_repairing` int(11) DEFAULT NULL,
+  `status_beli` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data untuk tabel `kebutuhan_materials`
 --
 
-INSERT INTO `kebutuhan_materials` (`id`, `komponen`, `kode`, `nama`, `jenis`, `satuan`, `jumlah`, `harga_beli`, `suplier`, `tanggal_masuk`, `tanggal_update`, `created_at`, `updated_at`, `status_verif`, `status_repairing`) VALUES
-(19, 'LABYRINTH PACKING', 'JIS-1015', 'JIS1015', 'JIS', 'Meter', 1, 200000, 'Rakan Pratama Mandiri', '2022-08-21', '2022-08-21', '2022-08-21 03:13:46', '2022-08-21 03:14:32', 5, NULL);
+INSERT INTO `kebutuhan_materials` (`id`, `komponen`, `kode`, `nama`, `jenis`, `satuan`, `jumlah`, `harga_beli`, `suplier`, `tanggal_masuk`, `tanggal_update`, `created_at`, `updated_at`, `status_verif`, `status_repairing`, `status_beli`) VALUES
+(29, 'LABYRINTH PACKING', 'AIS-1016', 'AISI1016', 'AISI', 'Meter', 3, 750000, 'Rakan Pratama Mandiri', '2022-08-23', '2022-08-23', '2022-08-23 02:21:57', '2022-08-24 06:13:10', 5, NULL, 2),
+(30, 'CASING CASE', 'JIS-1015', 'JIS1015', 'JIS', 'Meter', 1, 200000, 'Rakan Pratama Mandiri', '2022-08-24', '2022-08-24', '2022-08-24 05:22:01', '2022-08-24 05:22:01', NULL, NULL, NULL),
+(31, 'TURBINE', 'AIS-1015', 'AISI1015', 'AISI', 'Meter', 2, 5000000, 'Rakan Pratama Mandiri', '2022-08-24', '2022-08-24', '2022-08-24 05:22:45', '2022-08-24 05:35:07', 5, NULL, 2),
+(32, 'NOZZLE', 'AIS-1016', 'AISI1016', 'AISI', 'Meter', 2, 500000, 'Rakan Pratama Mandiri', '2022-08-24', '2022-08-24', '2022-08-24 06:01:06', '2022-08-24 06:13:10', 5, NULL, 2);
 
 -- --------------------------------------------------------
 
@@ -476,7 +480,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (31, '2022_08_20_075301_add_tanggal_to_pembelian_materials', 23),
 (32, '2022_08_20_075705_create_data_material_masuks_table', 24),
 (33, '2022_08_20_075843_add_tanggal_to_data_materials', 24),
-(34, '2022_08_20_103535_add_tanggal_to_repairings', 25);
+(34, '2022_08_20_103535_add_tanggal_to_repairings', 25),
+(35, '2022_08_23_070648_add_status_beli_to_pembelian_materials', 26),
+(36, '2022_08_23_070928_add_status_beli_to_kebutuhan_materials', 26);
 
 -- --------------------------------------------------------
 
@@ -509,18 +515,18 @@ CREATE TABLE `pembelian_materials` (
   `tanggal_update` date DEFAULT NULL,
   `status_verif` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `status_beli` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data untuk tabel `pembelian_materials`
 --
 
-INSERT INTO `pembelian_materials` (`id`, `kode`, `nama`, `jenis`, `satuan`, `jumlah`, `harga_beli`, `suplier`, `tanggal_masuk`, `tanggal_update`, `status_verif`, `created_at`, `updated_at`) VALUES
-(12, 'JIS-1015', 'JIS1015', 'JIS', 'Meter', 2, 200000, 'Rakan Pratama Mandiri', NULL, NULL, 2, '2022-08-18 19:05:18', '2022-08-20 11:32:34'),
-(14, 'JIS-1015', 'JIS1015', 'JIS', 'Meter', 1, 100000, 'Rakan Pratama Mandiri', NULL, NULL, 2, '2022-08-18 19:38:15', '2022-08-20 11:36:28'),
-(15, 'AIS-1016', 'AISI1016', 'AISI', 'Meter', 2, 500000, 'Rakan Pratama Mandiri', NULL, NULL, 2, '2022-08-19 05:51:15', '2022-08-20 11:37:10'),
-(16, 'AIS-1016', 'AISI1016', 'AISI', 'Meter', 2, 500000, 'Rakan Pratama Mandiri', '2022-08-20', '2022-08-20', NULL, '2022-08-20 16:41:54', '2022-08-20 16:41:54');
+INSERT INTO `pembelian_materials` (`id`, `kode`, `nama`, `jenis`, `satuan`, `jumlah`, `harga_beli`, `suplier`, `tanggal_masuk`, `tanggal_update`, `status_verif`, `created_at`, `updated_at`, `status_beli`) VALUES
+(28, 'AIS-1016', 'AISI1016', 'AISI', 'Meter', 3, 750000, 'Rakan Pratama Mandiri', '2022-08-23', '2022-08-23', 2, '2022-08-23 02:22:54', '2022-08-23 02:23:27', NULL),
+(29, 'AIS-1015', 'AISI1015', 'AISI', 'Meter', 2, 5000000, 'Rakan Pratama Mandiri', '2022-08-24', '2022-08-24', 2, '2022-08-24 05:33:49', '2022-08-24 05:34:19', NULL),
+(30, 'AIS-1016', 'AISI1016', 'AISI', 'Meter', 2, 500000, 'Rakan Pratama Mandiri', '2022-08-24', '2022-08-24', 2, '2022-08-24 06:09:49', '2022-08-24 06:12:33', NULL);
 
 -- --------------------------------------------------------
 
@@ -560,6 +566,16 @@ CREATE TABLE `repairings` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `status_verif` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `repairings`
+--
+
+INSERT INTO `repairings` (`id`, `komponen`, `nama`, `jenis`, `satuan`, `jumlah`, `tanggal_masuk`, `tanggal_update`, `keterangan`, `created_at`, `updated_at`, `status_verif`) VALUES
+(6, 'NOZZLE', 'JIS1015', 'JIS', 'Meter', 2, '2022-08-23', '2022-08-23', NULL, '2022-08-23 01:54:34', '2022-08-23 01:55:00', 3),
+(7, 'LABYRINTH PACKING', 'AISI1016', 'AISI', 'Meter', 3, '2022-08-23', '2022-08-23', NULL, '2022-08-23 02:23:45', '2022-08-23 02:23:54', 3),
+(8, 'TURBINE', 'AISI1015', 'AISI', 'Meter', 2, '2022-08-24', '2022-08-24', NULL, '2022-08-24 05:34:29', '2022-08-24 05:35:07', 3),
+(9, 'NOZZLE', 'AISI1016', 'AISI', 'Meter', 2, '2022-08-24', '2022-08-24', NULL, '2022-08-24 06:13:05', '2022-08-24 06:13:10', 3);
 
 -- --------------------------------------------------------
 
@@ -742,7 +758,7 @@ ALTER TABLE `kategori_materials`
 -- AUTO_INCREMENT untuk tabel `kebutuhan_materials`
 --
 ALTER TABLE `kebutuhan_materials`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT untuk tabel `komponen_turbins`
@@ -754,13 +770,13 @@ ALTER TABLE `komponen_turbins`
 -- AUTO_INCREMENT untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT untuk tabel `pembelian_materials`
 --
 ALTER TABLE `pembelian_materials`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT untuk tabel `personal_access_tokens`
@@ -772,7 +788,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT untuk tabel `repairings`
 --
 ALTER TABLE `repairings`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT untuk tabel `suppliers`

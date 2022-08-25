@@ -95,62 +95,91 @@
         </div>
       </li>
 
+
+
+
+
+
+      <?php 
+      $manager = Auth::user()->is_manager == 1;      
+      $notifikasi = DB::table('notifikasis')->where('status_notif',0)->get();
+
+      $notif_count = DB::table('notifikasis')->where('status_notif',0)->count();
+      ?>
+
+      @if ($manager)
+          
+  
+
       <!-- Messages Dropdown Menu -->
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="far fa-comments"></i>
-          <span class="badge badge-danger navbar-badge">3</span>
+          <span class="badge badge-danger navbar-badge"><?php echo $notif_count; ?></span>
         </a>
+
+
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <a href="#" class="dropdown-item">
-            <!-- Message Start -->
-            <div class="media">
-              <img src="{{asset('bootstrap/dist/img/user1-128x128.jpg')}}" alt="User Avatar" class="img-size-50 mr-3 img-circle">
-              <div class="media-body">
-                <h3 class="dropdown-item-title">
-                  Brad Diesel
-                  <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
-                </h3>
-                <p class="text-sm">Call me whenever you can...</p>
-                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-              </div>
-            </div>
-            <!-- Message End -->
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <!-- Message Start -->
-            <div class="media">
-              <img src="{{asset('bootstrap/dist/img/user8-128x128.jpg')}}" alt="User Avatar" class="img-size-50 img-circle mr-3">
-              <div class="media-body">
-                <h3 class="dropdown-item-title">
-                  John Pierce
-                  <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
-                </h3>
-                <p class="text-sm">I got your message bro</p>
-                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-              </div>
-            </div>
-            <!-- Message End -->
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <!-- Message Start -->
-            <div class="media">
-              <img src="{{asset('bootstrap/dist/img/user3-128x128.jpg')}}" alt="User Avatar" class="img-size-50 img-circle mr-3">
-              <div class="media-body">
-                <h3 class="dropdown-item-title">
-                  Nora Silvester
-                  <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
-                </h3>
-                <p class="text-sm">The subject goes here</p>
-                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-              </div>
-            </div>
-            <!-- Message End -->
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+        
+    
+
+
+@foreach ($notifikasi->reverse() as $item_notif)
+
+
+
+
+
+<a href="{{route('notifikasi_id', $item_notif->id)}}" class="dropdown-item">
+  <!-- Message Start -->
+  <div class="media">
+    <img src="{{asset('bootstrap/dist/img/user1-128x128.jpg')}}" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+    <div class="media-body">
+      <h3 class="dropdown-item-title">
+        {{$item_notif->pengirim}}
+        <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+      </h3>
+      <p class="text-sm">
+      
+        @if (strlen($item_notif->deskripsi>20))
+            <?php 
+            
+            $desc = substr($item_notif->deskripsi,0,10). '.....';
+
+            echo $desc;
+
+            ?>
+        @else
+          <?php 
+          
+          echo $item_notif->deskripsi . '.....';
+
+          ?>
+
+
+        @endif
+      
+      </p>
+      <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i>
+      
+        <?php
+          
+          echo $item_notif->created_at;
+
+          ?>
+
+      </p>
+    </div>
+  </div>
+  <!-- Message End -->
+</a>
+<div class="dropdown-divider"></div>
+
+
+@endforeach
+
+      
+          <a href="{{route('notifikasi_all')}}" class="dropdown-item dropdown-footer">Lihat Semua Pesan</a>
         </div>
       </li>
       <!-- Notifications Dropdown Menu -->
@@ -160,6 +189,14 @@
           <i class="fas fa-expand-arrows-alt"></i>
         </a>
       </li>
+
+
+      @else
+
+
+          
+      @endif
+
 
     </ul>
   </nav>
@@ -423,12 +460,12 @@
               </li>
 
 
-              <li class="nav-item" id = "persetujuan_data_repairing">
+              {{-- <li class="nav-item" id = "persetujuan_data_repairing">
                 <a href="{{url('/persetujuan/repairing')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Data Repairing</p>
                 </a>
-              </li>
+              </li> --}}
 
               
             </ul>
@@ -1136,6 +1173,13 @@
 
 
 
+
+@stack('script')
+
+
+
+
+
 <script>
     $(function () {
     $("#example_1").DataTable({
@@ -1183,7 +1227,8 @@
     var groupColumn = 0;
     var table = $('#kebutuhan_material_tabel').DataTable({
         columnDefs: [{ visible: false, targets: groupColumn }],
-        order: [[groupColumn, 'asc']],
+        // order: [[groupColumn, 'asc']],
+        order: [[5, 'desc']],
        buttons: ["copy", "csv", "excel", "pdf", "print"],
 
         displayLength: 25,
@@ -1211,10 +1256,10 @@
 
 
 
-    $('#repairing_tabel').DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    // $('#repairing_tabel').DataTable({
+    //   "responsive": true, "lengthChange": false, "autoWidth": false,
+    //   "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    // }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
 
 
 

@@ -6,6 +6,9 @@ use App\Models\PembelianMaterial;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\KebutuhanMaterial;
+use App\Models\Notifikasi;
+use Illuminate\Support\Facades\Auth;
+
 
 class PembelianMaterialController extends Controller
 {
@@ -84,6 +87,29 @@ class PembelianMaterialController extends Controller
 
         $pembelian_material->save();
 
+
+
+
+        
+        // KIRIM NOTIFIKASI 
+
+        $notifikasi = new Notifikasi();
+
+        $notifikasi['nama_notifikasi'] = 'Tambah Pembelian Material ' . $request->nama;
+        $notifikasi['deskripsi'] = 'Telah dilaksanakan Penambahan Pembelian Material '. $request->nama .' oleh Bagian Gudang ' . Auth::user()->name . '';
+        $notifikasi['pengirim'] = Auth::user()->name;
+        $notifikasi['tanggal_kirim'] = date('Y-m-d');
+        $notifikasi['jenis_notifikasi'] = 'Tambah Pembelian Material';        
+        $notifikasi['status_notif'] = 0;      
+        $notifikasi['pembelian_material_id'] = $pembelian_material->id;
+
+        $notifikasi['link_notif'] = "persetujuan/pembelian_material";
+
+
+        $notifikasi['deskripsi_link'] = "Berikut merupakan Link untuk melihat Pembelian material : ";
+
+
+        $notifikasi->save();
 
 
 

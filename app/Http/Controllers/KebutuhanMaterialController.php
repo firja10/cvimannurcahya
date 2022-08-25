@@ -6,6 +6,11 @@ use App\Models\DataMaterial;
 use App\Models\KebutuhanMaterial;
 use Illuminate\Http\Request;
 use App\Models\KomponenTurbin;
+use Illuminate\Support\Facades\Auth;
+
+use App\Models\Notifikasi;
+
+
 use Illuminate\Support\Facades\DB;
 
 class KebutuhanMaterialController extends Controller
@@ -48,6 +53,7 @@ class KebutuhanMaterialController extends Controller
 
       
 
+        // STORE DATA KEBUTUHAN MATERIAL
 
 
         $kebutuhan_material = new KebutuhanMaterial();
@@ -94,6 +100,32 @@ class KebutuhanMaterialController extends Controller
 
         $kebutuhan_material['harga_beli'] = $harga_total;
         $kebutuhan_material->save();
+
+
+
+
+        // KIRIM NOTIFIKASI 
+
+        $notifikasi = new Notifikasi();
+
+        $notifikasi['nama_notifikasi'] = 'Tambah Kebutuhan Material ' . $request->nama;
+        $notifikasi['deskripsi'] = 'Telah dilaksanakan Penambahan Kebutuhan Material '. $request->nama .' oleh PPIC ' . Auth::user()->name . '';
+        $notifikasi['pengirim'] = Auth::user()->name;
+        $notifikasi['tanggal_kirim'] = date('Y-m-d');
+        $notifikasi['jenis_notifikasi'] = 'Tambah Kebutuhan Material';        
+        $notifikasi['status_notif'] = 0;      
+        $notifikasi['kebutuhan_material_id'] = $kebutuhan_material->id;
+
+        $notifikasi['link_notif'] = "persetujuan/kebutuhan_material";
+
+
+        $notifikasi['deskripsi_link'] = "Berikut merupakan Link untuk melihat Kebutuhan material : ";
+
+
+        $notifikasi->save();
+
+
+
 
         return redirect('/kebutuhan_material')->with('tambahkebutuhanmaterial', 'Sukses Menambahkan Kebutuhan Material');
 

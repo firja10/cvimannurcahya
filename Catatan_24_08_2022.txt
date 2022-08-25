@@ -1,0 +1,24 @@
+1. Revisi : Alur PPIC - Manager - Gudang
+-PPIC input kebutuhan material 
+-Manager ACC kebutuhan material 
+-Gudang Melihat Stok Material di kebutuhan material apakah aman ato nggak. Kalo nggak, tombol laksanakan pembelian disabled. Kalau aman, tombol laksanakan pembelian bisa diklik
+
+
+2. Revisi Repairing : 
+- Data Repairing Harus dilakukan pengelompokan seperti data Kebutuhan Material
+- Material harus komplit
+
+
+Alur : 
+- Data Kebutuhan Material yang sudah komplit dari gudang diajukan ke Repairing untuk dilakukan penyesuaian 
+- Jika sesuai nanti dilakukan repairing, jika tidak ya nggak bisa.
+- Setelah dilakukan Repairing, nanti diklik informasi telah dilakukan Repairing ke manager. 
+
+3. 
+- Repairing dan Pembelian ada Tanggal 
+- Data Material Update terakhir dikasih tanggal 
+
+
+4. Dibuatkan Notifikasi untuk ke Manager saja
+
+5. 

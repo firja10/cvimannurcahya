@@ -93,7 +93,7 @@ Data Persetujuan Kebutuhan Material
                         ?>
                 {{-- @foreach ($kebutuhan_material as $material_key=>$material_value) --}}
 
-                @foreach ($kebutuhan_material as $item_material)
+                @foreach ($kebutuhan_material->reverse() as $item_material)
 
 
                 {{-- <tr>
@@ -129,7 +129,17 @@ Data Persetujuan Kebutuhan Material
                       
                       @elseif($item_material->status_verif == 1)
 
-                      <button class = "btn btn-success" disabled>Sudah Approve Manager</button>  
+                      <button class = "btn btn-success" disabled>Sudah Approve Manager</button> 
+                      
+
+                          @if ($item_material->status_repairing == 4)
+                          <br>
+                          <button class = "btn btn-primary mt-3" disabled>Sudah Dilakukan Repairing</button>  
+                          @else
+                              
+                          @endif
+
+                     
                       
                       @elseif($item_material->status_verif == 2)
 
@@ -150,13 +160,18 @@ Data Persetujuan Kebutuhan Material
                       <br>
                       <button class = "btn btn-warning mb-2" disabled>Sedang Dilakukan Repairing</button>  
 
-                      @elseif($item_material->status_verif == 5)
+                      {{-- @elseif($item_material->status_verif == 5)
 
                       
                       <button class = "btn btn-success mb-2" disabled>Sudah Approve Manager</button>  
                       <br>
                       <button class = "btn btn-success mb-2" disabled>Sudah Dilakukan Repairing</button>  
 
+                      @elseif($item_material->status_repairing == 1)
+
+                      <button class = "btn btn-success mb-2" disabled>Sudah Approve Manager</button>  
+                      <br>
+                      <button class = "btn btn-success mb-2" disabled>Sudah Dilakukan Repairing</button>   --}}
 
                       @endif
 

@@ -151,10 +151,17 @@ Route::get('/data_material_seluruh/ss_rop/{id}',[\App\Http\Controllers\LandingCo
 
 // UPDATE STATUS VERIF LAPORAN KEBUTUHAN MATERIAL 
 
-Route::patch('/kebutuhan_material/status_verif_sesuai/{id}',[\App\Http\Controllers\LandingController::class,'UpdateKomponenSesuai'])->name('UpdateKomponenSesuai')->middleware('auth');
+// Route::patch('/kebutuhan_material/status_verif_sesuai/{id}',[\App\Http\Controllers\LandingController::class,'UpdateKomponenSesuai'])->name('UpdateKomponenSesuai')->middleware('auth');
+
+Route::patch('/kebutuhan_material/status_verif_sesuai/{komponen}',[\App\Http\Controllers\LandingController::class,'UpdateKomponenSesuai'])->name('UpdateKomponenSesuai')->middleware('auth');
 
 
-Route::patch('/kebutuhan_material/status_verif_tidak_sesuai/{id}',[\App\Http\Controllers\LandingController::class,'UpdateKomponenTidakSesuai'])->name('UpdateKomponenTidakSesuai')->middleware('auth');
+
+// Route::patch('/kebutuhan_material/status_verif_tidak_sesuai/{id}',[\App\Http\Controllers\LandingController::class,'UpdateKomponenTidakSesuai'])->name('UpdateKomponenTidakSesuai')->middleware('auth');
+
+Route::patch('/kebutuhan_material/status_verif_tidak_sesuai/{komponen}',[\App\Http\Controllers\LandingController::class,'UpdateKomponenTidakSesuai'])->name('UpdateKomponenTidakSesuai')->middleware('auth');
+
+
 
 
 
@@ -185,8 +192,10 @@ Route::patch('/pembelian_material/update_beli/{id}',[\App\Http\Controllers\Landi
 
 Route::patch('/kebutuhan_material/perbaikan_komponen/{id}',[\App\Http\Controllers\LandingController::class,'PerbaikanKomponen'])->name('PerbaikanKomponen')->middleware('auth');
 
-Route::patch('/data_repairing/tambah/{id}',[\App\Http\Controllers\LandingController::class,'updateRepairingDilakukan'])->name('updateRepairingDilakukan')->middleware('auth');
+// Route::patch('/data_repairing/tambah/{id}',[\App\Http\Controllers\LandingController::class,'updateRepairingDilakukan'])->name('updateRepairingDilakukan')->middleware('auth');
 
+
+Route::patch('/data_repairing/tambah/{komponen}',[\App\Http\Controllers\LandingController::class,'updateRepairingDilakukan'])->name('updateRepairingDilakukan')->middleware('auth');
 
 
 
@@ -208,6 +217,24 @@ Route::post('/pembelian_material/update_beli/{id}',[\App\Http\Controllers\Landin
 
 
 
+
+
+
+
+// DATA NOTIFIKASI
+
+Route::resource('/data_notifikasi',\App\Http\Controllers\NotifikasiController::class)->middleware('auth');
+
+
+
+
+
+
+Route::get('/notifikasi',[\App\Http\Controllers\LandingController::class,'notifikasi_all'])->name('notifikasi_all')->middleware('auth');
+
+
+
+Route::get('/notifikasi/{id}',[\App\Http\Controllers\LandingController::class,'notifikasi_id'])->name('notifikasi_id')->middleware('auth');
 
 
 
