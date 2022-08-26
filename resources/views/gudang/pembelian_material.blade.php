@@ -165,8 +165,8 @@ $ppic = Auth::user()->is_ppic;
                         
                         @elseif($item_pembelian_material->status_verif == 2)
 
-                        <button type = "button" class="btn btn-primary mb-2">Sudah diapprove</button>   <br>
-                        <button type = "button" class="btn btn-success mt-2">Pesanan sudah sampai</button>
+                        <button type = "button" class="btn btn-primary mb-2 disabled">Sudah diapprove</button>   <br>
+                        <button type = "button" class="btn btn-success mt-2 disabled">Pesanan sudah sampai</button>
 
                         @endif
 

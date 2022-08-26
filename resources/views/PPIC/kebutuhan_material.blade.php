@@ -301,11 +301,11 @@ $pemilik = Auth::user()->is_pemilik;
 
                                 @if ($gudang == 1)
 
-                                  <button class = "btn btn-success">Sedang Menunggu Penyesuaian Komponen</button>
+                                  <button class = "btn btn-success disabled">Sedang Menunggu Penyesuaian Komponen</button>
                                     
                                 @elseif($repairing == 1)
 
-                                <button class = "btn btn-success">Sedang Menunggu Penyesuaian Komponen</button>
+                                <button class = "btn btn-success disabled">Sedang Menunggu Penyesuaian Komponen</button>
 
                                 {{-- <form action="{{route('UpdateKomponenSesuai', $item_material->id)}}" method="POST">
                                   @csrf

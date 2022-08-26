@@ -1622,18 +1622,18 @@ public function LakukanPembelian($id,Request $request )
 
         $notifikasi = new Notifikasi();
 
-        $notifikasi['nama_notifikasi'] = 'Tambah Pembelian Material ' . $request->nama;
-        $notifikasi['deskripsi'] = 'Telah dilaksanakan Penambahan Pembelian Material '. $request->nama .' oleh Bagian Gudang ' . Auth::user()->name . '';
+        $notifikasi['nama_notifikasi'] = 'Tambah Pemesanan Material ' . $request->nama;
+        $notifikasi['deskripsi'] = 'Telah dilaksanakan Penambahan Pemesanan Material '. $request->nama .' oleh Bagian Gudang ' . Auth::user()->name . '';
         $notifikasi['pengirim'] = Auth::user()->name;
         $notifikasi['tanggal_kirim'] = date('Y-m-d');
-        $notifikasi['jenis_notifikasi'] = 'Tambah Pembelian Material';        
+        $notifikasi['jenis_notifikasi'] = 'Tambah Pemesanan Material';        
         $notifikasi['status_notif'] = 0;      
         $notifikasi['pembelian_material_id'] = $pembelian_material->id;
 
         $notifikasi['link_notif'] = "persetujuan/pembelian_material";
 
 
-        $notifikasi['deskripsi_link'] = "Berikut merupakan Link untuk melihat Pembelian material : ";
+        $notifikasi['deskripsi_link'] = "Berikut merupakan Link untuk melihat Pemesanan material : ";
 
 
         $notifikasi->save();

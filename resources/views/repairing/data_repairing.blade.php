@@ -123,7 +123,7 @@ Data Repairing
                             
                         @elseif($item_repairing->status_repairing == 2)
 
-                        <button class = "btn btn-success">Komponen Sesuai</button>
+                        <button class = "btn btn-success disabled">Komponen Sesuai</button>
 
                         <form action="{{route('updateRepairingDilakukan', $item_repairing->komponen)}}" method = "POST" id = "update_repairing">
                           @csrf
@@ -133,7 +133,7 @@ Data Repairing
 
                         @elseif($item_repairing->status_repairing == 1)
 
-                        <button class = "btn btn-success">Repairing Telah Dilakukan</button>
+                        <button class = "btn btn-success disabled">Repairing Telah Dilakukan</button>
                             
                         @endif
 
