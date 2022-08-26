@@ -1205,24 +1205,61 @@ public function MasukanRepairing($id, Request $request)
 
 
 
-public function UpdateKomponenTidakSesuai($id, Request $request)
+public function UpdateKomponenTidakSesuai($komponen, Request $request)
 {
     # code...
 
 
-    Repairing::where('id', $id)->update([
+    // Repairing::where('id', $id)->update([
+
+    //     'status_repairing'=>3,
+
+    // ]);
+
+
+    // $repairing_nama = Repairing::where('id', $id)->first();
+
+
+    // $kebutuhan_material_nama = DB::table('kebutuhan_materials')->where('nama',$repairing_nama->nama)->first();
+
+
+
+
+
+
+    Repairing::where('komponen', $komponen)->update([
 
         'status_repairing'=>3,
 
     ]);
 
-    $kebutuhan_material_nama = DB::table('kebutuhan_materials')->where('id',$id)->first();
 
-    KebutuhanMaterial::where('nama', $kebutuhan_material_nama->nama)->update([
+    $repairing_nama = Repairing::where('komponen', $komponen)->first();
 
-        'status_repairing'=>3,
+
+
+//     $kebutuhan_material_nama = DB::table('kebutuhan_materials')->where('nama',$repairing_nama->nama)->get();
+
+//     KebutuhanMaterial::where('nama', $repairing_nama->nama)->update([
+
+//         'status_repairing'=>3,
  
-  ]);
+//   ]);
+
+
+
+DB::table('kebutuhan_materials')->where('komponen', $repairing_nama->komponen)->update([
+
+    'status_repairing'=>3,
+
+]);
+
+
+
+
+
+
+
 
 
     return redirect('/kebutuhan_material')->with('kebutuhan_tidak_sesuai', 'Kebutuhan Material Tidak Sesuai');

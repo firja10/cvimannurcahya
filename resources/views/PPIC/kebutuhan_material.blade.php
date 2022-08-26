@@ -351,11 +351,11 @@ $pemilik = Auth::user()->is_pemilik;
                         @if ($gudang == 1)
 
 
-                        <button class = "btn btn-danger">Komponen Tidak Sesuai</button>
+                        <button class = "btn btn-danger disabled">Komponen Tidak Sesuai</button>
                             
                         @elseif($repairing == 1)
                                                   
-                        <button class = "btn btn-danger">Komponen Tidak Sesuai</button>
+                        <button class = "btn btn-danger disabled">Komponen Tidak Sesuai</button>
                         {{-- <a href = "{{url('/data_repairing')}}" class = "btn btn-dark">Pergi Ke Halaman Repairing bahwa Repairing Telah Dilakukan</a> --}}
 
                         @endif

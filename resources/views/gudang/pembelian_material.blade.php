@@ -146,9 +146,9 @@ $ppic = Auth::user()->is_ppic;
                         <br>
 
                         @if ($item_pembelian_material->status_verif == 0 || $item_pembelian_material->status_verif == NULL)
-                        <button type = "button" class="btn btn-warning">Belum diapprove</button>
+                        <button type = "button" class="btn btn-warning disabled">Belum diapprove</button>
                         @elseif($item_pembelian_material->status_verif == 1)
-                        <button type = "button" class="btn btn-primary mb-2">Sudah diapprove</button>   <br>
+                        <button type = "button" class="btn btn-primary mb-2 disabled">Sudah diapprove</button>   <br>
 
                         <form action="{{route('KonfirmasiBeli', $item_pembelian_material->id)}}" method="POST">
                           @csrf
