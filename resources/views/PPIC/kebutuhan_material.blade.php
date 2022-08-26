@@ -215,25 +215,52 @@ $pemilik = Auth::user()->is_pemilik;
 
                       @if ($item_material->status_beli == NULL || $item_material->status_beli == 0)
                   
-                        <form action="{{route('LakukanPembelian', $item_material->id)}}" method="POST">
-                          @csrf
-
-                          <input type="hidden" name="kode" value = {{$item_material->kode}}>
-                          {{-- <input type="hidden" name="nama" value = {{$item_material->nama}}> --}}
-                          <textarea name="nama" id="nama" cols="30" rows="10" hidden>{{$item_material->nama}}</textarea>
-                          <input type="hidden" name="jenis" value = {{$item_material->jenis}}>
-                          <input type="hidden" name="jumlah" value = {{$item_material->jumlah}}>
+                        
 
                           @if ($R_O_P>=$stoc_k)
-                          <button class="btn btn-dark" type = "submit">Laksanakan Pemesanan</button>                
+                        
+                          <form action="{{route('LakukanPembelian', $item_material->id)}}" method="POST">
+                            @csrf
+  
+                            <input type="hidden" name="kode" value = {{$item_material->kode}}>
+                            {{-- <input type="hidden" name="nama" value = {{$item_material->nama}}> --}}
+                            <textarea name="nama" id="nama" cols="30" rows="10" hidden>{{$item_material->nama}}</textarea>
+                            <input type="hidden" name="jenis" value = {{$item_material->jenis}}>
+                            <input type="hidden" name="jumlah" value = {{$item_material->jumlah}}>
+
+                          <button class="btn btn-dark" type = "submit">Laksanakan Pemesanan</button>
+                          
+                          </form>
+
+
                           @elseif($R_O_P<$stoc_k && ($R_O_P != NULL || $S_S != NULL  || $A_U !=NULL))
-                          <button class="btn btn-dark disabled" type = "submit">Laksanakan Pemesanan</button>     
+                          <button class="btn btn-dark disabled" type = "submit">Laksanakan Pemesanan</button>  
+                          
+                          <br>
+
+                          <form action="{{route('MasukanRepairing', $item_material->id)}}" method = "POST">
+                            @csrf
+                            @method('PATCH')
+    
+                            <input type="hidden" name="komponen" value="{{$item_material->komponen}}">
+                            <input type="hidden" name="nama" value="{{$item_material->nama}}">
+                            <input type="hidden" name="jenis" value="{{$item_material->jenis}}">
+                            <input type="hidden" name="satuan" value="{{$item_material->satuan}}">
+                            <input type="hidden" name="jumlah" value="{{$item_material->jumlah}}">
+
+
+                            <button class = "btn btn-dark mt-3" type = "submit">Ajukan Repairing</button>
+
+                          </form>
+
+
+
+
                           @elseif($R_O_P == NULL || $S_S == NULL || $A_U == NULL)
                           <button class="btn btn-danger disabled">Segera isi bahan baku</button> 
 
                           @endif
               
-                        </form>
                         
                       @elseif($item_material->status_beli == 1)
 
@@ -276,8 +303,9 @@ $pemilik = Auth::user()->is_pemilik;
 
                         @elseif($repairing == 1 && $item_material->status_verif == 1 && ($item_material->status_repairing == NULL || $item_material->status_repairing == 0))
                         <button type = "button" class="btn btn-primary disabled mb-2">Sudah diapprove Manager</button>   
+                        <br>
 
-                        <button type = "button" class = "btn btn-dark">Menunggu Pengajuan Repairing</button>
+                        <button type = "button" class = "btn btn-dark disabled">Menunggu Pengajuan Repairing</button>
 
                                   {{-- <form action="{{route('UpdateKomponenSesuai', $item_material->id)}}" method="POST">
                                     @csrf

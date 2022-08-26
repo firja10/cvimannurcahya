@@ -1141,6 +1141,7 @@ public function MasukanRepairing($id, Request $request)
         // 'status_verif'=>4,
 
         'status_repairing'=>1,
+        // 'status_beli'=>2,
 
     ]);
 

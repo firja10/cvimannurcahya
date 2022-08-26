@@ -110,20 +110,20 @@ Data Repairing
                           @method('PATCH')
 
                       
-                          <button class="btn btn-dark mt-2 mb-2" type = "submit">Lapor Komponen Sesuai</button>
+                          <button class="btn btn-dark mt-2 mb-2" type = "submit">Lapor Material Sesuai</button>
                         </form>
 
                         
                         <form action="{{route('UpdateKomponenTidakSesuai', $item_repairing->komponen)}}" method="POST" id = "update_tidak_sesuai">
                           @csrf
                           @method('PATCH')
-                          <button class="btn btn-warning" type = "submit">Lapor Komponen Tidak Sesuai, Minta Koreksi</button>
+                          <button class="btn btn-warning" type = "submit">Lapor Material Tidak Sesuai, Minta Koreksi</button>
                         </form> 
 
                             
                         @elseif($item_repairing->status_repairing == 2)
 
-                        <button class = "btn btn-success disabled">Komponen Sesuai</button>
+                        <button class = "btn btn-success disabled">Material Sesuai</button>
 
                         <form action="{{route('updateRepairingDilakukan', $item_repairing->komponen)}}" method = "POST" id = "update_repairing">
                           @csrf
@@ -279,7 +279,7 @@ Data Repairing
   
                           $(rows_repair)
                                 .eq(i)
-                                .before('<tr class="group"><td colspan="7" style="background-color:gray;color:white;" class = "justify-content-center" >' + '<h6 class = "mr-auto">' + group + '</h6> (Untuk konfirmasi, silakan klik tombol Lapor Komponen Sesuai / Konfirmasi Repairing Telah Dilakukan pada salah satu data di bawah)</td></tr>');
+                                .before('<tr class="group"><td colspan="7" style="background-color:gray;color:white;" class = "justify-content-center" >' + '<h6 class = "mr-auto">' + group + '</h6> (Untuk konfirmasi, silakan klik tombol Lapor Material Sesuai / Konfirmasi Repairing Telah Dilakukan pada salah satu data di bawah)</td></tr>');
      
                             last_repair = group;
   
