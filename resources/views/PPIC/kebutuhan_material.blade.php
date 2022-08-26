@@ -361,11 +361,11 @@ $pemilik = Auth::user()->is_pemilik;
                                 @if ($gudang == 1)
 
 
-                                <button class = "btn btn-warning">Komponen Sesuai</button>
+                                <button class = "btn btn-warning disabled">Komponen Sesuai</button>
                                     
                                 @elseif($repairing == 1)
                                                           
-                                <button class = "btn btn-warning">Komponen Sesuai</button>
+                                <button class = "btn btn-warning disabled">Komponen Sesuai</button>
                                 {{-- <a href = "{{url('/data_repairing')}}" class = "btn btn-dark">Pergi Ke Halaman Repairing bahwa Repairing Telah Dilakukan</a> --}}
 
                                 @endif
@@ -392,7 +392,7 @@ $pemilik = Auth::user()->is_pemilik;
                         @elseif($item_material->status_repairing == 4)
                     
 
-                        <button class = "btn btn-success">Repairing Selesai Dilakukan</button>
+                        <button class = "btn btn-success disabled">Repairing Selesai Dilakukan</button>
 
                         @endif
 
