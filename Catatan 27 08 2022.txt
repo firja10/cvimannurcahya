@@ -1,0 +1,5 @@
+1. Pembelian Setiap Material 1 bulan 1 kali, ditambahkan keterangan pembelian per bulan di sebelah kanan safety stock
+
+2. Ditambahkan data yang direpairing ke jumlah barang yang harus dibeli di data seluruh material
+
+3. Di data material keseluruhan bisa dipantau langsung bahan baku yang warning mana dan tersedia mana 

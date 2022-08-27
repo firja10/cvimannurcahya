@@ -128,6 +128,8 @@ Data Repairing
                         <form action="{{route('updateRepairingDilakukan', $item_repairing->komponen)}}" method = "POST" id = "update_repairing">
                           @csrf
                           @method('PATCH')
+
+                          <input type="hidden" name = "jumlah" value = {{$item_repairing->jumlah}}>
                           <button class = "btn btn-dark mt-3" type = "submit">Konfirmasi Repairing Telah Dilakukan</button>
                         </form>
 
