@@ -207,7 +207,7 @@ $pemilik = Auth::user()->is_pemilik;
                    
 
                     @if ($item_material->status_verif == 0 || $item_material->status_verif == NULL )
-                        <button type = "button" class="btn btn-warning mb-2">Belum diapprove Manager</button>
+                        <button type = "button" class="btn btn-warning mb-2 disabled">Belum diapprove Manager</button>
 
                     @elseif($gudang == 1 && $item_material->status_verif == 1 && ($item_material->status_repairing == NULL || $item_material->status_repairing == 0))
                         <button type = "button" class="btn btn-primary disabled mb-2">Sudah diapprove Manager</button>   
