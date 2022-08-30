@@ -238,7 +238,18 @@ Route::get('/notifikasi/{id}',[\App\Http\Controllers\LandingController::class,'n
 
 
 
+Route::get('/data_material_seluruh_warning',[\App\Http\Controllers\LandingController::class,'filter_material_seluruh_bahan_warning'])->name('filter_material_seluruh_bahan_warning')->middleware('auth');
 
+
+Route::get('/data_material_seluruh_tersedia',[\App\Http\Controllers\LandingController::class,'filter_material_seluruh_bahan_tersedia'])->name('filter_material_seluruh_bahan_tersedia')->middleware('auth');
+
+
+
+
+Route::get('/data_material_warning',[\App\Http\Controllers\LandingController::class,'filter_material_bahan_warning'])->name('filter_material_bahan_warning')->middleware('auth');
+
+
+Route::get('/data_material_tersedia',[\App\Http\Controllers\LandingController::class,'filter_material_bahan_tersedia'])->name('filter_material_bahan_tersedia')->middleware('auth');
 
 
 

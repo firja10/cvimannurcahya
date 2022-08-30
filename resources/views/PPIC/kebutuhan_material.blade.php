@@ -107,6 +107,7 @@ $pemilik = Auth::user()->is_pemilik;
                   <th>Jumlah</th>
                   <th>Tanggal Masuk</th>
                   <th>Keterangan</th>
+                  <th>Jumlah yang harus dibeli</th>
                   <th>Aksi</th>
                 </tr>
                 </thead>
@@ -153,6 +154,22 @@ $pemilik = Auth::user()->is_pemilik;
 
 
                     </td>
+
+
+
+
+                    <td>{{$item_material->jumlah_harus_beli}}</td>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -425,6 +442,7 @@ $pemilik = Auth::user()->is_pemilik;
                     <th>Jumlah</th>
                     <th>Tanggal Masuk</th>
                     <th>Keterangan</th>
+                    <th>Jumlah yang harus dibeli</th>
                     <th>Aksi</th>
                 </tr>
                 </tfoot>

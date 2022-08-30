@@ -306,7 +306,7 @@
 
 
 
-          @if ($manager || $gudang || $pemilik)
+          @if ($manager || $gudang || $pemilik || $ppic)
               
           <li class="nav-item menu-open">
             <a href="#" class="nav-link">
@@ -1251,7 +1251,7 @@
                     if (last !== group) {
                         $(rows)
                             .eq(i)
-                            .before('<tr class="group"><td colspan="7" style="background-color:gray;color:white" >' + group + '</td></tr>');
+                            .before('<tr class="group"><td colspan="8" style="background-color:gray;color:white" >' + group + '</td></tr>');
  
                         last = group;
                     }

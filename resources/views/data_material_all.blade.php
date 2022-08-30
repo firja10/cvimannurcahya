@@ -66,23 +66,50 @@ $pemilik = Auth::user()->is_pemilik == 1;
 
 
           <div class="card">
+            
+            @if ($ppic || $pemilik)
             <div class="card-header justify-content-center d-flex">
-           
-
-
-              @if ($ppic || $pemilik)
+        
 
                  {{-- <h3 class="card-title">DataTable with default features</h3> --}}
                  <button class = "btn btn-dark" onclick="history.back()"> <i class = "fas fa-arrow-left"></i> Previous</button>
-                  
-              <button class = "btn btn-success ml-auto" data-toggle = "modal" data-target = "#CarbonSteelModal" > <i class = "fas fa-plus"></i> Tambah Data</button>
-              @else
-                  
-              @endif
 
-            
-            
+
+                  <a class = "btn btn-dark mr-3" href = "{{url('/data_material_seluruh_tersedia')}}">Cari Bahan Baku Tersedia</a>
+     
+
+                  <a class="btn btn-warning ml-3" href = "{{url('/data_material_seluruh_warning')}}" >Cari Bahan Baku Tidak Aman</a>
+
+                 
+              <button class = "btn btn-success ml-auto" data-toggle = "modal" data-target = "#CarbonSteelModal" > <i class = "fas fa-plus"></i> Tambah Data</button>
+
             </div>
+
+            @else
+                 
+
+
+
+            <div class="card-header justify-content-center d-flex">
+        
+
+              {{-- <h3 class="card-title">DataTable with default features</h3> --}}
+              <button class = "btn btn-dark mr-auto" onclick="history.back()"> <i class = "fas fa-arrow-left"></i> Previous</button>
+
+              <a class = "btn btn-dark mr-3" href = "{{url('/data_material_seluruh_tersedia')}}">Cari Bahan Baku Tersedia</a>
+     
+
+              <a class="btn btn-warning ml-3" href = "{{url('/data_material_seluruh_warning')}}" >Cari Bahan Baku Tidak Aman</a>
+
+         </div>
+            
+
+
+
+            @endif
+
+
+
             <!-- /.card-header -->
             <div class="card-body">
               <table id="data_material_semua_tabel" class="table table-bordered table-striped">
@@ -95,6 +122,8 @@ $pemilik = Auth::user()->is_pemilik == 1;
                   <th>Jenis</th>
                     <th>Stock</th>
                     <th>Keterangan</th>
+                    <th>Jumlah Yang Harus Dibeli</th>
+                    <th>Stok Maksimal</th>
                     <th>Safety Stock</th>
                     <th>Reorder Point</th>
                     <th>Average User</th>
@@ -143,6 +172,8 @@ $pemilik = Auth::user()->is_pemilik == 1;
                       @endif
                 
                     </td>
+                    <td>{{$item_material->jumlah_harus_beli}}</td>
+                    <td>{{$item_material->stock_max}}</td>
                     <td>{{$item_material->SS}}</td>
                     <td>{{$item_material->ROP}}</td>
                     <td>{{$item_material->AU}}</td>
@@ -195,6 +226,8 @@ $pemilik = Auth::user()->is_pemilik == 1;
                   <th>Jenis</th>
                     <th>Stock</th>
                     <th>Keterangan</th>
+                    <th>Jumlah Yang Harus Dibeli</th>
+                    <th>Stok Maksimal</th>
                     <th>Safety Stock</th>
                     <th>Reorder Point</th>
                     <th>Average User</th>

@@ -739,6 +739,13 @@ public function data_material_store(Request $request)
 
     $data_material['tanggal_masuk'] = date('Y-m-d');
     $data_material['tanggal_update'] = date('Y-m-d');
+    
+
+    $kebutuhan_material['stock_max'] = $request->stock_max;
+
+    $kebutuhan_material['jumlah_harus_beli'] = $request->jumlah_harus_beli;
+
+
 
 
     if($kategori == "Cast Steel")
@@ -978,6 +985,8 @@ public function updateDataMaterials($id, Request $request)
         'stock'=> $request->stock,
         'harga_beli'=> $request->harga_beli,
         'tanggal_update'=>date('Y-m-d'),
+        'stock_max'=>$request->stock_max,
+        'jumlah_harus_beli'=>$request->jumlah_harus_beli,
 
     ]);
 
@@ -1311,7 +1320,6 @@ public function updateRepairingDilakukan($komponen, Request $request)
     $data_repairing = Repairing::where('komponen', $komponen)->get();
 
 
-
 foreach ($data_repairing as $repairings) {
     # code...
 
@@ -1330,10 +1338,14 @@ foreach ($data_repairing as $repairings) {
 
         $update_stock = (int)$materials->stock - (int)$request->jumlah ;
 
+        $tambah_harus_beli = (int)$materials->jumlah_harus_beli + (int)$request->jumlah ;
+
 
         $material_update = DataMaterial::find($materials->id);
 
         $material_update['stock'] = $update_stock;
+
+        $material_update['jumlah_harus_beli'] = $tambah_harus_beli;
 
         $material_update->save();
 
@@ -1744,10 +1756,13 @@ public function KonfirmasiBeli(Request $request, $id)
 
      $hasil_stok = (int)$data_material_sebelumnya->stock + (int)$request->jumlah;
 
+     $kurang_jumlah_beli = (int) $data_material_sebelumnya->jumlah_harus_beli - (int)$request->jumlah;
+
      DataMaterial::where('nama', $pembelian_material->nama)->update([
 
         'tanggal_masuk'=>date('Y-m-d'),
         'stock'=> $hasil_stok,
+        'jumlah_harus_beli'=>$kurang_jumlah_beli,
 
      ]);
 
@@ -1781,9 +1796,6 @@ public function PerbaikanKomponen($id, Request $request)
     return redirect('/kebutuhan_material')->with('perbaikan_komponen', 'Komponen Telah Diperbaiki');
 
 }
-
-
-
 
 
 
@@ -1834,6 +1846,179 @@ public function notifikasi_id($id)
 
 
 // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// public function filter_material_bahan(Request $request)
+// {
+//     # code...
+
+//     $input_data_material = $request->get('bahan_baku');
+
+//     // $data_material = '';
+
+//     if ($input_data_material == 'warning') {
+//         # code...
+
+//         $data_material = DB::table('data_materials')->whereRaw('data_materials.stock < data_materials.ROP')->get();
+        
+//     }
+
+//     elseif ($input_data_material == 'aman') {
+//         # code...
+
+//         $data_material = DB::table('data_materials')->whereRaw('data_materials.stock > data_materials.ROP')->get(); 
+
+//     }
+
+//     else{
+
+//         $data_material = DB::table('data_materials')->get(); 
+
+//     }
+
+
+//     return view('data_material_all',['data_material'=>$data_material]);
+
+
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public function filter_material_seluruh_bahan_warning()
+{
+    # code...
+
+
+    $data_material = DB::table('data_materials')->whereRaw('data_materials.stock <= data_materials.ROP')->get();        
+
+
+    return view('data_material_all',['data_material'=>$data_material]);
+
+
+}
+
+
+
+public function filter_material_bahan_warning(Request $request)
+{
+    # code...
+
+
+    // $data_material = DB::table('data_materials')->whereRaw('data_materials.stock < data_materials.ROP')->get();        
+
+
+    // return view('data_material_all',['data_material'=>$data_material]);
+
+
+
+
+
+
+    $permintaan = $request->get('nama_kategori');
+
+
+    $data_material = DB::table('data_materials')->where('kategori', $permintaan)->whereRaw('data_materials.stock <= data_materials.ROP')->get();
+
+
+    return view('data_material',['data_material'=>$data_material]);
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+public function filter_material_seluruh_bahan_tersedia()
+{
+    # code...
+
+
+    $data_material = DB::table('data_materials')->whereRaw('data_materials.stock > data_materials.ROP')->get();        
+
+
+    return view('data_material_all',['data_material'=>$data_material]);
+
+
+}
+
+
+
+
+
+
+
+
+public function filter_material_bahan_tersedia(Request $request)
+{
+    # code...
+
+
+    // $data_material = DB::table('data_materials')->whereRaw('data_materials.stock > data_materials.ROP')->get();        
+
+
+    // return view('data_material_all',['data_material'=>$data_material]);
+
+
+
+    $permintaan = $request->get('nama_kategori');
+
+
+
+    $data_material = DB::table('data_materials')->where('kategori', $permintaan)->whereRaw('data_materials.stock > data_materials.ROP')->get();
+
+
+    return view('data_material',['data_material'=>$data_material]);
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
 
 
 

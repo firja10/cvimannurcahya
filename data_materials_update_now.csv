@@ -1,227 +1,227 @@
-id ,kode,nama,kategori,link_kategori,jenis,stock,harga_beli,suplier,tanggal_masuk,tanggal_update,created_at,updated_at,d_ss,L,Z,SS,d_rop,ROP,AU
-6,CS-SCP-1,Cast Steel SCPH1,Cast Steel,CS,JIS,35,250000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2
-7,CS-SCR-415,Cast Steel SCR415H,Cast Steel,CS,JIS,47,200000,Rahayu Teknik,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-8,CS-SCR-420,Cast Steel SCR420H,Cast Steel,CS,JIS,52,300000,Rahayu Teknik,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2
-9,CS-SCR-430,Cast Steel SCR430H,Cast Steel,CS,JIS,33,150000,Rahayu Teknik,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2
-10,CS-SCR-435,Cast Steel SCR435H,Cast Steel,CS,JIS,12,250000,Rahayu Teknik,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2
-11,CS-SCR-440,Cast Steel SCR440H,Cast Steel,CS,JIS,62,200000,Rahayu Teknik,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2
-12,CS-SCM-415,Cast Steel SCM415H,Cast Steel,CS,JIS,17,300000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2
-13,CS-SCM-418,Cast Steel SCM418H,Cast Steel,CS,JIS,27,150000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-14,CS-SCM-419,Cast Steel SCM419H,Cast Steel,CS,JIS,11,250000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-15,CS-SCM-420,Cast Steel SCM420H,Cast Steel,CS,JIS,43,200000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-16,CS-SCM-435,Cast Steel SCM435H,Cast Steel,CS,JIS,76,300000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-17,CS-SCM-440,Cast Steel SCM440H,Cast Steel,CS,JIS,31,250000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-18,CS-SCM-445,Cast Steel SCM445H,Cast Steel,CS,JIS,47,200000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-19,CS-SCM-822,Cast Steel SCM822H,Cast Steel,CS,JIS,25,300000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-20,CS-SCP-5,Cast Steel SCPH5,Cast Steel,CS,JIS,29,150000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-21,CS-SCM-480,Cast Steel SCM480H,Cast Steel,CS,JIS,6,250000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2
-22,CS-SCM-490,Cast Steel SCM490H,Cast Steel,CS,JIS,59,200000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-23,CS-SCM-465,Cast Steel SCM465H,Cast Steel,CS,JIS,58,250000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-24,CS-SCP-2,Cast Steel SCPH2,Cast Steel,CS,JIS,62,200000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2
-25,CS-SCR-450,Cast Steel SCR450H,Cast Steel,CS,JIS,80,250000,Rahayu Teknik,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2
-26,CS-SCR-465,Cast Steel SCR465H,Cast Steel,CS,JIS,42,200000,Rahayu Teknik,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2
-27,CS-SUS-42J8,Cast Steel SUS420J8,Cast Steel,CS,JIS,57,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-28,CS-SUS-438,Cast Steel SUS438,Cast Steel,CS,JIS,18,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,1
-29,CS-SUS-440B,Cast Steel SUS440B,Cast Steel,CS,JIS,72,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-30,CS-SUS-440F,Cast Steel SUS440F,Cast Steel,CS,JIS,77,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2
-31,CS-SUS-634,Cast Steel SUS634,Cast Steel,CS,JIS,75,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-32,CBS-SC-15,Carbon Steel S15C,Carbon Steel,CBS,JIS,44,150000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,10,2
-33,CBS-SC-17,Carbon Steel S17C,Carbon Steel,CBS,JIS,64,250000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2
-34,CBS-SC-20,Carbon Steel S20C,Carbon Steel,CBS,JIS,57,200000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,10,2
-35,CBS-SC-22,Carbon Steel S22C,Carbon Steel,CBS,JIS,77,250000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2
-36,CBS-SC-25,Carbon Steel S25C,Carbon Steel,CBS,JIS,48,200000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,10,2
-37,CBS-SC-28,Carbon Steel S28C,Carbon Steel,CBS,JIS,13,300000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,11,2
-38,CBS-SC-30,Carbon Steel S30C,Carbon Steel,CBS,JIS,15,250000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,10,2
-39,CBS-SC-38,Carbon Steel S38C,Carbon Steel,CBS,JIS,72,200000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,11,2
-40,CBS-SC-40,Carbon Steel S40C,Carbon Steel,CBS,JIS,80,300000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2
-41,CBS-SC-43,Carbon Steel S43C,Carbon Steel,CBS,JIS,54,150000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,11,2
-42,CBS-SC-45,Carbon Steel S45C,Carbon Steel,CBS,JIS,32,250000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2
-43,CBS-SC-50,Carbon Steel S50C,Carbon Steel,CBS,JIS,13,200000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,10,2
-44,CBS-SC-53,Carbon Steel S53C,Carbon Steel,CBS,JIS,53,300000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2
-45,CBS-SC-55,Carbon Steel S55C,Carbon Steel,CBS,JIS,12,150000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2
-46,CBS-SC-58,Carbon Steel S58C,Carbon Steel,CBS,JIS,32,250000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,10,2
-47,CBS-SC-35,Carbon Steel S35C,Carbon Steel,CBS,JIS,43,200000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2
-48,CBS-SC-21,Carbon Steel S21C,Carbon Steel,CBS,JIS,70,300000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,10,2
-49,CBS-SC-35,Carbon Steel S35C,Carbon Steel,CBS,JIS,60,150000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,11,2
-50,CBS-SC-78,Carbon Steel S78C,Carbon Steel,CBS,JIS,72,250000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,11,2
-51,CBS-SC-44,Carbon Steel S44C,Carbon Steel,CBS,JIS,43,250000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2
-52,CBS-AIS-1015,Carbon Steel AISI1015,Carbon Steel,CBS,AISI,76,200000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,11,2
-53,CBS-AIS-1017,Carbon Steel AISI1017,Carbon Steel,CBS,AISI,33,300000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,10,2
-54,CBS-AIS-1020,Carbon Steel AISI1020,Carbon Steel,CBS,AISI,43,150000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,8,2
-55,CBS-AIS-1023,Carbon Steel AISI1023,Carbon Steel,CBS,AISI,35,250000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,8,1
-56,CBS-AIS-1025,Carbon Steel AISI1025,Carbon Steel,CBS,AISI,39,200000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,11,2
-57,CBS-AIS-1029,Carbon Steel AISI1029,Carbon Steel,CBS,AISI,71,300000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2
-58,CBS-AIS-1030,Carbon Steel AISI1030,Carbon Steel,CBS,AISI,6,150000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2
-59,CBS-AIS-1038,Carbon Steel AISI1038,Carbon Steel,CBS,AISI,14,250000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,10,2
-60,CBS-AIS-1040,Carbon Steel AISI1040,Carbon Steel,CBS,AISI,64,200000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,10,2
-61,CBS-AIS-1043,Carbon Steel AISI1043,Carbon Steel,CBS,AISI,3,300000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,11,2
-62,CBS-AIS-1045,Carbon Steel AISI1045,Carbon Steel,CBS,AISI,15,150000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,8,1
-63,CBS-AIS-1049,Carbon Steel AISI1049,Carbon Steel,CBS,AISI,46,250000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,11,2
-64,CBS-AIS-1053,Carbon Steel AISI1053,Carbon Steel,CBS,AISI,62,200000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,10,2
-65,CBS-AIS-1055,Carbon Steel AISI1055,Carbon Steel,CBS,AISI,34,250000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,11,2
-66,CBS-AIS-1059,Carbon Steel AISI1059,Carbon Steel,CBS,AISI,22,200000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,11,2
-67,CBS-AIS-1035,Carbon Steel AISI1035,Carbon Steel,CBS,AISI,27,300000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,11,2
-68,CBS-AIS-1010,Carbon Steel AISI1010,Carbon Steel,CBS,AISI,42,150000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2
-69,CBS-AIS-1012,Carbon Steel AISI1012,Carbon Steel,CBS,AISI,14,250000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,10,2
-70,CBS-AIS-1011,Carbon Steel AISI1011,Carbon Steel,CBS,AISI,47,200000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,8,2
-71,CBS-AIS-1014,Carbon Steel AISI1014,Carbon Steel,CBS,AISI,79,300000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,8,2
-72,CBS-AIS-1062,Carbon Steel AISI1061,Carbon Steel,CBS,AISI,65,150000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2
-73,CBS-AIS-1022,Carbon Steel AISI1022,Carbon Steel,CBS,AISI,45,250000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2
-74,CBS-AIS-1026,Carbon Steel AISI1026,Carbon Steel,CBS,AISI,47,200000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2
-75,CBS-AIS-1027,Carbon Steel AISI1027,Carbon Steel,CBS,AISI,45,250000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,11,2
-76,CBS-AIS-1032,Carbon Steel AISI1032,Carbon Steel,CBS,AISI,66,200000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,8,1
-77,SS-SUS-201,Stainless Steel SUS201,Stainless Steel,SS,JIS,50,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-78,SS-SUS-301,Stainless Steel SUS301,Stainless Steel,SS,JIS,31,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2
-79,SS-SUS-302,Stainless Steel SUS302,Stainless Steel,SS,JIS,15,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-80,SS-SUS-303,Stainless Steel SUS303SE,Stainless Steel,SS,JIS,26,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-81,SS-SUS-304,Stainless Steel SUS304L,Stainless Steel,SS,JIS,53,150000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-82,SS-SUS-304L,Stainless Steel SUS304LN,Stainless Steel,SS,JIS,63,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2
-83,SS-SUS-305,Stainless Steel SUS305,Stainless Steel,SS,JIS,34,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-84,SS-SUS-310,Stainless Steel SUS310S,Stainless Steel,SS,JIS,27,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2
-85,SS-SUS-316L,Stainless Steel SUS316L,Stainless Steel,SS,JIS,36,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-86,SS-SUS-316N,Stainless Steel SUS316N,Stainless Steel,SS,JIS,9,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-87,SS-SUS-316,Stainless Steel SUS316LN,Stainless Steel,SS,JIS,43,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-88,SS-SUS-317,Stainless Steel SUS317,Stainless Steel,SS,JIS,59,150000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2
-89,SS-SUS-317L,Stainless Steel SUS317L,Stainless Steel,SS,JIS,55,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,1
-90,SS-SUS-890,Stainless Steel SUS890L,Stainless Steel,SS,JIS,26,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2
-91,SS-SUS-321,Stainless Steel SUS321,Stainless Steel,SS,JIS,71,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2
-92,SS-SUS-347,Stainless Steel SUS347,Stainless Steel,SS,JIS,46,150000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-93,SS-SUS-384,Stainless Steel SUS384,Stainless Steel,SS,JIS,18,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-94,SS-SUS-XM,Stainless Steel SUSXM7,Stainless Steel,SS,JIS,77,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2
-95,SS-SUS-32J1,Stainless Steel SUS329J1,Stainless Steel,SS,JIS,47,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2
-96,SS-SUS-32J3,Stainless Steel SUS329J3L,Stainless Steel,SS,JIS,13,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2
-97,SS-SUS-32J4,Stainless Steel SUS329J4L,Stainless Steel,SS,JIS,8,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-98,SS-SUS-405,Stainless Steel SUS405,Stainless Steel,SS,JIS,29,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-99,SS-SUS-429,Stainless Steel SUS429,Stainless Steel,SS,JIS,68,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2
-100,SS-SUS-430,Stainless Steel SUS430,Stainless Steel,SS,JIS,27,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,1
-101,SS-SUS-430F,Stainless Steel SUS430F,Stainless Steel,SS,JIS,68,150000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-102,SS-SUS-434,Stainless Steel SUS434,Stainless Steel,SS,JIS,38,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-103,SS-SUS-436,Stainless Steel SUS436L,Stainless Steel,SS,JIS,71,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2
-104,SS-SUS-444,Stainless Steel SUS444,Stainless Steel,SS,JIS,14,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-105,SS-SUS-403,Stainless Steel SUS403,Stainless Steel,SS,JIS,33,150000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,1
-106,SS-SUS-410,Stainless Steel SUS410,Stainless Steel,SS,JIS,16,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-107,SS-SUS-410S,Stainless Steel SUS410S,Stainless Steel,SS,JIS,61,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-108,SS-SUS-416,Stainless Steel SUS416,Stainless Steel,SS,JIS,51,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-109,SS-SUS-42J2,Stainless Steel SUS420J2,Stainless Steel,SS,JIS,6,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,1
-110,SS-SUS-420F,Stainless Steel SUS420F,Stainless Steel,SS,JIS,54,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-111,SS-SUS-431,Stainless Steel SUS431,Stainless Steel,SS,JIS,59,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2
-112,SS-SUS-440C,Stainless Steel SUS440C,Stainless Steel,SS,JIS,10,150000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2
-113,SS-SUS-631,Stainless Steel SUS631,Stainless Steel,SS,JIS,73,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2
-114,SS-SUS-42J7,Stainless Steel SUS420J7,Stainless Steel,SS,JIS,64,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-115,SS-SUS-42F2,Stainless Steel SUS420F2,Stainless Steel,SS,JIS,25,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-116,SS-SUS-501,Stainless Steel SUS501,Stainless Steel,SS,JIS,20,150000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,1
-117,SS-AIS-3105,Stainless Steel AISI3105,Stainless Steel,SS,AISI,59,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2
-118,SS-AIS-201,Stainless Steel AISI201,Stainless Steel,SS,AISI,30,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-119,SS-AIS-202,Stainless Steel AISI202,Stainless Steel,SS,AISI,60,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-120,SS-AIS-301,Stainless Steel AISI301,Stainless Steel,SS,AISI,39,150000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-121,SS-AIS-302,Stainless Steel AISI302,Stainless Steel,SS,AISI,23,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-122,SS-AIS-302B,Stainless Steel AISI302B,Stainless Steel,SS,AISI,29,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-123,SS-AIS-303,Stainless Steel AISI303,Stainless Steel,SS,AISI,48,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-124,SS-AIS-303S,Stainless Steel AISI303SE,Stainless Steel,SS,AISI,65,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-125,SS-AIS-304,Stainless Steel AISI304,Stainless Steel,SS,AISI,1,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2
-126,SS-AIS-304L,Stainless Steel AISI304L,Stainless Steel,SS,AISI,66,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-127,SS-AIS-304N,Stainless Steel AISI304N,Stainless Steel,SS,AISI,8,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-128,SS-AIS-30LN,Stainless Steel AISI304LN,Stainless Steel,SS,AISI,10,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-129,SS-S30-431,Stainless Steel S30431,Stainless Steel,SS,AISI,23,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-130,SS-AIS-305,Stainless Steel AISI305,Stainless Steel,SS,AISI,34,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2
-131,SS-AIS-309,Stainless Steel AISI309S,Stainless Steel,SS,AISI,58,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-132,SS-AIS-3105,Stainless Steel AISI310S,Stainless Steel,SS,AISI,49,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-133,SS-AIS-316,Stainless Steel AISI316,Stainless Steel,SS,AISI,56,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-134,SS-AIS-316L,Stainless Steel AISI316L,Stainless Steel,SS,AISI,50,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2
-135,SS-AIS-316N,Stainless Steel AISI316N,Stainless Steel,SS,AISI,69,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-136,SS-AIS-36LN,Stainless Steel AISI316LN,Stainless Steel,SS,AISI,25,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-137,SS-AIS-317,Stainless Steel AISI317,Stainless Steel,SS,AISI,41,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2
-138,SS-AIS-317L,Stainless Steel AISI317L,Stainless Steel,SS,AISI,25,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,1
-139,SS-N08-904,Stainless Steel N08904,Stainless Steel,SS,AISI,15,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2
-140,SS-AIS-321,Stainless Steel AISI321,Stainless Steel,SS,AISI,56,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-141,SS-AIS-347,Stainless Steel AISI347,Stainless Steel,SS,AISI,76,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-142,SS-AIS-384,Stainless Steel AISI384,Stainless Steel,SS,AISI,7,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2
-143,SS-AIS-30CU,Stainless Steel AISI304CU,Stainless Steel,SS,AISI,58,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2
-144,SS-AIS-329,Stainless Steel AISI329,Stainless Steel,SS,AISI,20,150000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-145,SS-S31-803,Stainless Steel S31803,Stainless Steel,SS,AISI,40,250000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2
-146,SS-S31-260,Stainless Steel S31260,Stainless Steel,SS,AISI,26,200000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-147,SS-AIS-405,Stainless Steel AISI405,Stainless Steel,SS,AISI,24,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-148,SS-AIS-429,Stainless Steel AISI429,Stainless Steel,SS,AISI,52,150000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-149,SS-AIS-430,Stainless Steel AISI430,Stainless Steel,SS,AISI,72,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2
-150,SS-AIS-430F,Stainless Steel AISI430F,Stainless Steel,SS,AISI,38,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-151,SS-AIS-434,Stainless Steel AISI434,Stainless Steel,SS,AISI,38,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2
-152,SS-AIS-436,Stainless Steel AISI436,Stainless Steel,SS,AISI,8,150000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-153,SS-AIS-444,Stainless Steel AISI444,Stainless Steel,SS,AISI,68,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-154,SS-AIS-403,Stainless Steel AISI403,Stainless Steel,SS,AISI,6,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2
-155,SS-AIS-410,Stainless Steel AISI410,Stainless Steel,SS,AISI,12,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-156,SS-AIS-410S,Stainless Steel AISI410S,Stainless Steel,SS,AISI,58,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-157,SS-AIS-416,Stainless Steel AISI416,Stainless Steel,SS,AISI,57,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,1
-158,SS-AIS-426,Stainless Steel AISI426,Stainless Steel,SS,AISI,2,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-159,SS-AIS-429,Stainless Steel AISI429,Stainless Steel,SS,AISI,64,150000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,1
-160,SS-AIS-420F,Stainless Steel AISI420F,Stainless Steel,SS,AISI,72,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,1
-161,SS-AIS-439,Stainless Steel AISI439,Stainless Steel,SS,AISI,16,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2
-162,SS-AIS-440A,Stainless Steel AISI440A,Stainless Steel,SS,AISI,41,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-163,SS-AIS-440B,Stainless Steel AISI440B,Stainless Steel,SS,AISI,79,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-164,SS-AIS-440C,Stainless Steel AISI440C,Stainless Steel,SS,AISI,15,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,1
-165,SS-S44-02L,Stainless Steel S44020L,Stainless Steel,SS,AISI,23,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-166,SS-S17-400,Stainless Steel S17400,Stainless Steel,SS,AISI,31,150000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-167,SS-S17-700,Stainless Steel S17700,Stainless Steel,SS,AISI,21,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2
-168,SS-AIS-422,Stainless Steel AISI422,Stainless Steel,SS,AISI,56,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2
-169,SS-AIS-424,Stainless Steel AISI424,Stainless Steel,SS,AISI,43,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-170,SS-AIS-420F,Stainless Steel AISI420F,Stainless Steel,SS,AISI,0,150000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2
-171,SS-AIS-436,Stainless Steel AISI436,Stainless Steel,SS,AISI,67,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2
-172,SS-AIS-441A,Stainless Steel AISI441A,Stainless Steel,SS,AISI,45,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,1
-173,SS-AIS-441B,Stainless Steel AISI441B,Stainless Steel,SS,AISI,3,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,1
-174,SS-AIS-441C,Stainless Steel AISI441C,Stainless Steel,SS,AISI,17,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2
-175,SS-S44-02N,Stainless Steel S44020N,Stainless Steel,SS,AISI,1,300000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2
-176,SS-S17-406,Stainless Steel S17406,Stainless Steel,SS,AISI,32,150000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2
-177,SS-S17-767,Stainless Steel S17767,Stainless Steel,SS,AISI,65,250000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2
-178,SS-AIS-420Z,Stainless Steel AISI420Z,Stainless Steel,SS,AISI,14,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-179,SS-AIS-420G,Stainless Steel AISI420G,Stainless Steel,SS,AISI,60,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2
-180,SS-AIS-420F,Stainless Steel AISI420F,Stainless Steel,SS,AISI,20,150000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-181,SS-AIS-438,Stainless Steel AISI438,Stainless Steel,SS,AISI,43,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,1
-182,SS-AIS-444A,Stainless Steel AISI444A,Stainless Steel,SS,AISI,37,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-183,SS-AIS-444B,Stainless Steel AISI444B,Stainless Steel,SS,AISI,78,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2
-184,SS-AIS-444C,Stainless Steel AISI444C,Stainless Steel,SS,AISI,66,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,1
-185,SS-S44-020,Stainless Steel S44020,Stainless Steel,SS,AISI,70,200000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-186,SS-S17-457,Stainless Steel S17457,Stainless Steel,SS,AISI,45,300000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-187,SS-S17-748,Stainless Steel S17748,Stainless Steel,SS,AISI,40,150000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-188,SS-AIS-420N,Stainless Steel AISI420N,Stainless Steel,SS,AISI,47,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2
-189,SS-AIS-420J,Stainless Steel AISI420J,Stainless Steel,SS,AISI,55,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-190,SS-AIS-420F,Stainless Steel AISI420F,Stainless Steel,SS,AISI,3,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-191,SS-AIS-431,Stainless Steel AISI431,Stainless Steel,SS,AISI,66,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-192,HRS-SUH-616,Heat-Resiting Steel SUH616,Heat Resiting Steel,HRS,JIS,57,200000,CV. Bintang Jaya,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,10,2
-193,HRS-SUH-21,Heat-Resiting Steel SUH21,Heat Resiting Steel,HRS,JIS,16,300000,CV. Bintang Jaya,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,8,2
-194,HRS-SUH-409,Heat-Resiting Steel SUH409,Heat Resiting Steel,HRS,JIS,63,250000,CV. Bintang Jaya,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,11,2
-195,HRS-SUH-409L,Heat-Resiting Steel SUH409L,Heat Resiting Steel,HRS,JIS,18,200000,CV. Bintang Jaya,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,8,2
-196,HRS-SUH-446,Heat-Resiting Steel SUH446,Heat Resiting Steel,HRS,JIS,3,300000,CV. Bintang Jaya,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2
-197,HRS-SUH-1,Heat-Resiting Steel SUH1,Heat Resiting Steel,HRS,JIS,56,150000,CV. Bintang Jaya,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,10,2
-198,HRS-SUH-3,Heat-Resiting Steel SUH3,Heat Resiting Steel,HRS,JIS,68,250000,CV. Bintang Jaya,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,8,2
-199,HRS-SUH-4,Heat-Resiting Steel SUH4,Heat Resiting Steel,HRS,JIS,77,200000,CV. Bintang Jaya,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,10,2
-200,HRS-SUH-11,Heat-Resiting Steel SUH11,Heat Resiting Steel,HRS,JIS,5,300000,CV. Bintang Jaya,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,10,2
-201,HRS-SUH-600,Heat-Resiting Steel SUH600,Heat Resiting Steel,HRS,JIS,21,150000,CV. Bintang Jaya,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,11,2
-202,HRS-AIS-309,Heat-Resiting Steel AISI309,Heat Resiting Steel,HRS,AISI,78,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-203,HRS-AIS-310,Heat-Resiting Steel AISI310,Heat Resiting Steel,HRS,AISI,15,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-204,HRS-N08-330,Heat-Resiting Steel N08330,Heat Resiting Steel,HRS,AISI,10,300000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2
-205,HRS-AIS-409,Heat-Resiting Steel AISI409,Heat Resiting Steel,HRS,AISI,19,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2
-206,HRS-AIS-446,Heat-Resiting Steel AISI446,Heat Resiting Steel,HRS,AISI,35,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-207,FS-SF-540,Forged Steel SF540A,Forged Steel,FS,JIS,57,300000,Willy Teknhik,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,10,2
-208,FS-SF-440,Forged Steel SF440A,Forged Steel,FS,JIS,3,150000,Willy Teknhik,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,11,2
-209,FS-SF-490,Forged Steel SF490A,Forged Steel,FS,JIS,74,250000,Willy Teknhik,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,11,2
-210,FS-SF-580,Forged Steel SF580A,Forged Steel,FS,JIS,63,200000,Willy Teknhik,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,11,2
-211,FS-AIS-4345,Stainless Steel AISI4345,Forged Steel,FS,AISI,46,300000,Willy Teknhik,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2
-212,AAM-A-40,Al-Alloy Metal A40,Al-Alloy-Metal,AAM,JIS,23,150000,Centralindo Sealing,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,10,2
-213,AAM-SNM-625,Al-Alloy Metal SNCM625,Al-Alloy-Metal,AAM,JIS,62,250000,Centralindo Sealing,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-214,AAM-SNM-630,Al-Alloy Metal SNCM630,Al-Alloy-Metal,AAM,JIS,38,200000,Centralindo Sealing,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2
-215,AAM-SNM-815,Al-Alloy Metal SNCM815,Al-Alloy-Metal,AAM,JIS,73,300000,Centralindo Sealing,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2
-216,AAM-AIS-1046,Al-Alloy-Metal AISI1046,Al-Alloy-Metal,AAM,AISI,6,150000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2
-217,WM-WJ-2,White Metal WJ2,White Metal,WM,JIS,77,250000,Willy Teknhik,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2
-218,WM-WJ-2B,White Metal WJ2B,White Metal,WM,JIS,13,200000,Willy Teknhik,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2
-219,WM-AIS-1045,White Metal AISI1045,White Metal,WM,AISI,33,250000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,10,2
-220,NMS-AIS-4340,Ni-Cr-Mo Steel AISI4340,Ni-Cr-Mo Steel,NMS,AISI,52,200000,Willy Teknhik,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2
-221,NCS-SNC-236,Ni-Cr Steel SNC236,Ni-Cr Steel,NCS,JIS,5,300000,Centralindo Sealing,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-222,NCS-SNC-631,Ni-Cr Steel SNC631,Ni-Cr Steel,NCS,JIS,67,250000,Centralindo Sealing,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2
-223,NCS-SNC-815,Ni-Cr Steel SNC815,Ni-Cr Steel,NCS,JIS,29,200000,Centralindo Sealing,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2
-224,NCS-SNM-220,Ni-Cr Steel SNCM220,Ni-Cr Steel,NCS,JIS,29,300000,Centralindo Sealing,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-225,NCS-SNM-240,Ni-Cr Steel SNCM240,Ni-Cr Steel,NCS,JIS,6,150000,Centralindo Sealing,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-226,NCS-SNM-420,Ni-Cr Steel SNCM420,Ni-Cr Steel,NCS,JIS,19,250000,Centralindo Sealing,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2
-227,NCS-SNM-431,Ni-Cr Steel SNCM431,Ni-Cr Steel,NCS,JIS,20,200000,Centralindo Sealing,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2
-228,NCS-AIS-8620,Ni-Cr Steel AISI8620,Ni-Cr Steel,NCS,AISI,61,250000,Centralindo Sealing,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2
-229,NCS-AIS-8637,Ni-Cr Steel AISI8637,Ni-Cr Steel,NCS,AISI,27,200000,Centralindo Sealing,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2
-230,NCS-AIS-4320,Ni-Cr Steel AISI4320,Ni-Cr Steel,NCS,AISI,47,300000,Willy Teknhik,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,11,2
-231,NCS-AIS-4340,Ni-Cr Steel AISI4340,Ni-Cr Steel,NCS,AISI,56,150000,Willy Teknhik,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2
+id ,kode,nama,kategori,link_kategori,jenis,stock,harga_beli,suplier,tanggal_masuk,tanggal_update,created_at,updated_at,d_ss,L,Z,SS,d_rop,ROP,AU,stock_max,jumlah_harus_beli,status_material
+6,CS-SCP-1,Cast Steel SCPH1,Cast Steel,CS,JIS,14,250000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2,42,28,
+7,CS-SCR-415,Cast Steel SCR415H,Cast Steel,CS,JIS,42,200000,Rahayu Teknik,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,36,0,
+8,CS-SCR-420,Cast Steel SCR420H,Cast Steel,CS,JIS,13,300000,Rahayu Teknik,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2,42,29,
+9,CS-SCR-430,Cast Steel SCR430H,Cast Steel,CS,JIS,8,150000,Rahayu Teknik,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2,33,25,
+10,CS-SCR-435,Cast Steel SCR435H,Cast Steel,CS,JIS,1,250000,Rahayu Teknik,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2,32,31,
+11,CS-SCR-440,Cast Steel SCR440H,Cast Steel,CS,JIS,19,200000,Rahayu Teknik,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2,40,21,
+12,CS-SCM-415,Cast Steel SCM415H,Cast Steel,CS,JIS,20,300000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2,41,21,
+13,CS-SCM-418,Cast Steel SCM418H,Cast Steel,CS,JIS,19,150000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,35,16,
+14,CS-SCM-419,Cast Steel SCM419H,Cast Steel,CS,JIS,6,250000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,38,32,
+15,CS-SCM-420,Cast Steel SCM420H,Cast Steel,CS,JIS,38,200000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,36,0,
+16,CS-SCM-435,Cast Steel SCM435H,Cast Steel,CS,JIS,28,300000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,39,11,
+17,CS-SCM-440,Cast Steel SCM440H,Cast Steel,CS,JIS,23,250000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,35,12,
+18,CS-SCM-445,Cast Steel SCM445H,Cast Steel,CS,JIS,24,200000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,33,9,
+19,CS-SCM-822,Cast Steel SCM822H,Cast Steel,CS,JIS,34,300000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,35,1,
+20,CS-SCP-5,Cast Steel SCPH5,Cast Steel,CS,JIS,6,150000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,35,29,
+21,CS-SCM-480,Cast Steel SCM480H,Cast Steel,CS,JIS,37,250000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2,30,0,
+22,CS-SCM-490,Cast Steel SCM490H,Cast Steel,CS,JIS,14,200000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,37,23,
+23,CS-SCM-465,Cast Steel SCM465H,Cast Steel,CS,JIS,24,250000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,34,10,
+24,CS-SCP-2,Cast Steel SCPH2,Cast Steel,CS,JIS,3,200000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2,31,28,
+25,CS-SCR-450,Cast Steel SCR450H,Cast Steel,CS,JIS,31,250000,Rahayu Teknik,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2,31,0,
+26,CS-SCR-465,Cast Steel SCR465H,Cast Steel,CS,JIS,9,200000,Rahayu Teknik,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2,30,21,
+27,CS-SUS-42J8,Cast Steel SUS420J8,Cast Steel,CS,JIS,22,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,36,14,
+28,CS-SUS-438,Cast Steel SUS438,Cast Steel,CS,JIS,35,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,1,29,0,
+29,CS-SUS-440B,Cast Steel SUS440B,Cast Steel,CS,JIS,32,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,36,4,
+30,CS-SUS-440F,Cast Steel SUS440F,Cast Steel,CS,JIS,10,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2,41,31,
+31,CS-SUS-634,Cast Steel SUS634,Cast Steel,CS,JIS,26,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,39,13,
+32,CBS-SC-15,Carbon Steel S15C,Carbon Steel,CBS,JIS,42,150000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,10,2,38,0,
+33,CBS-SC-17,Carbon Steel S17C,Carbon Steel,CBS,JIS,33,250000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2,33,0,
+34,CBS-SC-20,Carbon Steel S20C,Carbon Steel,CBS,JIS,40,200000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,10,2,38,0,
+35,CBS-SC-22,Carbon Steel S22C,Carbon Steel,CBS,JIS,20,250000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2,34,14,
+36,CBS-SC-25,Carbon Steel S25C,Carbon Steel,CBS,JIS,35,200000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,10,2,35,0,
+37,CBS-SC-28,Carbon Steel S28C,Carbon Steel,CBS,JIS,0,300000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,11,2,39,39,
+38,CBS-SC-30,Carbon Steel S30C,Carbon Steel,CBS,JIS,2,250000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,10,2,37,35,
+39,CBS-SC-38,Carbon Steel S38C,Carbon Steel,CBS,JIS,25,200000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,11,2,41,16,
+40,CBS-SC-40,Carbon Steel S40C,Carbon Steel,CBS,JIS,0,300000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2,34,34,
+41,CBS-SC-43,Carbon Steel S43C,Carbon Steel,CBS,JIS,12,150000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,11,2,38,26,
+42,CBS-SC-45,Carbon Steel S45C,Carbon Steel,CBS,JIS,4,250000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2,32,28,
+43,CBS-SC-50,Carbon Steel S50C,Carbon Steel,CBS,JIS,37,200000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,10,2,35,0,
+44,CBS-SC-53,Carbon Steel S53C,Carbon Steel,CBS,JIS,19,300000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2,33,14,
+45,CBS-SC-55,Carbon Steel S55C,Carbon Steel,CBS,JIS,3,150000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2,32,29,
+46,CBS-SC-58,Carbon Steel S58C,Carbon Steel,CBS,JIS,13,250000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,10,2,35,22,
+47,CBS-SC-35,Carbon Steel S35C,Carbon Steel,CBS,JIS,41,200000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2,34,0,
+48,CBS-SC-21,Carbon Steel S21C,Carbon Steel,CBS,JIS,22,300000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,10,2,37,15,
+49,CBS-SC-35,Carbon Steel S35C,Carbon Steel,CBS,JIS,8,150000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,11,2,40,32,
+50,CBS-SC-78,Carbon Steel S78C,Carbon Steel,CBS,JIS,9,250000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,11,2,41,32,
+51,CBS-SC-44,Carbon Steel S44C,Carbon Steel,CBS,JIS,27,250000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2,32,5,
+52,CBS-AIS-1015,Carbon Steel AISI1015,Carbon Steel,CBS,AISI,34,200000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,11,2,42,8,
+53,CBS-AIS-1017,Carbon Steel AISI1017,Carbon Steel,CBS,AISI,39,300000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,10,2,35,0,
+54,CBS-AIS-1020,Carbon Steel AISI1020,Carbon Steel,CBS,AISI,8,150000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,8,2,31,23,
+55,CBS-AIS-1023,Carbon Steel AISI1023,Carbon Steel,CBS,AISI,14,250000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,8,1,29,15,
+56,CBS-AIS-1025,Carbon Steel AISI1025,Carbon Steel,CBS,AISI,31,200000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,11,2,41,10,
+57,CBS-AIS-1029,Carbon Steel AISI1029,Carbon Steel,CBS,AISI,4,300000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2,34,30,
+58,CBS-AIS-1030,Carbon Steel AISI1030,Carbon Steel,CBS,AISI,2,150000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2,34,32,
+59,CBS-AIS-1038,Carbon Steel AISI1038,Carbon Steel,CBS,AISI,37,250000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,10,2,38,1,
+60,CBS-AIS-1040,Carbon Steel AISI1040,Carbon Steel,CBS,AISI,3,200000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,10,2,35,32,
+61,CBS-AIS-1043,Carbon Steel AISI1043,Carbon Steel,CBS,AISI,27,300000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,11,2,40,13,
+62,CBS-AIS-1045,Carbon Steel AISI1045,Carbon Steel,CBS,AISI,8,150000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,8,1,30,22,
+63,CBS-AIS-1049,Carbon Steel AISI1049,Carbon Steel,CBS,AISI,30,250000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,11,2,39,9,
+64,CBS-AIS-1053,Carbon Steel AISI1053,Carbon Steel,CBS,AISI,16,200000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,10,2,35,19,
+65,CBS-AIS-1055,Carbon Steel AISI1055,Carbon Steel,CBS,AISI,6,250000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,11,2,40,34,
+66,CBS-AIS-1059,Carbon Steel AISI1059,Carbon Steel,CBS,AISI,11,200000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,11,2,38,27,
+67,CBS-AIS-1035,Carbon Steel AISI1035,Carbon Steel,CBS,AISI,15,300000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,11,2,39,24,
+68,CBS-AIS-1010,Carbon Steel AISI1010,Carbon Steel,CBS,AISI,24,150000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2,31,7,
+69,CBS-AIS-1012,Carbon Steel AISI1012,Carbon Steel,CBS,AISI,38,250000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,10,2,35,0,
+70,CBS-AIS-1011,Carbon Steel AISI1011,Carbon Steel,CBS,AISI,42,200000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,8,2,31,0,
+71,CBS-AIS-1014,Carbon Steel AISI1014,Carbon Steel,CBS,AISI,21,300000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,8,2,31,10,
+72,CBS-AIS-1062,Carbon Steel AISI1061,Carbon Steel,CBS,AISI,23,150000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2,31,8,
+73,CBS-AIS-1022,Carbon Steel AISI1022,Carbon Steel,CBS,AISI,3,250000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2,34,31,
+74,CBS-AIS-1026,Carbon Steel AISI1026,Carbon Steel,CBS,AISI,14,200000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2,33,19,
+75,CBS-AIS-1027,Carbon Steel AISI1027,Carbon Steel,CBS,AISI,38,250000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,11,2,39,1,
+76,CBS-AIS-1032,Carbon Steel AISI1032,Carbon Steel,CBS,AISI,25,200000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,8,1,30,5,
+77,SS-SUS-201,Stainless Steel SUS201,Stainless Steel,SS,JIS,6,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,37,31,
+78,SS-SUS-301,Stainless Steel SUS301,Stainless Steel,SS,JIS,13,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2,32,19,
+79,SS-SUS-302,Stainless Steel SUS302,Stainless Steel,SS,JIS,11,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,39,28,
+80,SS-SUS-303,Stainless Steel SUS303SE,Stainless Steel,SS,JIS,23,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,36,13,
+81,SS-SUS-304,Stainless Steel SUS304L,Stainless Steel,SS,JIS,37,150000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,39,2,
+82,SS-SUS-304L,Stainless Steel SUS304LN,Stainless Steel,SS,JIS,24,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2,33,9,
+83,SS-SUS-305,Stainless Steel SUS305,Stainless Steel,SS,JIS,23,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,36,13,
+84,SS-SUS-310,Stainless Steel SUS310S,Stainless Steel,SS,JIS,4,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2,31,27,
+85,SS-SUS-316L,Stainless Steel SUS316L,Stainless Steel,SS,JIS,39,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,38,0,
+86,SS-SUS-316N,Stainless Steel SUS316N,Stainless Steel,SS,JIS,5,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,36,31,
+87,SS-SUS-316,Stainless Steel SUS316LN,Stainless Steel,SS,JIS,2,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,34,32,
+88,SS-SUS-317,Stainless Steel SUS317,Stainless Steel,SS,JIS,35,150000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2,33,0,
+89,SS-SUS-317L,Stainless Steel SUS317L,Stainless Steel,SS,JIS,9,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,1,30,21,
+90,SS-SUS-890,Stainless Steel SUS890L,Stainless Steel,SS,JIS,39,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2,41,2,
+91,SS-SUS-321,Stainless Steel SUS321,Stainless Steel,SS,JIS,37,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2,41,4,
+92,SS-SUS-347,Stainless Steel SUS347,Stainless Steel,SS,JIS,32,150000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,36,4,
+93,SS-SUS-384,Stainless Steel SUS384,Stainless Steel,SS,JIS,20,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,38,18,
+94,SS-SUS-XM,Stainless Steel SUSXM7,Stainless Steel,SS,JIS,1,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2,32,31,
+95,SS-SUS-32J1,Stainless Steel SUS329J1,Stainless Steel,SS,JIS,32,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2,40,8,
+96,SS-SUS-32J3,Stainless Steel SUS329J3L,Stainless Steel,SS,JIS,3,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2,31,28,
+97,SS-SUS-32J4,Stainless Steel SUS329J4L,Stainless Steel,SS,JIS,26,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,34,8,
+98,SS-SUS-405,Stainless Steel SUS405,Stainless Steel,SS,JIS,25,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,35,10,
+99,SS-SUS-429,Stainless Steel SUS429,Stainless Steel,SS,JIS,38,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2,40,2,
+100,SS-SUS-430,Stainless Steel SUS430,Stainless Steel,SS,JIS,2,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,1,29,27,
+101,SS-SUS-430F,Stainless Steel SUS430F,Stainless Steel,SS,JIS,27,150000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,38,11,
+102,SS-SUS-434,Stainless Steel SUS434,Stainless Steel,SS,JIS,23,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,38,15,
+103,SS-SUS-436,Stainless Steel SUS436L,Stainless Steel,SS,JIS,15,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2,40,25,
+104,SS-SUS-444,Stainless Steel SUS444,Stainless Steel,SS,JIS,42,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,35,0,
+105,SS-SUS-403,Stainless Steel SUS403,Stainless Steel,SS,JIS,38,150000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,1,30,0,
+106,SS-SUS-410,Stainless Steel SUS410,Stainless Steel,SS,JIS,17,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,39,22,
+107,SS-SUS-410S,Stainless Steel SUS410S,Stainless Steel,SS,JIS,2,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,35,33,
+108,SS-SUS-416,Stainless Steel SUS416,Stainless Steel,SS,JIS,17,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,34,17,
+109,SS-SUS-42J2,Stainless Steel SUS420J2,Stainless Steel,SS,JIS,0,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,1,30,30,
+110,SS-SUS-420F,Stainless Steel SUS420F,Stainless Steel,SS,JIS,30,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,38,8,
+111,SS-SUS-431,Stainless Steel SUS431,Stainless Steel,SS,JIS,25,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2,32,7,
+112,SS-SUS-440C,Stainless Steel SUS440C,Stainless Steel,SS,JIS,21,150000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2,32,11,
+113,SS-SUS-631,Stainless Steel SUS631,Stainless Steel,SS,JIS,13,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2,40,27,
+114,SS-SUS-42J7,Stainless Steel SUS420J7,Stainless Steel,SS,JIS,11,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,35,24,
+115,SS-SUS-42F2,Stainless Steel SUS420F2,Stainless Steel,SS,JIS,2,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,35,33,
+116,SS-SUS-501,Stainless Steel SUS501,Stainless Steel,SS,JIS,16,150000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,1,30,14,
+117,SS-AIS-3105,Stainless Steel AISI3105,Stainless Steel,SS,AISI,31,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2,33,2,
+118,SS-AIS-201,Stainless Steel AISI201,Stainless Steel,SS,AISI,19,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,34,15,
+119,SS-AIS-202,Stainless Steel AISI202,Stainless Steel,SS,AISI,14,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,35,21,
+120,SS-AIS-301,Stainless Steel AISI301,Stainless Steel,SS,AISI,33,150000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,37,4,
+121,SS-AIS-302,Stainless Steel AISI302,Stainless Steel,SS,AISI,15,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,38,23,
+122,SS-AIS-302B,Stainless Steel AISI302B,Stainless Steel,SS,AISI,25,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,34,9,
+123,SS-AIS-303,Stainless Steel AISI303,Stainless Steel,SS,AISI,15,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,36,21,
+124,SS-AIS-303S,Stainless Steel AISI303SE,Stainless Steel,SS,AISI,23,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,33,10,
+125,SS-AIS-304,Stainless Steel AISI304,Stainless Steel,SS,AISI,16,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2,32,16,
+126,SS-AIS-304L,Stainless Steel AISI304L,Stainless Steel,SS,AISI,15,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,36,21,
+127,SS-AIS-304N,Stainless Steel AISI304N,Stainless Steel,SS,AISI,30,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,36,6,
+128,SS-AIS-30LN,Stainless Steel AISI304LN,Stainless Steel,SS,AISI,16,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,36,20,
+129,SS-S30-431,Stainless Steel S30431,Stainless Steel,SS,AISI,27,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,36,9,
+130,SS-AIS-305,Stainless Steel AISI305,Stainless Steel,SS,AISI,18,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2,41,23,
+131,SS-AIS-309,Stainless Steel AISI309S,Stainless Steel,SS,AISI,40,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,36,0,
+132,SS-AIS-3105,Stainless Steel AISI310S,Stainless Steel,SS,AISI,15,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,34,19,
+133,SS-AIS-316,Stainless Steel AISI316,Stainless Steel,SS,AISI,10,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,39,29,
+134,SS-AIS-316L,Stainless Steel AISI316L,Stainless Steel,SS,AISI,9,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2,33,24,
+135,SS-AIS-316N,Stainless Steel AISI316N,Stainless Steel,SS,AISI,21,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,36,15,
+136,SS-AIS-36LN,Stainless Steel AISI316LN,Stainless Steel,SS,AISI,21,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,38,17,
+137,SS-AIS-317,Stainless Steel AISI317,Stainless Steel,SS,AISI,5,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2,42,37,
+138,SS-AIS-317L,Stainless Steel AISI317L,Stainless Steel,SS,AISI,37,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,1,29,0,
+139,SS-N08-904,Stainless Steel N08904,Stainless Steel,SS,AISI,9,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2,33,24,
+140,SS-AIS-321,Stainless Steel AISI321,Stainless Steel,SS,AISI,0,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,38,38,
+141,SS-AIS-347,Stainless Steel AISI347,Stainless Steel,SS,AISI,28,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,37,9,
+142,SS-AIS-384,Stainless Steel AISI384,Stainless Steel,SS,AISI,37,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2,32,0,
+143,SS-AIS-30CU,Stainless Steel AISI304CU,Stainless Steel,SS,AISI,21,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2,41,20,
+144,SS-AIS-329,Stainless Steel AISI329,Stainless Steel,SS,AISI,25,150000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,36,11,
+145,SS-S31-803,Stainless Steel S31803,Stainless Steel,SS,AISI,13,250000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2,39,26,
+146,SS-S31-260,Stainless Steel S31260,Stainless Steel,SS,AISI,29,200000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,35,6,
+147,SS-AIS-405,Stainless Steel AISI405,Stainless Steel,SS,AISI,32,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,37,5,
+148,SS-AIS-429,Stainless Steel AISI429,Stainless Steel,SS,AISI,8,150000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,35,27,
+149,SS-AIS-430,Stainless Steel AISI430,Stainless Steel,SS,AISI,24,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2,32,8,
+150,SS-AIS-430F,Stainless Steel AISI430F,Stainless Steel,SS,AISI,23,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,37,14,
+151,SS-AIS-434,Stainless Steel AISI434,Stainless Steel,SS,AISI,16,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2,32,16,
+152,SS-AIS-436,Stainless Steel AISI436,Stainless Steel,SS,AISI,33,150000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,34,1,
+153,SS-AIS-444,Stainless Steel AISI444,Stainless Steel,SS,AISI,20,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,37,17,
+154,SS-AIS-403,Stainless Steel AISI403,Stainless Steel,SS,AISI,9,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2,41,32,
+155,SS-AIS-410,Stainless Steel AISI410,Stainless Steel,SS,AISI,14,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,36,22,
+156,SS-AIS-410S,Stainless Steel AISI410S,Stainless Steel,SS,AISI,28,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,34,6,
+157,SS-AIS-416,Stainless Steel AISI416,Stainless Steel,SS,AISI,0,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,1,29,29,
+158,SS-AIS-426,Stainless Steel AISI426,Stainless Steel,SS,AISI,27,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,36,9,
+159,SS-AIS-429,Stainless Steel AISI429,Stainless Steel,SS,AISI,38,150000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,1,29,0,
+160,SS-AIS-420F,Stainless Steel AISI420F,Stainless Steel,SS,AISI,39,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,1,30,0,
+161,SS-AIS-439,Stainless Steel AISI439,Stainless Steel,SS,AISI,32,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2,31,0,
+162,SS-AIS-440A,Stainless Steel AISI440A,Stainless Steel,SS,AISI,5,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,39,34,
+163,SS-AIS-440B,Stainless Steel AISI440B,Stainless Steel,SS,AISI,7,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,39,32,
+164,SS-AIS-440C,Stainless Steel AISI440C,Stainless Steel,SS,AISI,2,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,1,30,28,
+165,SS-S44-02L,Stainless Steel S44020L,Stainless Steel,SS,AISI,40,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,37,0,
+166,SS-S17-400,Stainless Steel S17400,Stainless Steel,SS,AISI,6,150000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,36,30,
+167,SS-S17-700,Stainless Steel S17700,Stainless Steel,SS,AISI,13,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2,30,17,
+168,SS-AIS-422,Stainless Steel AISI422,Stainless Steel,SS,AISI,39,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2,31,0,
+169,SS-AIS-424,Stainless Steel AISI424,Stainless Steel,SS,AISI,38,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,37,0,
+170,SS-AIS-420F,Stainless Steel AISI420F,Stainless Steel,SS,AISI,17,150000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2,40,23,
+171,SS-AIS-436,Stainless Steel AISI436,Stainless Steel,SS,AISI,27,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2,41,14,
+172,SS-AIS-441A,Stainless Steel AISI441A,Stainless Steel,SS,AISI,30,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,1,30,0,
+173,SS-AIS-441B,Stainless Steel AISI441B,Stainless Steel,SS,AISI,21,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,1,30,9,
+174,SS-AIS-441C,Stainless Steel AISI441C,Stainless Steel,SS,AISI,42,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2,32,0,
+175,SS-S44-02N,Stainless Steel S44020N,Stainless Steel,SS,AISI,32,300000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2,38,6,
+176,SS-S17-406,Stainless Steel S17406,Stainless Steel,SS,AISI,26,150000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2,31,5,
+177,SS-S17-767,Stainless Steel S17767,Stainless Steel,SS,AISI,29,250000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2,41,12,
+178,SS-AIS-420Z,Stainless Steel AISI420Z,Stainless Steel,SS,AISI,34,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,36,2,
+179,SS-AIS-420G,Stainless Steel AISI420G,Stainless Steel,SS,AISI,3,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2,32,29,
+180,SS-AIS-420F,Stainless Steel AISI420F,Stainless Steel,SS,AISI,6,150000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,38,32,
+181,SS-AIS-438,Stainless Steel AISI438,Stainless Steel,SS,AISI,33,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,1,30,0,
+182,SS-AIS-444A,Stainless Steel AISI444A,Stainless Steel,SS,AISI,7,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,34,27,
+183,SS-AIS-444B,Stainless Steel AISI444B,Stainless Steel,SS,AISI,19,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2,33,14,
+184,SS-AIS-444C,Stainless Steel AISI444C,Stainless Steel,SS,AISI,35,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,1,30,0,
+185,SS-S44-020,Stainless Steel S44020,Stainless Steel,SS,AISI,5,200000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,37,32,
+186,SS-S17-457,Stainless Steel S17457,Stainless Steel,SS,AISI,12,300000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,38,26,
+187,SS-S17-748,Stainless Steel S17748,Stainless Steel,SS,AISI,27,150000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,34,7,
+188,SS-AIS-420N,Stainless Steel AISI420N,Stainless Steel,SS,AISI,41,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2,32,0,
+189,SS-AIS-420J,Stainless Steel AISI420J,Stainless Steel,SS,AISI,23,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,35,12,
+190,SS-AIS-420F,Stainless Steel AISI420F,Stainless Steel,SS,AISI,30,300000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,34,4,
+191,SS-AIS-431,Stainless Steel AISI431,Stainless Steel,SS,AISI,8,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,38,30,
+192,HRS-SUH-616,Heat-Resiting Steel SUH616,Heat Resiting Steel,HRS,JIS,4,200000,CV. Bintang Jaya,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,10,2,35,31,
+193,HRS-SUH-21,Heat-Resiting Steel SUH21,Heat Resiting Steel,HRS,JIS,5,300000,CV. Bintang Jaya,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,8,2,30,25,
+194,HRS-SUH-409,Heat-Resiting Steel SUH409,Heat Resiting Steel,HRS,JIS,11,250000,CV. Bintang Jaya,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,11,2,40,29,
+195,HRS-SUH-409L,Heat-Resiting Steel SUH409L,Heat Resiting Steel,HRS,JIS,18,200000,CV. Bintang Jaya,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,8,2,31,13,
+196,HRS-SUH-446,Heat-Resiting Steel SUH446,Heat Resiting Steel,HRS,JIS,26,300000,CV. Bintang Jaya,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2,33,7,
+197,HRS-SUH-1,Heat-Resiting Steel SUH1,Heat Resiting Steel,HRS,JIS,11,150000,CV. Bintang Jaya,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,10,2,37,26,
+198,HRS-SUH-3,Heat-Resiting Steel SUH3,Heat Resiting Steel,HRS,JIS,2,250000,CV. Bintang Jaya,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,8,2,30,28,
+199,HRS-SUH-4,Heat-Resiting Steel SUH4,Heat Resiting Steel,HRS,JIS,38,200000,CV. Bintang Jaya,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,10,2,36,0,
+200,HRS-SUH-11,Heat-Resiting Steel SUH11,Heat Resiting Steel,HRS,JIS,32,300000,CV. Bintang Jaya,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,10,2,37,5,
+201,HRS-SUH-600,Heat-Resiting Steel SUH600,Heat Resiting Steel,HRS,JIS,8,150000,CV. Bintang Jaya,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,11,2,41,33,
+202,HRS-AIS-309,Heat-Resiting Steel AISI309,Heat Resiting Steel,HRS,AISI,35,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,35,0,
+203,HRS-AIS-310,Heat-Resiting Steel AISI310,Heat Resiting Steel,HRS,AISI,6,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,39,33,
+204,HRS-N08-330,Heat-Resiting Steel N08330,Heat Resiting Steel,HRS,AISI,11,300000,Rakan Pratama Mandiri,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2,33,22,
+205,HRS-AIS-409,Heat-Resiting Steel AISI409,Heat Resiting Steel,HRS,AISI,39,250000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2,31,0,
+206,HRS-AIS-446,Heat-Resiting Steel AISI446,Heat Resiting Steel,HRS,AISI,10,200000,Inti Sarana Kreasi,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,34,24,
+207,FS-SF-540,Forged Steel SF540A,Forged Steel,FS,JIS,5,300000,Willy Teknhik,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,10,2,38,33,
+208,FS-SF-440,Forged Steel SF440A,Forged Steel,FS,JIS,4,150000,Willy Teknhik,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,11,2,41,37,
+209,FS-SF-490,Forged Steel SF490A,Forged Steel,FS,JIS,34,250000,Willy Teknhik,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,11,2,41,7,
+210,FS-SF-580,Forged Steel SF580A,Forged Steel,FS,JIS,25,200000,Willy Teknhik,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,11,2,40,15,
+211,FS-AIS-4345,Stainless Steel AISI4345,Forged Steel,FS,AISI,34,300000,Willy Teknhik,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2,32,0,
+212,AAM-A-40,Al-Alloy Metal A40,Al-Alloy-Metal,AAM,JIS,24,150000,Centralindo Sealing,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,10,2,36,12,
+213,AAM-SNM-625,Al-Alloy Metal SNCM625,Al-Alloy-Metal,AAM,JIS,7,250000,Centralindo Sealing,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,36,29,
+214,AAM-SNM-630,Al-Alloy Metal SNCM630,Al-Alloy-Metal,AAM,JIS,6,200000,Centralindo Sealing,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2,40,34,
+215,AAM-SNM-815,Al-Alloy Metal SNCM815,Al-Alloy-Metal,AAM,JIS,35,300000,Centralindo Sealing,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2,31,0,
+216,AAM-AIS-1046,Al-Alloy-Metal AISI1046,Al-Alloy-Metal,AAM,AISI,9,150000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2,32,23,
+217,WM-WJ-2,White Metal WJ2,White Metal,WM,JIS,15,250000,Willy Teknhik,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2,34,19,
+218,WM-WJ-2B,White Metal WJ2B,White Metal,WM,JIS,24,200000,Willy Teknhik,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2,34,10,
+219,WM-AIS-1045,White Metal AISI1045,White Metal,WM,AISI,40,250000,PT. Gemilang Mahakarya ,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,10,2,35,0,
+220,NMS-AIS-4340,Ni-Cr-Mo Steel AISI4340,Ni-Cr-Mo Steel,NMS,AISI,19,200000,Willy Teknhik,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2,31,12,
+221,NCS-SNC-236,Ni-Cr Steel SNC236,Ni-Cr Steel,NCS,JIS,1,300000,Centralindo Sealing,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,33,32,
+222,NCS-SNC-631,Ni-Cr Steel SNC631,Ni-Cr Steel,NCS,JIS,17,250000,Centralindo Sealing,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2,32,15,
+223,NCS-SNC-815,Ni-Cr Steel SNC815,Ni-Cr Steel,NCS,JIS,13,200000,Centralindo Sealing,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2,40,27,
+224,NCS-SNM-220,Ni-Cr Steel SNCM220,Ni-Cr Steel,NCS,JIS,14,300000,Centralindo Sealing,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,34,20,
+225,NCS-SNM-240,Ni-Cr Steel SNCM240,Ni-Cr Steel,NCS,JIS,30,150000,Centralindo Sealing,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,34,4,
+226,NCS-SNM-420,Ni-Cr Steel SNCM420,Ni-Cr Steel,NCS,JIS,13,250000,Centralindo Sealing,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,7,2,42,29,
+227,NCS-SNM-431,Ni-Cr Steel SNCM431,Ni-Cr Steel,NCS,JIS,20,200000,Centralindo Sealing,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2,32,12,
+228,NCS-AIS-8620,Ni-Cr Steel AISI8620,Ni-Cr Steel,NCS,AISI,40,250000,Centralindo Sealing,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,5,2,31,0,
+229,NCS-AIS-8637,Ni-Cr Steel AISI8637,Ni-Cr Steel,NCS,AISI,30,200000,Centralindo Sealing,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,3,,1,,6,2,37,7,
+230,NCS-AIS-4320,Ni-Cr Steel AISI4320,Ni-Cr Steel,NCS,AISI,11,300000,Willy Teknhik,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,11,2,40,29,
+231,NCS-AIS-4340,Ni-Cr Steel AISI4340,Ni-Cr Steel,NCS,AISI,30,150000,Willy Teknhik,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,8/8/2022 1:38,,5,,1,,9,2,33,3,

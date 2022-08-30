@@ -1,12 +1,15 @@
 @extends('template')
 
 @section('title')
-<?php $kateg = $_GET['nama_kategori'] ;
+
+<?php 
+$kateg = $_GET['nama_kategori'] ;
 
 echo "Data Material ". $kateg;
 
-?>
+// echo "Data Material"
 
+?>
     
 @endsection
 
@@ -16,6 +19,8 @@ echo "Data Material ". $kateg;
 <?php
 
 echo "Data Material ". $kateg;
+
+// echo "Data Material"
 
 ?>
     
@@ -28,6 +33,20 @@ echo "Data Material ". $kateg;
 
 
 @section('style')
+
+{{-- <style>
+    #data_material_seluruh{
+        background-color:white;
+    }
+
+    #data_material_seluruh .nav-link {
+        color:firebrick;
+    }
+</style> --}}
+
+
+
+
 
 {{-- 
 
@@ -85,17 +104,12 @@ echo "Data Material ". $kateg;
 
 
 
-{{-- <style>
-    #CBS{
-        background-color:white;
-    }
 
-    #CBS .nav-link {
-        color:firebrick;
-    }
-</style> --}}
-    
+
+
 @endsection
+
+
 
 
 
@@ -114,12 +128,9 @@ $repairing = Auth::user()->is_repairing == 1;
 $pemilik = Auth::user()->is_pemilik == 1;
 
 
+// $kateg = $_GET['nama_kategori'] ;
 
 ?>
-
-
-
-
 
 
 
@@ -132,23 +143,78 @@ $pemilik = Auth::user()->is_pemilik == 1;
 
 
           <div class="card">
+            
+            @if ($ppic || $pemilik)
             <div class="card-header justify-content-center d-flex">
-           
-
-
-              @if ($ppic || $pemilik)
+        
 
                  {{-- <h3 class="card-title">DataTable with default features</h3> --}}
                  <button class = "btn btn-dark" onclick="history.back()"> <i class = "fas fa-arrow-left"></i> Previous</button>
-                  
-              <button class = "btn btn-success ml-auto" data-toggle = "modal" data-target = "#CarbonSteelModal" > <i class = "fas fa-plus"></i> Tambah Data</button>
-              @else
-                  
-              @endif
 
-            
-            
+
+                  {{-- <a class = "btn btn-dark" href = "{{url('/data_material_tersedia')}}">Cari Bahan Baku Tersedia</a>
+     
+
+                  <a class="btn btn-warning" href = "{{url('/data_material_warning')}}" >Cari Bahan Baku Tidak Aman</a> --}}
+
+
+                  <form action="/data_material_tersedia" method = "GET">
+                    {{-- @csrf --}}
+    
+                    <input type="hidden" name="nama_kategori" value = "<?php echo $kateg ?>">
+                    <button type = "submit" class = "btn btn-dark mr-2">Cari Bahan Baku Tersedia</button>
+                   </form>
+    
+                  <form action="/data_material_warning'" method = "GET">
+                    {{-- @csrf --}}
+    
+                    <input type="hidden" name="nama_kategori" value = "<?php echo $kateg ?>">
+                    <button type = "submit" class = "btn btn-warning ml-2">Cari Bahan Baku Tidak Aman</button>
+                  </form>
+                  
+                 
+
+
+              <button class = "btn btn-success ml-auto" data-toggle = "modal" data-target = "#CarbonSteelModal" > <i class = "fas fa-plus"></i> Tambah Data</button>
+
             </div>
+
+            @else
+                 
+
+
+
+            <div class="card-header justify-content-center d-flex">
+        
+
+              {{-- <h3 class="card-title">DataTable with default features</h3> --}}
+              <button class = "btn btn-dark mr-auto" onclick="history.back()"> <i class = "fas fa-arrow-left"></i> Previous</button>
+
+     
+              <form action="/data_material_tersedia" method = "GET">
+                {{-- @csrf --}}
+
+                <input type="hidden" name="nama_kategori" value = "<?php echo $kateg ?>">
+                <button type = "submit" class = "btn btn-dark mr-2">Cari Bahan Baku Tersedia</button>
+               </form>
+
+              <form action="/data_material_warning" method = "GET">
+                {{-- @csrf --}}
+
+                <input type="hidden" name="nama_kategori" value = "<?php echo $kateg ?>">
+                <button type = "submit" class = "btn btn-warning ml-2">Cari Bahan Baku Tidak Aman</button>
+              </form>
+              
+
+         </div>
+            
+
+
+
+            @endif
+
+
+
             <!-- /.card-header -->
             <div class="card-body">
               <table id="data_material_semua_tabel" class="table table-bordered table-striped">
@@ -161,6 +227,8 @@ $pemilik = Auth::user()->is_pemilik == 1;
                   <th>Jenis</th>
                     <th>Stock</th>
                     <th>Keterangan</th>
+                    <th>Jumlah Yang Harus Dibeli</th>
+                    <th>Stok Maksimal</th>
                     <th>Safety Stock</th>
                     <th>Reorder Point</th>
                     <th>Average User</th>
@@ -209,6 +277,8 @@ $pemilik = Auth::user()->is_pemilik == 1;
                       @endif
                 
                     </td>
+                    <td>{{$item_material->jumlah_harus_beli}}</td>
+                    <td>{{$item_material->stock_max}}</td>
                     <td>{{$item_material->SS}}</td>
                     <td>{{$item_material->ROP}}</td>
                     <td>{{$item_material->AU}}</td>
@@ -261,6 +331,8 @@ $pemilik = Auth::user()->is_pemilik == 1;
                   <th>Jenis</th>
                     <th>Stock</th>
                     <th>Keterangan</th>
+                    <th>Jumlah Yang Harus Dibeli</th>
+                    <th>Stok Maksimal</th>
                     <th>Safety Stock</th>
                     <th>Reorder Point</th>
                     <th>Average User</th>
@@ -308,6 +380,67 @@ $pemilik = Auth::user()->is_pemilik == 1;
 
 
 
+
+    
+@endsection
+
+
+
+
+
+
+@section('form_penting')
+
+
+<form action="{{route('updateSS_ROP', $item_material->id)}}" method = "POST">
+  @csrf
+  @method('PATCH')
+
+<!-- Modal -->
+<div class="modal fade" id="DataMaterialModal_{{$item_material->id}}" tabindex="-1" aria-labelledby="DataMaterialModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="DataMaterialModalLabel">Tambah Data Safety Stock dan Reorder Point</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        
+
+        <div class="form-group">
+          <label for="d_ss">Demand (SS)</label>
+          <input id = "d_ss" type="number" class="form-control" name = "d_ss" placeholder="">
+      </div>
+
+      <div class="form-group">
+        <label for="Z">Z</label>
+        <input id = "Z" type="number" class="form-control" name = "Z" placeholder="" step = "any">
+    </div>
+
+    <div class="form-group">
+      <label for="L">L (Lead Time)</label>
+      <input id = "L" type="number" class="form-control" name = "L" placeholder="">
+  </div>
+
+  <div class="form-group">
+    <label for="d_rop">Demand (ROP)</label>
+    <input id = "d_rop" type="number" class="form-control" name = "d_rop" placeholder="">
+</div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Simpan</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</form>
 
 
     

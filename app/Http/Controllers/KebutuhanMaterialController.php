@@ -85,6 +85,14 @@ class KebutuhanMaterialController extends Controller
 
         $kebutuhan_material['suplier'] = $sesuai_kebutuhan->suplier;
 
+
+        $kebutuhan_material['stock_max'] = $sesuai_kebutuhan->stock_max;
+
+        // $kebutuhan_material['jumlah_harus_beli'] = (int)$sesuai_kebutuhan->stock_max - (int)$request->jumlah ;
+
+        $kebutuhan_material['jumlah_harus_beli'] = $sesuai_kebutuhan->jumlah_harus_beli ;
+
+
         $harga_total = '';
 
         if($sesuai_kebutuhan->harga_beli == NULL)
@@ -182,7 +190,8 @@ class KebutuhanMaterialController extends Controller
             'satuan'=>'Meter',
             'jumlah'=>$request->jumlah,
             'harga_beli'=>$request->harga_beli,
-            'tanggal_update'=>date('Y-m-d')
+            'tanggal_update'=>date('Y-m-d'),
+      
     
         ]);
     
