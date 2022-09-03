@@ -105,6 +105,12 @@ Edit Data Material <?php echo $data_material->nama ?>
                 <label for="stock">Stock</label>
                 <input id = "stock" type="number" class="form-control" name = "stock" placeholder="" value = "{{$data_material->stock}}">
             </div>
+
+            <div class="form-group">
+              <label for="stock_max">Stok Maksimal</label>
+              <input id = "stock_max" type="number" class="form-control" name = "stock_max" placeholder="" value = "{{$data_material->stock_max}}">
+          </div>
+
         
             <div class="form-group">
               <label for="harga_beli">Harga Beli</label>

@@ -972,6 +972,9 @@ public function updateDataMaterials($id, Request $request)
     }
 
 
+
+
+    $jumlah_harus_beli = (int)$request->stock_max - (int)$request->stock;
     
 
 
@@ -986,7 +989,7 @@ public function updateDataMaterials($id, Request $request)
         'harga_beli'=> $request->harga_beli,
         'tanggal_update'=>date('Y-m-d'),
         'stock_max'=>$request->stock_max,
-        'jumlah_harus_beli'=>$request->jumlah_harus_beli,
+        'jumlah_harus_beli'=>$jumlah_harus_beli,
 
     ]);
 

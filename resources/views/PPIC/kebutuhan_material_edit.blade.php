@@ -95,12 +95,16 @@ Edit Data Kebutuhan Material <?php echo $kebutuhan_material->nama ?>
         
 
             <div class="form-group">
-              <label for="harga_beli">Harga Total</label>
-              <input id = "harga_beli" type="number" class="form-control" name = "harga_beli" placeholder="" value = "{{$kebutuhan_material->harga_beli}}">
+              <label for="jumlah_harus_beli">Jumlah Yang Harus Dibeli</label>
+              <input id = "jumlah_harus_beli" type="number" class="form-control" name = "jumlah_harus_beli" placeholder="" value = "{{$kebutuhan_material->jumlah_harus_beli}}">
           </div>
       
 
-              
+            <div class="form-group">
+              <label for="harga_beli">Harga Total</label>
+              <input id = "harga_beli" type="number" class="form-control" name = "harga_beli" placeholder="" value = "{{$kebutuhan_material->harga_beli}}">
+          </div>
+                    
 
                     <button type = "submit" class = "btn btn-primary">Update Kebutuhan Material</button>
 

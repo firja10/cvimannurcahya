@@ -191,6 +191,7 @@ class KebutuhanMaterialController extends Controller
             'jumlah'=>$request->jumlah,
             'harga_beli'=>$request->harga_beli,
             'tanggal_update'=>date('Y-m-d'),
+            'jumlah_harus_beli'=>$request->jumlah_harus_beli,
       
     
         ]);

@@ -1,0 +1,4 @@
+1. Data Seluruh Material = Edit -> Stock Max, Stock - 1
+2. Data Kebutuhan Material = Edit -> Jumlah nya bisa diedit sama Gudang - 1
+3. Semua Data Material Stok Maksimal dibuat 42 - 2 -> Sudah
+4. Notifikasi Dibuat pendek, menampilkan 3 pesan terbaru (pagination) - 1 -> Sudah

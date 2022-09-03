@@ -102,7 +102,9 @@
 
       <?php 
       $manager = Auth::user()->is_manager == 1;      
-      $notifikasi = DB::table('notifikasis')->where('status_notif',0)->get();
+      // $notifikasi = DB::table('notifikasis')->where('status_notif',0)->get();
+
+      $notifikasi = DB::table('notifikasis')->where('status_notif',0)->paginate(3);
 
       $notif_count = DB::table('notifikasis')->where('status_notif',0)->count();
       ?>
@@ -306,7 +308,7 @@
 
 
 
-          @if ($manager || $gudang || $pemilik || $ppic)
+          @if ($manager || $gudang || $pemilik)
               
           <li class="nav-item menu-open">
             <a href="#" class="nav-link">

@@ -72,10 +72,10 @@ $pemilik = Auth::user()->is_pemilik == 1;
         
 
                  {{-- <h3 class="card-title">DataTable with default features</h3> --}}
-                 <button class = "btn btn-dark" onclick="history.back()"> <i class = "fas fa-arrow-left"></i> Previous</button>
+                 <button class = "btn btn-dark mr-3" onclick="history.back()"> <i class = "fas fa-arrow-left"></i> Previous</button>
 
 
-                  <a class = "btn btn-dark mr-3" href = "{{url('/data_material_seluruh_tersedia')}}">Cari Bahan Baku Tersedia</a>
+                  <a class = "btn btn-dark ml-3 mr-3" href = "{{url('/data_material_seluruh_tersedia')}}">Cari Bahan Baku Tersedia</a>
      
 
                   <a class="btn btn-warning ml-3" href = "{{url('/data_material_seluruh_warning')}}" >Cari Bahan Baku Tidak Aman</a>

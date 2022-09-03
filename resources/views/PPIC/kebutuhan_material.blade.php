@@ -108,7 +108,12 @@ $pemilik = Auth::user()->is_pemilik;
                   <th>Tanggal Masuk</th>
                   <th>Keterangan</th>
                   <th>Jumlah yang harus dibeli</th>
+                  @if ($ppic != 1)
                   <th>Aksi</th>
+                  @else
+                      
+                  @endif
+              
                 </tr>
                 </thead>
                 <tbody>
@@ -168,6 +173,11 @@ $pemilik = Auth::user()->is_pemilik;
 
 
 
+
+
+                    @if ($ppic != 1)
+                  
+            
 
 
 
@@ -424,6 +434,11 @@ $pemilik = Auth::user()->is_pemilik;
                       </center>
 
                     </td>
+
+                    @else
+                        
+                    @endif
+                
                 </tr>
 
 
@@ -443,7 +458,12 @@ $pemilik = Auth::user()->is_pemilik;
                     <th>Tanggal Masuk</th>
                     <th>Keterangan</th>
                     <th>Jumlah yang harus dibeli</th>
+                    @if ($ppic != 1)
                     <th>Aksi</th>
+                    @else
+                        
+                    @endif
+                
                 </tr>
                 </tfoot>
               </table>
