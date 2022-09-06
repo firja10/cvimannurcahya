@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 4.9.7
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Waktu pembuatan: 03 Sep 2022 pada 19.08
--- Versi server: 10.4.20-MariaDB
--- Versi PHP: 7.4.22
+-- Host: localhost:3306
+-- Waktu pembuatan: 06 Sep 2022 pada 09.15
+-- Versi server: 10.3.35-MariaDB-cll-lve
+-- Versi PHP: 7.4.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `renaldi_project`
+-- Database: `cvimannu_db`
 --
 
 -- --------------------------------------------------------
@@ -59,14 +60,14 @@ CREATE TABLE `data_materials` (
 
 INSERT INTO `data_materials` (`id`, `kode`, `nama`, `kategori`, `link_kategori`, `jenis`, `stock`, `harga_beli`, `suplier`, `tanggal_masuk`, `tanggal_update`, `created_at`, `updated_at`, `d_ss`, `L`, `Z`, `SS`, `d_rop`, `ROP`, `AU`, `stock_max`, `jumlah_harus_beli`, `status_material`) VALUES
 (6, 'CS-SCP-1', 'Cast Steel SCPH1', 'Cast Steel', 'CS', 'JIS', 14, 250000, 'Rakan Pratama Mandiri', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 3, NULL, 2, NULL, 8, 2, 42, 28, NULL),
-(7, 'CS-SCR-415', 'Cast Steel SCR415H', 'Cast Steel', 'CS', 'JIS', 42, 200000, 'Rahayu Teknik', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 3, NULL, 2, NULL, 7, 2, 42, 0, NULL),
+(7, 'CS-SCR-415', 'Cast Steel SCR415H', 'Cast Steel', 'CS', 'JIS', 42, 200000, 'Rahayu Teknik', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '2022-09-03 15:28:07', NULL, 3, NULL, 2, NULL, 8, 2, 42, 0, NULL),
 (8, 'CS-SCR-420', 'Cast Steel SCR420H', 'Cast Steel', 'CS', 'JIS', 13, 300000, 'Rahayu Teknik', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 3, NULL, 2, NULL, 8, 2, 42, 29, NULL),
 (9, 'CS-SCR-430', 'Cast Steel SCR430H', 'Cast Steel', 'CS', 'JIS', 8, 150000, 'Rahayu Teknik', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 3, NULL, 1, NULL, 6, 2, 42, 34, NULL),
-(10, 'CS-SCR-435', 'Cast Steel SCR435H', 'Cast Steel', 'CS', 'JIS', 1, 250000, 'Rahayu Teknik', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 3, NULL, 1, NULL, 6, 2, 42, 41, NULL),
+(10, 'CS-SCR-435', 'Cast Steel SCR435H', 'Cast Steel', 'CS', 'JIS', 30, 250000, 'Rahayu Teknik', '0000-00-00', '2022-09-05', '0000-00-00 00:00:00', '2022-09-05 16:10:12', NULL, 3, NULL, 1, NULL, 6, 2, 42, 12, NULL),
 (11, 'CS-SCR-440', 'Cast Steel SCR440H', 'Cast Steel', 'CS', 'JIS', 19, 200000, 'Rahayu Teknik', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 3, NULL, 2, NULL, 8, 2, 42, 23, NULL),
 (12, 'CS-SCM-415', 'Cast Steel SCM415H', 'Cast Steel', 'CS', 'JIS', 20, 300000, 'Rakan Pratama Mandiri', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 3, NULL, 2, NULL, 8, 2, 42, 22, NULL),
 (13, 'CS-SCM-418', 'Cast Steel SCM418H', 'Cast Steel', 'CS', 'JIS', 19, 150000, 'Rakan Pratama Mandiri', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 3, NULL, 2, NULL, 7, 2, 42, 23, NULL),
-(14, 'CS-SCM-419', 'Cast Steel SCM419H', 'Cast Steel', 'CS', 'JIS', 6, 250000, 'Rakan Pratama Mandiri', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 3, NULL, 2, NULL, 7, 2, 42, 36, NULL),
+(14, 'CS-SCM-419', 'Cast Steel SCM419H', 'Cast Steel', 'CS', 'JIS', 6, 250000, 'Rakan Pratama Mandiri', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '2022-09-03 15:27:40', NULL, 3, NULL, 2, NULL, 8, 2, 42, 36, NULL),
 (15, 'CS-SCM-420', 'Cast Steel SCM420H', 'Cast Steel', 'CS', 'JIS', 38, 200000, 'Rakan Pratama Mandiri', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 3, NULL, 2, NULL, 7, 2, 42, 4, NULL),
 (16, 'CS-SCM-435', 'Cast Steel SCM435H', 'Cast Steel', 'CS', 'JIS', 28, 300000, 'Rakan Pratama Mandiri', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 3, NULL, 2, NULL, 8, 2, 42, 14, NULL),
 (17, 'CS-SCM-440', 'Cast Steel SCM440H', 'Cast Steel', 'CS', 'JIS', 23, 250000, 'Rakan Pratama Mandiri', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 3, NULL, 2, NULL, 7, 2, 42, 19, NULL),
@@ -284,8 +285,7 @@ INSERT INTO `data_materials` (`id`, `kode`, `nama`, `kategori`, `link_kategori`,
 (228, 'NCS-AIS-8620', 'Ni-Cr Steel AISI8620', 'Ni-Cr Steel', 'NCS', 'AISI', 40, 250000, 'Centralindo Sealing', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 3, NULL, 1, NULL, 6, 2, 42, 2, NULL),
 (229, 'NCS-AIS-8637', 'Ni-Cr Steel AISI8637', 'Ni-Cr Steel', 'NCS', 'AISI', 30, 200000, 'Centralindo Sealing', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 3, NULL, 2, NULL, 7, 2, 42, 12, NULL),
 (230, 'NCS-AIS-4320', 'Ni-Cr Steel AISI4320', 'Ni-Cr Steel', 'NCS', 'AISI', 11, 300000, 'Willy Teknhik', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 5, NULL, 3, NULL, 13, 2, 42, 31, NULL),
-(231, 'NCS-AIS-4340', 'Ni-Cr Steel AISI4340', 'Ni-Cr Steel', 'NCS', 'AISI', 30, 150000, 'Willy Teknhik', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 5, NULL, 2, NULL, 11, 2, 42, 12, NULL),
-(232, 'kode', 'nama', 'kategori', 'link_kategori', 'jenis', 0, 0, 'suplier', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 0, 0, 0, 0, 0, 0, 0, 0, 'status_material');
+(231, 'NCS-AIS-4340', 'Ni-Cr Steel AISI4340', 'Ni-Cr Steel', 'NCS', 'AISI', 30, 150000, 'Willy Teknhik', '0000-00-00', '0000-00-00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 5, NULL, 2, NULL, 11, 2, 42, 12, NULL);
 
 -- --------------------------------------------------------
 
@@ -391,7 +391,7 @@ CREATE TABLE `kebutuhan_materials` (
 --
 
 INSERT INTO `kebutuhan_materials` (`id`, `komponen`, `kode`, `nama`, `jenis`, `satuan`, `jumlah`, `harga_beli`, `suplier`, `tanggal_masuk`, `tanggal_update`, `created_at`, `updated_at`, `status_verif`, `status_repairing`, `status_beli`, `stock_max`, `jumlah_harus_beli`) VALUES
-(81, 'LABYRINTH PACKING', 'CS-SCR-435', 'Cast Steel SCR435H', 'JIS', 'Meter', 31, 1250000, 'Rahayu Teknik', '2022-09-02', '2022-09-03', '2022-09-02 07:43:38', '2022-09-02 17:49:02', 1, NULL, 2, 42, 31);
+(81, 'LABYRINTH PACKING', 'CS-SCR-435', 'Cast Steel SCR435H', 'JIS', 'Meter', 31, 1250000, 'Rahayu Teknik', '2022-09-02', '2022-09-03', '2022-09-02 07:43:38', '2022-09-03 15:36:31', 1, 4, 2, 42, 31);
 
 -- --------------------------------------------------------
 
@@ -563,7 +563,8 @@ INSERT INTO `notifikasis` (`id`, `nama_notifikasi`, `deskripsi`, `pengirim`, `ta
 (42, 'Tambah Pemesanan Material Cast Steel SCR435H', 'Telah dilaksanakan Penambahan Pemesanan Material Cast Steel SCR435H oleh Bagian Gudang Gallantmon', 'Gallantmon', '2022-09-02', 'Tambah Pemesanan Material', '2022-09-02 07:14:26', '2022-09-02 07:14:26', 0, NULL, 59, NULL, 'Berikut merupakan Link untuk melihat Pemesanan material : ', 'persetujuan/pembelian_material'),
 (43, 'Tambah Data Repairing Cast Steel SCPH1', 'Telah dilaksanakan Penambahan Repairing Cast Steel SCPH1 oleh PPIC Omegamon', 'Omegamon', '2022-09-02', 'Tambah Kebutuhan Material', '2022-09-02 07:17:52', '2022-09-02 07:17:52', 0, NULL, NULL, 31, 'Berikut merupakan Link untuk melihat Data Repairing : ', 'data_repairing'),
 (44, 'Tambah Kebutuhan Material Cast Steel SCR435H', 'Telah dilaksanakan Penambahan Kebutuhan Material Cast Steel SCR435H oleh PPIC Takato Matsuda', 'Takato Matsuda', '2022-09-02', 'Tambah Kebutuhan Material', '2022-09-02 07:43:38', '2022-09-02 07:43:38', 0, 81, NULL, NULL, 'Berikut merupakan Link untuk melihat Kebutuhan material : ', 'persetujuan/kebutuhan_material'),
-(45, 'Tambah Pemesanan Material Cast Steel SCR435H', 'Telah dilaksanakan Penambahan Pemesanan Material Cast Steel SCR435H oleh Bagian Gudang Gallantmon', 'Gallantmon', '2022-09-02', 'Tambah Pemesanan Material', '2022-09-02 07:49:14', '2022-09-02 07:49:14', 0, NULL, 60, NULL, 'Berikut merupakan Link untuk melihat Pemesanan material : ', 'persetujuan/pembelian_material');
+(45, 'Tambah Pemesanan Material Cast Steel SCR435H', 'Telah dilaksanakan Penambahan Pemesanan Material Cast Steel SCR435H oleh Bagian Gudang Gallantmon', 'Gallantmon', '2022-09-02', 'Tambah Pemesanan Material', '2022-09-02 07:49:14', '2022-09-02 07:49:14', 0, NULL, 60, NULL, 'Berikut merupakan Link untuk melihat Pemesanan material : ', 'persetujuan/pembelian_material'),
+(46, 'Tambah Data Repairing Cast Steel SCR435H', 'Telah dilaksanakan Penambahan Repairing Cast Steel SCR435H oleh PPIC Hilwanul Fikri', 'Hilwanul Fikri', '2022-09-03', 'Tambah Kebutuhan Material', '2022-09-03 15:36:31', '2022-09-03 15:36:31', 0, NULL, NULL, 35, 'Berikut merupakan Link untuk melihat Data Repairing : ', 'data_repairing');
 
 -- --------------------------------------------------------
 
@@ -646,6 +647,13 @@ CREATE TABLE `repairings` (
   `status_verif` int(11) DEFAULT NULL,
   `status_repairing` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `repairings`
+--
+
+INSERT INTO `repairings` (`id`, `komponen`, `nama`, `jenis`, `satuan`, `jumlah`, `tanggal_masuk`, `tanggal_update`, `keterangan`, `created_at`, `updated_at`, `status_verif`, `status_repairing`) VALUES
+(35, 'LABYRINTH PACKING', 'Cast Steel SCR435H', 'JIS', 'Meter', 31, '2022-09-03', '2022-09-03', NULL, '2022-09-03 15:35:53', '2022-09-03 15:36:31', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -852,7 +860,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT untuk tabel `notifikasis`
 --
 ALTER TABLE `notifikasis`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT untuk tabel `pembelian_materials`
@@ -870,7 +878,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT untuk tabel `repairings`
 --
 ALTER TABLE `repairings`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT untuk tabel `suppliers`

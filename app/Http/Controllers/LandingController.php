@@ -1180,6 +1180,8 @@ public function MasukanRepairing($id, Request $request)
 
     $data_repairing['satuan'] = $request->satuan;
 
+    // $data_repairing['jumlah'] = $request->jumlah;
+
     $data_repairing['jumlah'] = $request->jumlah;
 
     $data_repairing['tanggal_masuk'] = date('Y-m-d');

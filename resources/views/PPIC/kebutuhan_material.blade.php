@@ -273,9 +273,13 @@ $pemilik = Auth::user()->is_pemilik;
                             <input type="hidden" name="nama" value="{{$item_material->nama}}">
                             <input type="hidden" name="jenis" value="{{$item_material->jenis}}">
                             <input type="hidden" name="satuan" value="{{$item_material->satuan}}">
-                            <input type="hidden" name="jumlah" value="{{$item_material->jumlah}}">
+                            {{-- <input type="hidden" name="jumlah" value="{{$item_material->jumlah}}"> --}}
+
+                            <input type="hidden" name="jumlah" value="{{$item_material->stok_repairing}}">
 
 
+                            {{-- <button class = "btn btn-dark mt-3" type = "submit">Ajukan Repairing</button> --}}
+                            
                             <button class = "btn btn-dark mt-3" type = "submit">Ajukan Repairing</button>
 
                           </form>

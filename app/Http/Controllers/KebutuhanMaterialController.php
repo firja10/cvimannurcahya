@@ -83,6 +83,10 @@ class KebutuhanMaterialController extends Controller
 
         $kebutuhan_material['jumlah'] = $request->jumlah;
 
+
+        $kebutuhan_material['stok_repairing'] = $request->jumlah;
+
+
         $kebutuhan_material['suplier'] = $sesuai_kebutuhan->suplier;
 
 
