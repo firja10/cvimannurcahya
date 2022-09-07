@@ -38,6 +38,16 @@ Data Repairing
 
 
 
+<?php 
+
+$manajer = Auth::user()->is_manager;
+
+
+
+?>
+
+
+
 
 
 
@@ -255,66 +265,139 @@ Data Repairing
 
 
 
+@if ($manajer != 1)
+
+
 
 <script>
 
   
-    var groupColumn_repair = 1;
-        var table_repair = $('#repairing_tabel').DataTable({
-            columnDefs: [{ visible: false, targets: groupColumn_repair }],
-            // order: [[groupColumn, 'asc']],
-            order: [[6, 'desc']],
-           buttons: ["copy", "csv", "excel", "pdf", "print"],
-    
-            displayLength: 25,
-          
-            drawCallback: function (settings) {
-                var api_repair = this.api();
-                var rows_repair = api_repair.rows({ page: 'current' }).nodes();
-                var last_repair = null;
-     
-                api_repair
-                    .column(groupColumn_repair, { page: 'current' })
-                    .data()
-                    .each(function (group, i) {
-                        if (last_repair !== group) {
+  var groupColumn_repair = 1;
+      var table_repair = $('#repairing_tabel').DataTable({
+          columnDefs: [{ visible: false, targets: groupColumn_repair }],
+          // order: [[groupColumn, 'asc']],
+          order: [[6, 'desc']],
+         buttons: ["copy", "csv", "excel", 
+         {
+                  extend: 'pdfHtml5',
+                  exportOptions: {
+                      columns: [ 0, 1, 2, 3, 4, 5]
+                  },
   
-                          $(rows_repair)
-                                .eq(i)
-                                .before('<tr class="group"><td colspan="7" style="background-color:gray;color:white;" class = "justify-content-center" >' + '<h6 class = "mr-auto">' + group + '</h6> (Untuk konfirmasi, silakan klik tombol Lapor Material Sesuai / Konfirmasi Repairing Telah Dilakukan pada salah satu data di bawah)</td></tr>');
-     
-                            last_repair = group;
+                  customize: function ( doc ) {
+                  // Splice the image in after the header, but before the table
+                  // doc.content.splice( 1, 0, {
+                  //     // margin: [ 0, 0, 0, 12 ],
+                  //     alignment: 'center',
+                    
+                  // } );
+
+                  doc.defaultStyle.alignment = 'center'
+                  // doc.pageMargins = [5, 5, 5, 5],
+
+
+                  
+              },
+              },
+          "print"],
   
-  
-                          }
-                    });
-            },
-        }).buttons().container().appendTo('#repairing_tabel_wrapper .col-md-6:eq(0)');
-  
+          displayLength: 25,
         
+          drawCallback: function (settings) {
+              var api_repair = this.api();
+              var rows_repair = api_repair.rows({ page: 'current' }).nodes();
+              var last_repair = null;
+   
+              api_repair
+                  .column(groupColumn_repair, { page: 'current' })
+                  .data()
+                  .each(function (group, i) {
+                      if (last_repair !== group) {
+
+                        $(rows_repair)
+                              .eq(i)
+                              .before('<tr class="group"><td colspan="7" style="background-color:gray;color:white;" class = "justify-content-center" >' + '<h6 class = "mr-auto">' + group + '</h6> (Untuk konfirmasi, silakan klik tombol Lapor Material Sesuai / Konfirmasi Repairing Telah Dilakukan pada salah satu data di bawah)</td></tr>');
+   
+                          last_repair = group;
+
+
+                        }
+                  });
+          },
+      }).buttons().container().appendTo('#repairing_tabel_wrapper .col-md-6:eq(0)');
+
+      
+
   
-    
-    </script>
+  </script>
 
 
 
 
+@else
+
+
+<script>
+
+  
+  var groupColumn_repair = 1;
+      var table_repair = $('#repairing_tabel').DataTable({
+          columnDefs: [{ visible: false, targets: groupColumn_repair }],
+          // order: [[groupColumn, 'asc']],
+          order: [[6, 'desc']],
+         buttons: ["copy", "csv", "excel",
+         {
+                  extend: 'pdfHtml5',
+     
+                  customize: function ( doc ) {
+                  // Splice the image in after the header, but before the table
+                  // doc.content.splice( 1, 0, {
+                  //     // margin: [ 0, 0, 0, 12 ],
+                  //     alignment: 'center',
+                    
+                  // } );
+
+                  doc.defaultStyle.alignment = 'center'
+                  // doc.pageMargins = [5, 5, 5, 5],
+
+
+                  
+              }, },
+          "print"],
+  
+          displayLength: 25,
+        
+          drawCallback: function (settings) {
+              var api_repair = this.api();
+              var rows_repair = api_repair.rows({ page: 'current' }).nodes();
+              var last_repair = null;
+   
+              api_repair
+                  .column(groupColumn_repair, { page: 'current' })
+                  .data()
+                  .each(function (group, i) {
+                      if (last_repair !== group) {
+
+                        $(rows_repair)
+                              .eq(i)
+                              .before('<tr class="group"><td colspan="7" style="background-color:gray;color:white;" class = "justify-content-center" >' + '<h6 class = "mr-auto">' + group + '</h6> (Untuk konfirmasi, silakan klik tombol Lapor Material Sesuai / Konfirmasi Repairing Telah Dilakukan pada salah satu data di bawah)</td></tr>');
+   
+                          last_repair = group;
+
+
+                        }
+                  });
+          },
+      }).buttons().container().appendTo('#repairing_tabel_wrapper .col-md-6:eq(0)');
+
+      
+
+  
+  </script>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+@endif
 
 
 

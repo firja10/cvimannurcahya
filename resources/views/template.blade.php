@@ -205,6 +205,8 @@
   <!-- /.navbar -->
 
   <?php
+
+$manajer = Auth::user()->is_manager;
   
   $manager = Auth::user()->is_manager == 1;
   $gudang = Auth::user()->is_bagiangudang == 1;
@@ -1182,6 +1184,288 @@
 
 
 
+
+@if ($manajer != 1)
+
+<script>
+
+
+  var groupColumn = 0;
+      var table = $('#kebutuhan_material_tabel').DataTable({
+          columnDefs: [{ visible: false, targets: groupColumn }],
+          // order: [[groupColumn, 'asc']],
+          order: [[5, 'desc']],
+
+          
+          dom: 'Bfrtip',
+
+
+        //  buttons: ["copy", "csv", "excel", "pdf", "print"],
+  
+        buttons: ["copy", "csv", "excel",
+        {
+                  extend: 'pdfHtml5',
+                  exportOptions: {
+                      columns: [ 0, 1, 2, 3, 4, 5, 6, 7]
+                  },
+  
+                  customize: function ( doc ) {
+                  // Splice the image in after the header, but before the table
+                  // doc.content.splice( 1, 0, {
+                  //     // margin: [ 0, 0, 0, 12 ],
+                  //     alignment: 'center',
+                    
+                  // } );
+
+                  doc.defaultStyle.alignment = 'center'
+                  // doc.pageMargins = [5, 5, 5, 5],
+
+
+                  
+              },
+              },
+          "print"],
+  
+          displayLength: 25,
+          drawCallback: function (settings) {
+              var api = this.api();
+              var rows = api.rows({ page: 'current' }).nodes();
+              var last = null;
+   
+              api
+                  .column(groupColumn, { page: 'current' })
+                  .data()
+                  .each(function (group, i) {
+                      if (last !== group) {
+                          $(rows)
+                              .eq(i)
+                              .before('<tr class="group"><td colspan="8" style="background-color:gray;color:white" >' + group + '</td></tr>');
+   
+                          last = group;
+                      }
+                  });
+          },
+      }).buttons().container().appendTo('#kebutuhan_material_tabel_wrapper .col-md-6:eq(0)');
+
+
+
+
+
+
+
+
+
+
+
+
+
+      var beli_table = $('#pembelian_material_tabel').DataTable({
+        responsive: true, lengthChange: false, autoWidth: false, 
+        columnDefs: [{ visible: true, targets: groupColumn }],
+          // order: [[groupColumn, 'asc']],
+          // order: [[5, 'desc']],
+
+          
+          dom: 'Bfrtip',
+  
+        buttons: ["copy", "csv", "excel",
+        {
+                  extend: 'pdfHtml5',
+                  exportOptions: {
+                      columns: [ 0, 1, 2, 3, 4, 5, 6, 7]
+                  },
+  
+                  customize: function ( doc ) {
+                  // Splice the image in after the header, but before the table
+                  // doc.content.splice( 1, 0, {
+                  //     // margin: [ 0, 0, 0, 12 ],
+                  //     alignment: 'center',
+                    
+                  // } );
+
+                  doc.defaultStyle.alignment = 'center'
+                  // doc.pageMargins = [5, 5, 5, 5],
+
+
+                  
+              },
+              },
+          "print"],
+  
+          displayLength: 25,
+
+
+      }).buttons().container().appendTo('#pembelian_material_tabel_wrapper .col-md-6:eq(0)');
+
+
+   // $("#pembelian_material_tabel").DataTable({
+    //   "responsive": true, "lengthChange": false, "autoWidth": false,
+    //   "buttons": ["copy", "csv", "excel", 
+    //   "pdf",
+      
+    //   "print"]
+    // }).buttons().container().appendTo('#pembelian_material_tabel_wrapper .col-md-6:eq(0)');
+    
+  
+  
+  </script>
+
+
+
+@else
+
+
+
+
+
+<script>
+
+
+  var groupColumn = 0;
+      var table = $('#kebutuhan_material_tabel').DataTable({
+          columnDefs: [{ visible: false, targets: groupColumn }],
+          // order: [[groupColumn, 'asc']],
+          order: [[5, 'desc']],
+  
+         buttons: ["copy", "csv", "excel", 
+         {
+                  extend: 'pdfHtml5',
+                  // exportOptions: {
+                  //     columns: [ 0, 1, 2, 3, 4, 5, 6, 7]
+                  // },
+  
+                  customize: function ( doc ) {
+                  // Splice the image in after the header, but before the table
+                  // doc.content.splice( 1, 0, {
+                  //     // margin: [ 0, 0, 0, 12 ],
+                  //     alignment: 'center',
+                    
+                  // } );
+
+                  doc.defaultStyle.alignment = 'center'
+                  // doc.pageMargins = [5, 5, 5, 5],
+
+
+                  
+              },
+              },
+          "print"],
+  
+
+
+
+  
+
+
+  
+  
+          displayLength: 25,
+          drawCallback: function (settings) {
+              var api = this.api();
+              var rows = api.rows({ page: 'current' }).nodes();
+              var last = null;
+   
+              api
+                  .column(groupColumn, { page: 'current' })
+                  .data()
+                  .each(function (group, i) {
+                      if (last !== group) {
+                          $(rows)
+                              .eq(i)
+                              .before('<tr class="group"><td colspan="8" style="background-color:gray;color:white" >' + group + '</td></tr>');
+   
+                          last = group;
+                      }
+                  });
+          },
+      }).buttons().container().appendTo('#kebutuhan_material_tabel_wrapper .col-md-6:eq(0)');
+
+
+
+
+
+    //   $("#pembelian_material_tabel").DataTable({
+    //   "responsive": true, "lengthChange": false, "autoWidth": false,
+    //   "buttons": ["copy", "csv", "excel", "pdf", "print"]
+    // }).buttons().container().appendTo('#pembelian_material_tabel_wrapper .col-md-6:eq(0)');
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    var beli_table = $('#pembelian_material_tabel').DataTable({
+        responsive: true, lengthChange: false, autoWidth: false, 
+        columnDefs: [{ visible: true, targets: groupColumn }],
+          // order: [[groupColumn, 'asc']],
+          // order: [[5, 'desc']],
+
+          
+          dom: 'Bfrtip',
+  
+        buttons: ["copy", "csv", "excel",
+        {
+                  extend: 'pdfHtml5',
+                  // exportOptions: {
+                  //     columns: [ 0, 1, 2, 3, 4, 5, 6, 7]
+                  // },
+  
+                  customize: function ( doc ) {
+                  // Splice the image in after the header, but before the table
+                  // doc.content.splice( 1, 0, {
+                  //     // margin: [ 0, 0, 0, 12 ],
+                  //     alignment: 'center',
+                    
+                  // } );
+
+                  doc.defaultStyle.alignment = 'center'
+                  // doc.pageMargins = [5, 5, 5, 5],
+
+
+                  
+              },
+              },
+          "print"],
+  
+          displayLength: 25,
+
+
+      }).buttons().container().appendTo('#pembelian_material_tabel_wrapper .col-md-6:eq(0)');
+
+
+
+  
+  
+  </script>
+  
+
+
+
+@endif
+
+
+
+
+
+
+
+
+
+
+
+
 <script>
     $(function () {
     $("#example_1").DataTable({
@@ -1204,10 +1488,8 @@
     // });
 
 
-    $("#pembelian_material_tabel").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print"]
-    }).buttons().container().appendTo('#pembelian_material_tabel_wrapper .col-md-6:eq(0)');
+
+
 
 
     $("#komponen_turbin_tabel").DataTable({
@@ -1227,45 +1509,7 @@
 
 
 
-
-
-
-
-
-
-    var groupColumn = 0;
-    var table = $('#kebutuhan_material_tabel').DataTable({
-        columnDefs: [{ visible: false, targets: groupColumn }],
-        // order: [[groupColumn, 'asc']],
-        order: [[5, 'desc']],
-       buttons: ["copy", "csv", "excel", "pdf", "print"],
-
-        displayLength: 25,
-        drawCallback: function (settings) {
-            var api = this.api();
-            var rows = api.rows({ page: 'current' }).nodes();
-            var last = null;
- 
-            api
-                .column(groupColumn, { page: 'current' })
-                .data()
-                .each(function (group, i) {
-                    if (last !== group) {
-                        $(rows)
-                            .eq(i)
-                            .before('<tr class="group"><td colspan="8" style="background-color:gray;color:white" >' + group + '</td></tr>');
- 
-                        last = group;
-                    }
-                });
-        },
-    }).buttons().container().appendTo('#kebutuhan_material_tabel_wrapper .col-md-6:eq(0)');
-
-
-
-
-
-    // $('#repairing_tabel').DataTable({
+ // $('#repairing_tabel').DataTable({
     //   "responsive": true, "lengthChange": false, "autoWidth": false,
     //   "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
     // }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
